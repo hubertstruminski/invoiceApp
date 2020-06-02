@@ -1,0 +1,11 @@
+.menuButton {
+    -fx-background-color: linear-gradient(from  40% 40% to 60% 60%, #7227d9, #14a3db 100%);
+}
+
+.menuButton:hover {
+    -fx-cursor: hand;
+}
+
+.menuWindow {
+    -fx-background-color: #3c4045;
+}
