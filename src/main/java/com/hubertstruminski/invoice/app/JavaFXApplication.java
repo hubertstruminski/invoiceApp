@@ -25,6 +25,7 @@ public class JavaFXApplication extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+//        System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
         springContext.publishEvent(new StageReadyEvent(stage));
     }
 

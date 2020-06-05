@@ -7,6 +7,10 @@ public abstract class BaseController {
     private ViewCreator viewCreator;
     private String fxmlName;
 
+    public BaseController() {
+
+    }
+
     public BaseController(ViewCreator viewCreator, String fxmlName) {
         this.viewCreator = viewCreator;
         this.fxmlName = fxmlName;

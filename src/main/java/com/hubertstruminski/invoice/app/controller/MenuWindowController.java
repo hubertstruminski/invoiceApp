@@ -3,6 +3,7 @@ package com.hubertstruminski.invoice.app.controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.hubertstruminski.invoice.app.view.ViewCreator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,10 +14,7 @@ import javafx.scene.web.WebView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 
-public class MenuWindowController implements Initializable {
-
-    @Autowired
-    Environment environment;
+public class MenuWindowController extends BaseController implements Initializable {
 
     @FXML
     private ResourceBundle resources;
@@ -36,17 +34,28 @@ public class MenuWindowController implements Initializable {
     @FXML
     private Label configurationMessageWarningLabel;
 
-    @FXML
-    private WebView googleWebView;
-//
-//    public MenuWindowController(ViewCreator viewCreator, String fxmlName) {
-//        super(viewCreator, fxmlName);
-//    }
+    public MenuWindowController() {
+
+    }
+
+    public MenuWindowController(ViewCreator viewCreator, String fxmlName) {
+        super(viewCreator, fxmlName);
+    }
 
     @FXML
     void configurationButtonAction(ActionEvent event) {
-        String port = environment.getProperty("local.server.port");
-        System.out.println(port);
+
+    }
+
+    @FXML
+    void createAccountButtonAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void loginButtonAction(ActionEvent event) {
+        ViewCreator viewCreator = new ViewCreator();
+        viewCreator.showLoginWindow();
     }
 
     @FXML
@@ -60,9 +69,5 @@ public class MenuWindowController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         configurationMessageWarningLabel.setText("");
-//        String htmlFileUrl = MenuWindowController.class.getResource("/templates/googleLogin.html").toExternalForm();
-
-        WebEngine engine = googleWebView.getEngine();
-        engine.load("http://localhost:5000/");
     }
 }

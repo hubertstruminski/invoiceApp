@@ -9,3 +9,30 @@
 .menuWindow {
     -fx-background-color: #3c4045;
 }
+
+.googleButton {
+    -fx-background-color: #238AF1;
+    -fx-font-weight: 700;
+    -fx-text-fill: white;
+}
+
+.googleButton:hover {
+    -fx-cursor: hand;
+}
+
+.loginInputs {
+    -fx-background-color: #3c4045;
+    -fx-border-insets: 0;
+    -fx-border-width: 1px;
+    -fx-border-color: #3c4045 #3c4045 white #3c4045;
+    -fx-text-fill: white;
+}
+
+.loginButton {
+    -fx-background-color: linear-gradient(from  40% 40% to 60% 60%, #7227d9, #14a3db 100%);
+    -fx-text-fill: white;
+}
+
+.loginButton:hover {
+    -fx-cursor: hand;
+}

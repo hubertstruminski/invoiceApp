@@ -16,18 +16,7 @@ import java.io.IOException;
 public class StageInitializer implements ApplicationListener<JavaFXApplication.StageReadyEvent> {
     @Override
     public void onApplicationEvent(JavaFXApplication.StageReadyEvent event) {
-//        Stage stage = event.getStage();
-//        ViewCreator viewCreator = new ViewCreator();
-//        viewCreator.showMenuWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/static/menuWindow.fxml"));
-        Parent parent = null;
-        try {
-            parent = fxmlLoader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Stage stage = event.getStage();
-        stage.setScene(new Scene(parent, 800, 600));
-        stage.show();
+        ViewCreator viewCreator = new ViewCreator();
+        viewCreator.showMenuWindow();
     }
 }
