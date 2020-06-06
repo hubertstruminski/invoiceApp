@@ -7,6 +7,7 @@ import com.hubertstruminski.invoice.app.controller.MenuWindowController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.web.WebEngine;
 import javafx.stage.Stage;
 import org.springframework.stereotype.Service;
 
