@@ -18,14 +18,12 @@ public class JavaFXApplication extends Application {
     @Override
     public void init() throws Exception {
         springContext = new SpringApplicationBuilder(InvoiceAppApplication.class).run();
-        //----------------------
         fxmlLoader = new FXMLLoader();
         fxmlLoader.setControllerFactory(springContext::getBean);
     }
 
     @Override
     public void start(Stage stage) throws Exception {
-//        System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
         springContext.publishEvent(new StageReadyEvent(stage));
     }
 
@@ -39,7 +37,6 @@ public class JavaFXApplication extends Application {
         public StageReadyEvent(Stage stage) {
             super(stage);
         }
-
         public Stage getStage() {
             return ((Stage) getSource());
         }

@@ -19,7 +19,7 @@ public class TestController {
     @GetMapping("/google/login/pass/{accessToken}")
     public ResponseEntity<?> passAccessTokenToServer(@PathVariable String accessToken) {
         System.out.println(accessToken);
-
+//        closeWindows();
         return new ResponseEntity<Void>(HttpStatus.OK);
     }
 

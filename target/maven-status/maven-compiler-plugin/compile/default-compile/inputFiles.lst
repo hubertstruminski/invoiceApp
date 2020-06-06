@@ -1,0 +1,16 @@
+/home/huber/Pulpit/invoiceApp/src/main/java/com/hubertstruminski/invoice/app/controller/TestController.java
+/home/huber/Pulpit/invoiceApp/src/main/java/com/hubertstruminski/invoice/app/InvoiceAppApplication.java
+/home/huber/Pulpit/invoiceApp/src/main/java/com/hubertstruminski/invoice/app/config/CustomCorsFilter.java
+/home/huber/Pulpit/invoiceApp/src/main/java/com/hubertstruminski/invoice/app/config/OAuthType.java
+/home/huber/Pulpit/invoiceApp/src/main/java/com/hubertstruminski/invoice/app/view/ViewCreator.java
+/home/huber/Pulpit/invoiceApp/src/main/java/com/hubertstruminski/invoice/app/controller/BaseController.java
+/home/huber/Pulpit/invoiceApp/src/main/java/com/hubertstruminski/invoice/app/controller/LoginWindowController.java
+/home/huber/Pulpit/invoiceApp/src/main/java/com/hubertstruminski/invoice/app/controller/GoogleLoginFormController.java
+/home/huber/Pulpit/invoiceApp/src/main/java/com/hubertstruminski/invoice/app/config/OAuthAuthenticator.java
+/home/huber/Pulpit/invoiceApp/src/main/java/com/hubertstruminski/invoice/app/config/OAuthGoogleAuthenticator.java
+/home/huber/Pulpit/invoiceApp/src/main/java/com/hubertstruminski/invoice/app/JavaFXApplication.java
+/home/huber/Pulpit/invoiceApp/src/main/java/com/hubertstruminski/invoice/app/service/StageInitializer.java
+/home/huber/Pulpit/invoiceApp/src/main/java/com/hubertstruminski/invoice/app/controller/MenuWindowController.java
+/home/huber/Pulpit/invoiceApp/src/main/java/com/hubertstruminski/invoice/app/config/OAuthCompletedCallback.java
+/home/huber/Pulpit/invoiceApp/src/main/java/com/hubertstruminski/invoice/app/controller/RestController.java
+/home/huber/Pulpit/invoiceApp/src/main/java/com/hubertstruminski/invoice/app/config/main.java
