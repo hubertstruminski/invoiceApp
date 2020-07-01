@@ -49,39 +49,36 @@ public class LoginWindowController extends BaseController implements Initializab
 
     @FXML
     void googleLoginButtonAction(ActionEvent event) {
-//        googleLoginButton.setOnAction(new EventHandler<ActionEvent>() {
-//            @Override public void handle(ActionEvent e) {
-//                try {
-//                    new ProcessBuilder("x-www-browser", "http://localhost:5000/").start();
-//                } catch (IOException ioException) {
-//                    ioException.printStackTrace();
-//                }
-//            }
-//        });
-//        ViewCreator viewCreator = new ViewCreator();
-//        viewCreator.showGoogleLoginFormWindow();
-
-    }
-
-    @FXML
-    void loginButtonAction(ActionEvent event) {
-
         OAuthGoogleAuthenticator auth = new OAuthGoogleAuthenticator(
-                "192634648100-g8jppcdrarqe437slgrd6np1eci8go7e.apps.googleusercontent.com",
-                "https://localhost:5000",
-                "ohCMtt1QHecVBCTqQ-bqiYjN",
+                "192634648100-d0kdeqe1nn37ijisirvp5rm7hq8ipiq4.apps.googleusercontent.com",
+//                "https://localhost:5000/google/login/pass",
+//                "oob",
+                "urn:ietf:wg:oauth:2.0:oob:auto",
+                "w2cY8VknWPMT_xSm07rlyKRX",
                 "https://www.googleapis.com/auth/userinfo.profile");
 
         auth.startLogin();
 
-//        new OAuthCompletedCallback() {
-//            @Override
-//            public void oAuthCallback(OAuthAuthenticator authenticator) {
-//                String accessToken = authenticator.getAccessToken();
-//                JSONObject jsonData = authenticator.getJsonData();
-//                System.out.println("Hubert Strumiński => " + accessToken);
-//            }
-//        };
+        new OAuthCompletedCallback() {
+            @Override
+            public void oAuthCallback(OAuthAuthenticator authenticator) {
+                String accessToken = authenticator.getAccessToken();
+                JSONObject jsonData = authenticator.getJsonData();
+                System.out.println("Hubert Strumiński => " + accessToken);
+            }
+        }.oAuthCallback(auth);
+        OAuthCompletedCallback oAuthCompletedCallback = new OAuthCompletedCallback() {
+            @Override
+            public void oAuthCallback(OAuthAuthenticator authenticator) {
+                String accessToken = authenticator.getAccessToken();
+                JSONObject jsonData = authenticator.getJsonData();
+                System.out.println("Hubert Strumiński => " + accessToken);
+            }
+        };
+    }
+
+    @FXML
+    void loginButtonAction(ActionEvent event) {
     }
 
     @FXML

@@ -28,4 +28,11 @@ public class TestController {
         GoogleLoginFormController controller = loader.getController();
         controller.closeGoogleLoginWindow();
     }
+
+    @GetMapping("/google/login/pass")
+    public ResponseEntity<?> passAccessTokenToSerkver() {
+        System.out.println("Hubert Strumiński => /google/login/pass");
+//        closeWindows();
+        return new ResponseEntity<Void>(HttpStatus.OK);
+    }
 }

@@ -46,24 +46,8 @@ public class GoogleLoginFormController extends BaseController implements Initial
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        webEngine = googleLoginWebView.getEngine();
-        webEngine.load("http://localhost:5000/");
-        OAuthGoogleAuthenticator auth = new OAuthGoogleAuthenticator(
-                "192634648100-g8jppcdrarqe437slgrd6np1eci8go7e.apps.googleusercontent.com",
-                "https://localhost:5000",
-                "ohCMtt1QHecVBCTqQ-bqiYjN",
-                "https://www.googleapis.com/auth/userinfo.profile");
-
-        auth.startLogin();
-
-        new OAuthCompletedCallback() {
-            @Override
-            public void oAuthCallback(OAuthAuthenticator authenticator) {
-                String accessToken = authenticator.getAccessToken();
-                JSONObject jsonData = authenticator.getJsonData();
-                System.out.println("Hubert Strumiński => " + accessToken);
-            }
-        };
+//        webEngine = googleLoginWebView.getEngine();
+//        webEngine.load("http://localhost:5000/");
     }
 
     public void closeGoogleLoginWindow() {

@@ -1,11 +1,16 @@
 package com.hubertstruminski.invoice.app.config;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.concurrent.Worker;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebErrorEvent;
 import javafx.scene.web.WebEvent;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -15,6 +20,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 
 /**
  * Created by max on 13/07/2017.
@@ -67,38 +73,58 @@ public abstract class OAuthAuthenticator {
 
         engine.load(getWebUrl());
 
-        engine.setOnStatusChanged(new EventHandler<WebEvent<String>>() {
-            public void handle(WebEvent<String> event) {
+        engine.getLoadWorker().stateProperty().addListener(new ChangeListener<Worker.State>() {
+            @Override
+            public void changed(ObservableValue ov, Worker.State oldState, Worker.State newState) {
+                if (newState == Worker.State.SUCCEEDED) {
+                    String result = java.net.URLDecoder.decode(engine.getLocation(), StandardCharsets.UTF_8);
+                    System.out.println("Location webview: " + result); //NEW URL
 
-                if(gotData || attemptRecieved) {
-                    return;
-                }
-                if (event.getSource() instanceof WebEngine) {
-                    WebEngine we = (WebEngine) event.getSource();
-                    String location = we.getLocation();
-                    if (location.contains("code") && location.startsWith(getRedirectUri())) {
-
-                        attemptRecieved = true;
-
-                        closeStage();
-
-                        accessCode = location.substring(location.indexOf("code=") + 5);
-
+                    if(result.startsWith("https://accounts.google.com/o/oauth2/approval/v2")) {
+                        accessCode = result.substring(result.indexOf("code=") + 5, result.indexOf("&scope=profile"));
                         accessToken = doGetAccessTokenRequest(accessCode);
 
                         String returnedJson = doGetAccountInfo(accessToken);
-
                         accessedJsonData = new JSONObject(returnedJson);
-
                         System.out.println(returnedJson);
-
-                        gotData = true;
-
-                        notifyLoginViewCompleted();
+                        System.out.println(accessedJsonData);
                     }
                 }
             }
         });
+
+                engine.setOnStatusChanged(new EventHandler<WebEvent<String>>() {
+                    public void handle(WebEvent<String> event) {
+
+                        if (gotData || attemptRecieved) {
+                            return;
+                        }
+                        if (event.getSource() instanceof WebEngine) {
+                            WebEngine we = (WebEngine) event.getSource();
+                            String location = we.getLocation();
+                            if (location.contains("code") && location.startsWith(getRedirectUri())) {
+
+                                attemptRecieved = true;
+
+                                closeStage();
+
+                                accessCode = location.substring(location.indexOf("code=") + 5);
+
+                                accessToken = doGetAccessTokenRequest(accessCode);
+
+                                String returnedJson = doGetAccountInfo(accessToken);
+
+                                accessedJsonData = new JSONObject(returnedJson);
+
+                                System.out.println(returnedJson);
+
+                                gotData = true;
+
+                                notifyLoginViewCompleted();
+                            }
+                        }
+                    }
+                });
 
         Scene scene = new Scene(root);
         stage.setScene(scene);

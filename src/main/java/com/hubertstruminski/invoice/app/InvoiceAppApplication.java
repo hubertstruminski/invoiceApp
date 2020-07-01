@@ -12,10 +12,16 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.Environment;
 
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.security.GeneralSecurityException;
+import java.security.cert.X509Certificate;
 
 @SpringBootApplication
 public class InvoiceAppApplication extends SpringBootServletInitializer {
@@ -23,7 +29,6 @@ public class InvoiceAppApplication extends SpringBootServletInitializer {
     public static void main(String[] args) {
         System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
         Application.launch(JavaFXApplication.class, args);
-        openHomePage();
     }
 
     private static void openHomePage() {
