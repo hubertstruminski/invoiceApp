@@ -30,13 +30,4 @@ public class InvoiceAppApplication extends SpringBootServletInitializer {
         System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
         Application.launch(JavaFXApplication.class, args);
     }
-
-    private static void openHomePage() {
-        try {
-            URI homepage = new URI("https://localhost:5000/");
-            Desktop.getDesktop().browse(homepage);
-        } catch (URISyntaxException | IOException e) {
-            e.printStackTrace();
-        }
-    }
 }

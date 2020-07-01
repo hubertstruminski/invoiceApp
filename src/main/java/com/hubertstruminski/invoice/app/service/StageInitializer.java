@@ -17,6 +17,6 @@ public class StageInitializer implements ApplicationListener<JavaFXApplication.S
     @Override
     public void onApplicationEvent(JavaFXApplication.StageReadyEvent event) {
         ViewCreator viewCreator = new ViewCreator();
-        viewCreator.showMenuWindow();
+        viewCreator.showMainWindow();
     }
 }

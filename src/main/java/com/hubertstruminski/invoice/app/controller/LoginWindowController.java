@@ -51,9 +51,8 @@ public class LoginWindowController extends BaseController implements Initializab
     void googleLoginButtonAction(ActionEvent event) {
         OAuthGoogleAuthenticator auth = new OAuthGoogleAuthenticator(
                 "192634648100-d0kdeqe1nn37ijisirvp5rm7hq8ipiq4.apps.googleusercontent.com",
-//                "https://localhost:5000/google/login/pass",
-//                "oob",
-                "urn:ietf:wg:oauth:2.0:oob:auto",
+                "oob",
+//                "urn:ietf:wg:oauth:2.0:oob:auto",
                 "w2cY8VknWPMT_xSm07rlyKRX",
                 "https://www.googleapis.com/auth/userinfo.profile");
 

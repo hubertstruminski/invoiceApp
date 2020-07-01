@@ -1,15 +1,13 @@
 package com.hubertstruminski.invoice.app.view;
 
 import com.hubertstruminski.invoice.app.controller.BaseController;
-import com.hubertstruminski.invoice.app.controller.GoogleLoginFormController;
 import com.hubertstruminski.invoice.app.controller.LoginWindowController;
+import com.hubertstruminski.invoice.app.controller.MainWindowController;
 import com.hubertstruminski.invoice.app.controller.MenuWindowController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.web.WebEngine;
 import javafx.stage.Stage;
-import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 
@@ -29,9 +27,9 @@ public class ViewCreator {
         initStage(controller, 550, 526);
     }
 
-    public void showGoogleLoginFormWindow() {
-        BaseController controller = new GoogleLoginFormController(this, "/static/googleLoginFormWindow.fxml");
-        initStage(controller, 450, 575);
+    public void showMainWindow() {
+        BaseController controller = new MainWindowController(this, "/static/mainWindow.fxml");
+        initStage(controller, 850, 600);
     }
 
     private void initStage(BaseController controller, int width, int height) {
