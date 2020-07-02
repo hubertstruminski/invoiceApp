@@ -34,7 +34,7 @@
               <items>
                 <MenuItem mnemonicParsing="false" text="Nowy klient" />
                   <MenuItem mnemonicParsing="false" text="Nowa faktura" />
-                  <MenuItem mnemonicParsing="false" text="Nowy podatek" />
+                  <MenuItem mnemonicParsing="false" onAction="#onNewTaxMenuItemAction" text="Nowy podatek" />
               </items>
             </Menu>
         </menus>

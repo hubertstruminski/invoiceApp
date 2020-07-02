@@ -3,6 +3,7 @@ package com.hubertstruminski.invoice.app.controller;
 import com.hubertstruminski.invoice.app.view.ViewCreator;
 import de.jensd.fx.glyphs.GlyphsDude;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -64,6 +65,12 @@ public class MainWindowController extends BaseController implements Initializabl
 
     public MainWindowController(ViewCreator viewCreator, String fxmlName) {
         super(viewCreator, fxmlName);
+    }
+
+    @FXML
+    void onNewTaxMenuItemAction(ActionEvent event) {
+        ViewCreator creator = new ViewCreator();
+        creator.showNewTaxWindow();
     }
 
     @Override
