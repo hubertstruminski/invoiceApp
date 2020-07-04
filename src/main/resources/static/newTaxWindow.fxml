@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-
 <VBox alignment="CENTER" prefHeight="500" prefWidth="400" styleClass="newTaxVBoxBackground" stylesheets="@../css/default.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="501.0" prefWidth="400.0" VBox.vgrow="ALWAYS">
@@ -45,7 +44,7 @@
             <TextField fx:id="nameTextField" alignment="TOP_RIGHT" promptText="np. VAT" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" />
             <TextField fx:id="descriptionTextField" alignment="TOP_RIGHT" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="taxAmountTextField" alignment="TOP_RIGHT" promptText="0%" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="118.0" styleClass="newTaxSaveButton" stylesheets="@../css/default.css" text="Zapisz" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+            <Button fx:id="newTaxSaveButton" mnemonicParsing="false" onAction="#onNewTaxSaveButtonAction" prefHeight="40.0" prefWidth="118.0" styleClass="newTaxSaveButton" stylesheets="@../css/default.css" text="Zapisz" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
          </children>
       </GridPane>
    </children>

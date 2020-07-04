@@ -1,24 +1,26 @@
 package com.hubertstruminski.invoice.app.controller;
 
+import com.hubertstruminski.invoice.app.model.Tax;
+import com.hubertstruminski.invoice.app.repository.TaxRepository;
 import com.hubertstruminski.invoice.app.view.ViewCreator;
-import javafx.fxml.FXMLLoader;
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 
 import javafx.fxml.FXML;
-import javafx.geometry.Insets;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-import javafx.stage.Window;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
-import java.io.IOException;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
+@Controller
 public class NewTaxWindowController extends BaseController implements Initializable {
+
+    @Autowired
+    private TaxRepository taxRepository;
 
     @FXML
     private Label nameLabel;
@@ -38,18 +40,27 @@ public class NewTaxWindowController extends BaseController implements Initializa
     @FXML
     private TextField taxAmountTextField;
 
-    public NewTaxWindowController() {
+    @FXML
+    private Button newTaxSaveButton;
+
+    @FXML
+    void onNewTaxSaveButtonAction(ActionEvent event) {
+        Tax tax = new Tax();
+        tax.setName(nameTextField.getText());
+        tax.setDescription(descriptionTextField.getText());
+        tax.setTaxAmount(taxAmountTextField.getText());
 
     }
 
-    public NewTaxWindowController(ViewCreator viewCreator, String fxmlName) {
-        super(viewCreator, fxmlName);
-    }
+//    public NewTaxWindowController() {
+//
+//    }
+//
+//    public NewTaxWindowController(ViewCreator viewCreator, String fxmlName) {
+//        super(viewCreator, fxmlName);
+//    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-
-
     }
 }

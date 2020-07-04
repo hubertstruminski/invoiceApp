@@ -21,22 +21,36 @@ public class ViewCreator {
     }
 
     public void showNewTaxWindow() {
-        BaseController controller = new NewTaxWindowController(this, "/static/newTaxWindow.fxml");
-        initStage(controller, 400, 500);
-    }
-
-    private void initStage(BaseController controller, int width, int height) {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(controller.getFxmlName()));
-        fxmlLoader.setController(controller);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/static/newTaxWindow.fxml"));
+        fxmlLoader.setController(new NewTaxWindowController());
         Parent parent;
         try {
             parent = fxmlLoader.load();
         } catch (IOException e) {
             return;
         }
+        Scene scene = new Scene(parent, 400, 500);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+//        BaseController controller = new NewTaxWindowController(this, "/static/newTaxWindow.fxml");
+//        Stage stage = initStage(controller, 400, 500);
+        stage.setResizable(false);
+    }
+
+    private Stage initStage(BaseController controller, int width, int height) {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(controller.getFxmlName()));
+        fxmlLoader.setController(controller);
+        Parent parent;
+        try {
+            parent = fxmlLoader.load();
+        } catch (IOException e) {
+            return null;
+        }
         Scene scene = new Scene(parent, width, height);
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
+        return stage;
     }
 }
