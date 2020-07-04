@@ -1,7 +1,7 @@
 package com.hubertstruminski.invoice.app.controller;
 
 import com.hubertstruminski.invoice.app.model.Tax;
-import com.hubertstruminski.invoice.app.repository.TaxRepository;
+//import com.hubertstruminski.invoice.app.repository.TaxRepository;
 import com.hubertstruminski.invoice.app.view.ViewCreator;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
@@ -19,8 +19,8 @@ import java.util.ResourceBundle;
 @Controller
 public class NewTaxWindowController extends BaseController implements Initializable {
 
-    @Autowired
-    private TaxRepository taxRepository;
+//    @Autowired
+//    private TaxRepository taxRepository;
 
     @FXML
     private Label nameLabel;
