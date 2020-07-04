@@ -1,38 +1,41 @@
-.menuButton {
-    -fx-background-color: linear-gradient(from  40% 40% to 60% 60%, #7227d9, #14a3db 100%);
+.leftMenuVBox {
+    -fx-background-color: rgba(166, 166, 166, .1);
 }
 
-.menuButton:hover {
+.leftMenuButtons {
+    -fx-background-color: rgba(166, 166, 166, .1);
+    -fx-text-fill: black;
+    -fx-border-style: solid;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #919191;
+}
+
+.leftMenuButtons:hover {
     -fx-cursor: hand;
-}
-
-.menuWindow {
-    -fx-background-color: #3c4045;
-}
-
-.googleButton {
-    -fx-background-color: #238AF1;
-    -fx-font-weight: 700;
+    -fx-background-color: #0098CE;
     -fx-text-fill: white;
 }
 
-.googleButton:hover {
-    -fx-cursor: hand;
+.newTaxVBoxBackground {
+    -fx-background-color: #ededed;
 }
 
-.loginInputs {
-    -fx-background-color: #3c4045;
+.newTaxTextFieldInputs {
+    -fx-background-color: #ededed;
     -fx-border-insets: 0;
     -fx-border-width: 1px;
-    -fx-border-color: #3c4045 #3c4045 white #3c4045;
+    -fx-border-color: #ededed #ededed black #ededed;
+    -fx-text-fill: black;
+}
+
+.newTaxSaveButton {
+    -fx-background-color: #009AD3;
     -fx-text-fill: white;
 }
 
-.loginButton {
-    -fx-background-color: linear-gradient(from  40% 40% to 60% 60%, #7227d9, #14a3db 100%);
-    -fx-text-fill: white;
-}
 
-.loginButton:hover {
+
+.newTaxSaveButton:hover {
+    -fx-background-color: #007fad;
     -fx-cursor: hand;
 }
