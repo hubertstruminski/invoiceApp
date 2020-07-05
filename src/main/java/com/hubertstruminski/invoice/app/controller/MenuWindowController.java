@@ -12,8 +12,11 @@ import javafx.scene.control.Label;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Controller;
 
+@Controller
 public class MenuWindowController extends BaseController implements Initializable {
 
     @FXML
@@ -34,9 +37,7 @@ public class MenuWindowController extends BaseController implements Initializabl
     @FXML
     private Label configurationMessageWarningLabel;
 
-    public MenuWindowController() {
-
-    }
+    public MenuWindowController() {  }
 
     public MenuWindowController(ViewCreator viewCreator, String fxmlName) {
         super(viewCreator, fxmlName);

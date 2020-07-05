@@ -140,7 +140,7 @@
     <orderEntry type="library" name="Maven: org.openjfx:javafx-swing:mac:14" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-web:14" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-web:mac:14" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:2.2.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:2.3.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.2.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:5.2.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.2.6.RELEASE" level="project" />
@@ -157,8 +157,6 @@
     <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.13" level="project" />
     <orderEntry type="library" name="Maven: de.jensd:fontawesomefx:8.9" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.apache.derby:derby:10.14.2.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.derby:derbyclient:10.13.1.1" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.h2database:h2:1.4.193" level="project" />
   </component>
 </module>
