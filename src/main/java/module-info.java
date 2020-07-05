@@ -18,10 +18,13 @@ module invoiceApp {
     requires spring.core;
     requires spring.data.commons;
     requires spring.security.config;
+    requires spring.data.jpa;
+    requires spring.jdbc;
 
     requires java.sql;
 
     requires java.persistence;
+    requires spring.orm;
 
     opens com.hubertstruminski.invoice.app;
     opens com.hubertstruminski.invoice.app.view;

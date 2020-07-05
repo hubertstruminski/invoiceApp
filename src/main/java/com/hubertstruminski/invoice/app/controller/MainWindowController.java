@@ -16,13 +16,20 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 @Controller
+@Scope("prototype")
 public class MainWindowController extends BaseController implements Initializable {
+
+    @Autowired
+    private ViewCreator viewCreator;
 
     @FXML
     private VBox leftMenuVBox;
@@ -71,8 +78,9 @@ public class MainWindowController extends BaseController implements Initializabl
 
     @FXML
     void onNewTaxMenuItemAction(ActionEvent event) {
-        ViewCreator creator = new ViewCreator();
-        creator.showNewTaxWindow();
+//        ViewCreator creator = new ViewCreator();
+//        creator.showNewTaxWindow();
+        viewCreator.showNewTaxWindow();
     }
 
     @Override
