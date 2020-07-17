@@ -24,35 +24,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
         http.headers().frameOptions().disable();
     }
-//
-//    @Bean
-//    @Scope("prototype")
-//    public ViewCreator createViewCreator() {
-//        return new ViewCreator();
-//    }
-
-//    @Bean
-//    @Scope("prototype")
-//    public MainWindowController createMainWindowController() {
-//        return new MainWindowController();
-//    }
-//    @Bean
-//    public DataSource h2DataSource() {
-//        return new EmbeddedDatabaseBuilder()
-//                .setType(EmbeddedDatabaseType.H2)
-//                .build();
-//    }
-//
-//    @Bean
-//    public LocalContainerEntityManagerFactoryBean entityManagerFactory() throws ClassNotFoundException {
-//        LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
-//        emf.setDataSource(h2DataSource());
-//        emf.setPackagesToScan("com.hubertstruminski.invoice.app.model", "com.hubert.struminski.invoice.app.repository");
-//        emf.setPersistenceXmlLocation(getClass().getResource("/META-INF/persistence.xml").toString());
-////        emf.setJpaVendorAdapter(jpaAdapter());
-////        Properties properties = new Properties();
-////        properties.setProperty("javax.persistence.schema-generation.database.action", "create");
-////        emf.setJpaProperties(jpaProterties());
-//        return emf;
-//    }
 }
