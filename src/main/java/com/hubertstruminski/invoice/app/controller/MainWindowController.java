@@ -1,35 +1,61 @@
 package com.hubertstruminski.invoice.app.controller;
 
+import com.hubertstruminski.invoice.app.component.NewTaxWindowComponent;
+import com.hubertstruminski.invoice.app.fx.manager.MainWindowUiManager;
+import com.hubertstruminski.invoice.app.fx.manager.NewTaxWindowUiManager;
+import com.hubertstruminski.invoice.app.repository.TaxRepository;
 import com.hubertstruminski.invoice.app.view.ViewCreator;
 import de.jensd.fx.glyphs.GlyphsDude;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import io.vavr.control.Try;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
+
+import javafx.stage.Stage;
+import moe.tristan.easyfxml.EasyFxml;
+import moe.tristan.easyfxml.FxUiManager;
+import moe.tristan.easyfxml.api.FxmlComponent;
+import moe.tristan.easyfxml.api.FxmlController;
+import moe.tristan.easyfxml.model.fxml.FxmlLoadResult;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Controller;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.io.IOException;
+import java.util.function.Consumer;
 
 @Controller
-@Scope("prototype")
-public class MainWindowController extends BaseController implements Initializable {
+public class MainWindowController implements FxmlController {
 
     @Autowired
     private ViewCreator viewCreator;
+
+    @Autowired
+    private TaxRepository taxRepository;
+
+    @Autowired
+    private NewTaxWindowComponent newTaxWindowComponent;
+
+    @Autowired
+    private EasyFxml easyFxml;
+
+    @Autowired
+    private MainWindowUiManager mainWindowUiManager;
+
+    @Autowired
+    private NewTaxWindowUiManager newTaxWindowUiManager;
 
     @FXML
     private VBox leftMenuVBox;
@@ -67,24 +93,26 @@ public class MainWindowController extends BaseController implements Initializabl
     @FXML
     private Menu addMenuButton;
 
-
-    public MainWindowController() {
-
-    }
-
-    public MainWindowController(ViewCreator viewCreator, String fxmlName) {
-        super(viewCreator, fxmlName);
-    }
-
     @FXML
     void onNewTaxMenuItemAction(ActionEvent event) {
-//        ViewCreator creator = new ViewCreator();
-//        creator.showNewTaxWindow();
-        viewCreator.showNewTaxWindow();
+        FxmlLoadResult<Pane, FxmlController> load = easyFxml.load(newTaxWindowComponent);
+
+
+
+        load.afterNodeLoaded(new Consumer<Pane>() {
+            @Override
+            public void accept(Pane pane) {
+                Scene scene = new Scene(pane, 400, 500);
+                Stage stage = new Stage();
+                stage.setScene(scene);
+
+                stage.show();
+            }
+        });
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize() {
         dashboardButton.setGraphic(GlyphsDude.createIcon(FontAwesomeIcon.DASHBOARD, "20px"));
         dashboardButton.setAlignment(Pos.BASELINE_LEFT);
         dashboardButton.setPadding(new Insets(0, 0, 0, 40));

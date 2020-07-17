@@ -1,7 +1,5 @@
 package com.hubertstruminski.invoice.app.controller;
 
-
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -10,7 +8,6 @@ import com.hubertstruminski.invoice.app.config.OAuthCompletedCallback;
 import com.hubertstruminski.invoice.app.config.OAuthGoogleAuthenticator;
 import com.hubertstruminski.invoice.app.view.ViewCreator;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 

@@ -3,7 +3,6 @@ package com.hubertstruminski.invoice.app.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Taxs")
 public class Tax {
 
     @Id
