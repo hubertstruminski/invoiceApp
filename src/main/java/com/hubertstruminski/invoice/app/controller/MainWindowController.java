@@ -7,15 +7,10 @@ import com.hubertstruminski.invoice.app.repository.TaxRepository;
 import com.hubertstruminski.invoice.app.view.ViewCreator;
 import de.jensd.fx.glyphs.GlyphsDude;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
-import io.vavr.control.Try;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
@@ -25,15 +20,10 @@ import javafx.scene.layout.VBox;
 
 import javafx.stage.Stage;
 import moe.tristan.easyfxml.EasyFxml;
-import moe.tristan.easyfxml.FxUiManager;
-import moe.tristan.easyfxml.api.FxmlComponent;
 import moe.tristan.easyfxml.api.FxmlController;
 import moe.tristan.easyfxml.model.fxml.FxmlLoadResult;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Controller;
-
-import java.io.IOException;
 import java.util.function.Consumer;
 
 @Controller
@@ -97,14 +87,13 @@ public class MainWindowController implements FxmlController {
     void onNewTaxMenuItemAction(ActionEvent event) {
         FxmlLoadResult<Pane, FxmlController> load = easyFxml.load(newTaxWindowComponent);
 
-
-
         load.afterNodeLoaded(new Consumer<Pane>() {
             @Override
             public void accept(Pane pane) {
                 Scene scene = new Scene(pane, 400, 500);
                 Stage stage = new Stage();
                 stage.setScene(scene);
+                stage.setResizable(false);
 
                 stage.show();
             }

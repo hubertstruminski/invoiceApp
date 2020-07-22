@@ -33,10 +33,9 @@ import java.util.ResourceBundle;
 @Controller
 public class NewTaxWindowController implements FxmlController {
 
-    private Stage stage;
-
-//    @Autowired
-//    private TaxRepository taxRepository;
+    private boolean isTaxNameError;
+    private boolean isTaxDescriptionError;
+    private boolean isTaxAmountError;
 
     @Autowired
     private TaxService taxService;
@@ -69,6 +68,15 @@ public class NewTaxWindowController implements FxmlController {
     private Label taxAmountLabel;
 
     @FXML
+    private Label taxAmountErrorLabel;
+
+    @FXML
+    private Label taxNameErrorLabel;
+
+    @FXML
+    private Label taxDescriptionErrorLabel;
+
+    @FXML
     private TextField nameTextField;
 
     @FXML
@@ -82,24 +90,64 @@ public class NewTaxWindowController implements FxmlController {
 
     @FXML
     void onNewTaxSaveButtonAction(ActionEvent event) {
-        Tax tax = new Tax();
-        tax.setName(nameTextField.getText());
-        tax.setDescription(descriptionTextField.getText());
-        tax.setTaxAmount(taxAmountTextField.getText());
 
-        taxService.save(tax);
+        if(!nameTextField.getText().matches(".{1,255}")) {
+            isTaxNameError = true;
+        } else {
+            isTaxNameError = false;
+        }
+
+        if(!taxDescriptionErrorLabel.getText().matches(".{0,255}")) {
+            isTaxDescriptionError = true;
+        } else {
+            isTaxDescriptionError = false;
+        }
+
+        if(!taxAmountTextField.getText().matches("[0-9]+%$")) {
+            isTaxAmountError = true;
+        } else {
+            isTaxAmountError = false;
+        }
+
+        if(isTaxNameError) {
+            taxNameErrorLabel.setText("Długość nazwy musi być od 1 do 255 znaków.");
+        } else {
+            taxNameErrorLabel.setText("");
+        }
+
+        if(isTaxDescriptionError) {
+            taxDescriptionErrorLabel.setText("Maksymalna długość to 255 znaków.");
+        } else {
+            taxDescriptionErrorLabel.setText("");
+        }
+
+        if(isTaxAmountError) {
+            taxAmountErrorLabel.setText("Nieprawidłowy format, np. 23%");
+        } else {
+            taxAmountErrorLabel.setText("");
+        }
+
+        if(!isTaxNameError && !isTaxDescriptionError && !isTaxAmountError) {
+            Tax tax = new Tax();
+            tax.setName(nameTextField.getText());
+            tax.setDescription(descriptionTextField.getText());
+            tax.setTaxAmount(taxAmountTextField.getText());
+
+            taxService.save(tax);
+        }
     }
 
     @Override
     public void initialize() {
-        System.out.println("Hubert");
-    }
+        String redColorFont = "-fx-text-fill: red; -fx-font-size: 12px;";
 
-    public Stage initStage() {
-//        Scene scene1 = newTaxWindowUiManager.getScene(newTaxWindowComponent);
-        Scene scene = newTaxSaveButton.getScene();
-        Window window = scene.getWindow();
-        Stage stage = (Stage) window;
-        return stage;
+        taxNameErrorLabel.setText("");
+        taxNameErrorLabel.setStyle(redColorFont);
+
+        taxDescriptionErrorLabel.setText("");
+        taxDescriptionErrorLabel.setStyle(redColorFont);
+
+        taxAmountErrorLabel.setText("");
+        taxAmountErrorLabel.setStyle(redColorFont);
     }
 }

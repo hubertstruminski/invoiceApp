@@ -19,9 +19,12 @@
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="3.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="3.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="3.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="20.0" valignment="CENTER" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
         </rowConstraints>
@@ -31,20 +34,23 @@
                   <Insets right="20.0" />
                </GridPane.margin>
             </Label>
-            <Label fx:id="descriptionLabel" text="Opis" GridPane.rowIndex="1">
+            <Label fx:id="descriptionLabel" text="Opis" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="20.0" />
                </GridPane.margin>
             </Label>
-            <Label fx:id="taxAmountLabel" text="Stawka" GridPane.rowIndex="2">
+            <Label fx:id="taxAmountLabel" text="Stawka" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets right="20.0" />
                </GridPane.margin>
             </Label>
             <TextField fx:id="nameTextField" alignment="TOP_RIGHT" promptText="np. VAT" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" />
-            <TextField fx:id="descriptionTextField" alignment="TOP_RIGHT" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="taxAmountTextField" alignment="TOP_RIGHT" promptText="0%" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button fx:id="newTaxSaveButton" mnemonicParsing="false" onAction="#onNewTaxSaveButtonAction" prefHeight="40.0" prefWidth="118.0" styleClass="newTaxSaveButton" stylesheets="@../css/default.css" text="Zapisz" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+            <TextField fx:id="descriptionTextField" alignment="TOP_RIGHT" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="taxAmountTextField" alignment="TOP_RIGHT" promptText="0%" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Button fx:id="newTaxSaveButton" mnemonicParsing="false" onAction="#onNewTaxSaveButtonAction" prefHeight="40.0" prefWidth="118.0" styleClass="newTaxSaveButton" stylesheets="@../css/default.css" text="Zapisz" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="7" />
+            <Label fx:id="taxNameErrorLabel" text="Label" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+            <Label fx:id="taxAmountErrorLabel" text="Label" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="5" />
+            <Label fx:id="taxDescriptionErrorLabel" text="Label" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" />
          </children>
       </GridPane>
    </children>
