@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../css/taxWindow.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hubertstruminski.invoice.app.controller.TaxWindowController">
+   <children>
+      <TableView fx:id="tableView" prefHeight="181.0" prefWidth="600.0" stylesheets="@../css/taxWindow.css" VBox.vgrow="ALWAYS">
+          <placeholder>
+              <Label style="-fx-text-fill: black;" text="Brak danych w tabeli" />
+          </placeholder>
+        <columns>
+          <TableColumn fx:id="numberTableColumn" prefWidth="50.0" text="Numer" />
+          <TableColumn fx:id="nameTableColumn" prefWidth="120.0" text="Nazwa" />
+            <TableColumn fx:id="taxAmountTableColumn" prefWidth="50.0" text="Stawka" />
+            <TableColumn fx:id="descriptionTableColumn" minWidth="0.0" prefWidth="200.0" text="Opis" />
+            <TableColumn fx:id="editTableColumn" prefWidth="100.0" text="Modyfikuj" />
+            <TableColumn fx:id="deleteTableColumn" prefWidth="75.0" text="Usuń" />
+        </columns>
+         <styleClass>
+            <String fx:value="column-header" />
+            <String fx:value="label" />
+            <String fx:value="table-view" />
+         </styleClass>
+      </TableView>
+   </children>
+</VBox>

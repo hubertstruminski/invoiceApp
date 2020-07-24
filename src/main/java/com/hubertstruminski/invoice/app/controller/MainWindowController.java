@@ -1,20 +1,18 @@
 package com.hubertstruminski.invoice.app.controller;
 
 import com.hubertstruminski.invoice.app.component.NewTaxWindowComponent;
-import com.hubertstruminski.invoice.app.fx.manager.MainWindowUiManager;
-import com.hubertstruminski.invoice.app.fx.manager.NewTaxWindowUiManager;
-import com.hubertstruminski.invoice.app.repository.TaxRepository;
-import com.hubertstruminski.invoice.app.view.ViewCreator;
+import com.hubertstruminski.invoice.app.component.TaxWindowComponent;
 import de.jensd.fx.glyphs.GlyphsDude;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
-import javafx.scene.layout.GridPane;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
@@ -29,29 +27,19 @@ import java.util.function.Consumer;
 @Controller
 public class MainWindowController implements FxmlController {
 
-    @Autowired
-    private ViewCreator viewCreator;
-
-    @Autowired
-    private TaxRepository taxRepository;
-
-    @Autowired
+    private TaxWindowComponent taxWindowComponent;
     private NewTaxWindowComponent newTaxWindowComponent;
-
-    @Autowired
     private EasyFxml easyFxml;
 
     @Autowired
-    private MainWindowUiManager mainWindowUiManager;
-
-    @Autowired
-    private NewTaxWindowUiManager newTaxWindowUiManager;
-
-    @FXML
-    private VBox leftMenuVBox;
-
-    @FXML
-    private GridPane leftMenuGridPane;
+    public MainWindowController(
+            TaxWindowComponent taxWindowComponent,
+            NewTaxWindowComponent newTaxWindowComponent,
+            EasyFxml easyFxml) {
+        this.taxWindowComponent = taxWindowComponent;
+        this.newTaxWindowComponent = newTaxWindowComponent;
+        this.easyFxml = easyFxml;
+    }
 
     @FXML
     private Button taxButton;
@@ -84,6 +72,9 @@ public class MainWindowController implements FxmlController {
     private Menu addMenuButton;
 
     @FXML
+    private VBox rightVBoxView;
+
+    @FXML
     void onNewTaxMenuItemAction(ActionEvent event) {
         FxmlLoadResult<Pane, FxmlController> load = easyFxml.load(newTaxWindowComponent);
 
@@ -99,6 +90,37 @@ public class MainWindowController implements FxmlController {
             }
         });
     }
+
+    @FXML
+    void onTaxButtonClickAction(ActionEvent event) {
+        taxButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                FxmlLoadResult<Pane, FxmlController> load = easyFxml.load(taxWindowComponent);
+                load.afterNodeLoaded(new Consumer<Pane>() {
+                    @Override
+                    public void accept(Pane pane) {
+                        VBox vBox = (VBox) pane;
+                        vBox.prefHeightProperty().bind(rightVBoxView.getScene().heightProperty());
+                        rightVBoxView.getChildren().setAll(vBox);
+                    }
+                });
+            }
+        });
+    }
+
+    public void refreshTaxTableView() {
+        easyFxml.load(taxWindowComponent)
+        .afterNodeLoaded(new Consumer<Pane>() {
+            @Override
+            public void accept(Pane pane) {
+                VBox vBox = (VBox) pane;
+                vBox.prefHeightProperty().bind(rightVBoxView.getScene().heightProperty());
+                rightVBoxView.getChildren().setAll(vBox);
+            }
+        });
+    }
+
 
     @Override
     public void initialize() {

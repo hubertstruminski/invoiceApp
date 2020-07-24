@@ -1,34 +1,18 @@
 package com.hubertstruminski.invoice.app.controller;
 
-import com.hubertstruminski.invoice.app.component.NewTaxWindowComponent;
-import com.hubertstruminski.invoice.app.fx.manager.MainWindowUiManager;
-import com.hubertstruminski.invoice.app.fx.manager.NewTaxWindowUiManager;
 import com.hubertstruminski.invoice.app.model.Tax;
 import com.hubertstruminski.invoice.app.repository.TaxRepository;
-import com.hubertstruminski.invoice.app.service.TaxService;
-import com.hubertstruminski.invoice.app.view.ViewCreator;
 import javafx.event.ActionEvent;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.stage.Window;
-import moe.tristan.easyfxml.EasyFxml;
 import moe.tristan.easyfxml.api.FxmlController;
-import moe.tristan.easyfxml.model.fxml.FxmlLoader;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Controller;
-
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 @Controller
 public class NewTaxWindowController implements FxmlController {
@@ -37,35 +21,19 @@ public class NewTaxWindowController implements FxmlController {
     private boolean isTaxDescriptionError;
     private boolean isTaxAmountError;
 
-    @Autowired
-    private TaxService taxService;
+    private TaxRepository taxRepository;
+    private MainWindowController mainWindowController;
 
     @Autowired
-    private ViewCreator viewCreator;
-
-    @Autowired
-    private EasyFxml easyFxml;
-
-    @Autowired
-    private MainWindowUiManager mainWindowUiManager;
-
-    @Autowired
-    private NewTaxWindowComponent newTaxWindowComponent;
-
-    @Autowired
-    private NewTaxWindowUiManager newTaxWindowUiManager;
+    public NewTaxWindowController(
+            TaxRepository taxRepository,
+            MainWindowController mainWindowController) {
+        this.taxRepository = taxRepository;
+        this.mainWindowController = mainWindowController;
+    }
 
     @FXML
     private VBox vBox;
-
-    @FXML
-    private Label nameLabel;
-
-    @FXML
-    private Label descriptionLabel;
-
-    @FXML
-    private Label taxAmountLabel;
 
     @FXML
     private Label taxAmountErrorLabel;
@@ -133,7 +101,11 @@ public class NewTaxWindowController implements FxmlController {
             tax.setDescription(descriptionTextField.getText());
             tax.setTaxAmount(taxAmountTextField.getText());
 
-            taxService.save(tax);
+            taxRepository.save(tax);
+            mainWindowController.refreshTaxTableView();
+
+            Stage stage = (Stage) vBox.getScene().getWindow();
+            stage.close();
         }
     }
 
