@@ -1,7 +1,10 @@
 package com.hubertstruminski.invoice.app.controller;
 
+import com.hubertstruminski.invoice.app.component.NewTaxWindowComponent;
 import com.hubertstruminski.invoice.app.model.Tax;
 import com.hubertstruminski.invoice.app.repository.TaxRepository;
+import javafx.beans.property.ReadOnlyObjectWrapper;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
@@ -9,16 +12,23 @@ import javafx.event.EventHandler;
 import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javafx.util.Callback;
+import moe.tristan.easyfxml.EasyFxml;
 import moe.tristan.easyfxml.api.FxmlController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.converter.json.GsonBuilderUtils;
 import org.springframework.stereotype.Controller;
+
+import java.util.function.Consumer;
 
 @Controller
 public class TaxWindowController implements FxmlController {
@@ -27,10 +37,23 @@ public class TaxWindowController implements FxmlController {
     private static final String dangerButtonStyles = "-fx-background-color: #DC3545; -fx-text-fill: white;";
 
     private TaxRepository taxRepository;
+    private NewTaxWindowComponent newTaxWindowComponent;
+    private EasyFxml easyFxml;
+    private NewTaxWindowController newTaxWindowController;
+    private MainWindowController mainWindowController;
 
     @Autowired
-    public TaxWindowController(TaxRepository taxRepository) {
+    public TaxWindowController(
+            TaxRepository taxRepository,
+            NewTaxWindowComponent newTaxWindowComponent,
+            EasyFxml easyFxml,
+            NewTaxWindowController newTaxWindowController,
+            MainWindowController mainWindowController) {
         this.taxRepository = taxRepository;
+        this.newTaxWindowComponent = newTaxWindowComponent;
+        this.easyFxml = easyFxml;
+        this.newTaxWindowController = newTaxWindowController;
+        this.mainWindowController = mainWindowController;
     }
 
     @FXML
@@ -81,7 +104,10 @@ public class TaxWindowController implements FxmlController {
 
         tableView.setItems(observableTaxList);
 
-        numberTableColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        numberTableColumn.setCellValueFactory(parameter ->
+                new ReadOnlyObjectWrapper(tableView.getItems().indexOf(parameter.getValue()) + 1));
+        numberTableColumn.setSortable(false);
+
         nameTableColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         descriptionTableColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
         taxAmountTableColumn.setCellValueFactory(new PropertyValueFactory<>("taxAmount"));
@@ -128,9 +154,12 @@ public class TaxWindowController implements FxmlController {
                                     btn.setOnAction(event -> {
                                         Tax tax = getTableView().getItems().get(getIndex());
                                         if(isUpdating) {
-
+                                            invokeNewTaxWindowForUpdateTax();
+                                            newTaxWindowController.setTextFields(tax);
+                                            newTaxWindowController.setUpdateFlag(true);
                                         } else {
                                             taxRepository.delete(tax);
+                                            mainWindowController.refreshTaxTableView();
                                         }
                                     });
                                     setGraphic(getBtn());
@@ -142,5 +171,20 @@ public class TaxWindowController implements FxmlController {
                 };
         tableColumn.setCellFactory(callback);
         return tableColumn;
+    }
+
+    public void invokeNewTaxWindowForUpdateTax() {
+        easyFxml.load(newTaxWindowComponent)
+                .afterNodeLoaded(new Consumer<Pane>() {
+                    @Override
+                    public void accept(Pane pane) {
+                        Scene scene = new Scene(pane, 400, 500);
+                        Stage stage = new Stage();
+                        stage.setScene(scene);
+                        stage.setResizable(false);
+
+                        stage.show();
+                    }
+                });
     }
 }

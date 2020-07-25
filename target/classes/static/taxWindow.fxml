@@ -17,7 +17,7 @@
           <TableColumn fx:id="nameTableColumn" prefWidth="120.0" text="Nazwa" />
             <TableColumn fx:id="taxAmountTableColumn" prefWidth="50.0" text="Stawka" />
             <TableColumn fx:id="descriptionTableColumn" minWidth="0.0" prefWidth="200.0" text="Opis" />
-            <TableColumn fx:id="editTableColumn" prefWidth="100.0" text="Modyfikuj" />
+            <TableColumn fx:id="editTableColumn" prefWidth="100.0" text="Edytuj" />
             <TableColumn fx:id="deleteTableColumn" prefWidth="75.0" text="Usuń" />
         </columns>
          <styleClass>

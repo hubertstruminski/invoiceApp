@@ -85,6 +85,7 @@ public class MainWindowController implements FxmlController {
                 Stage stage = new Stage();
                 stage.setScene(scene);
                 stage.setResizable(false);
+                stage.setTitle("Nowy podatek");
 
                 stage.show();
             }

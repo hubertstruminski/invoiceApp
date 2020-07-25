@@ -21,6 +21,8 @@ public class NewTaxWindowController implements FxmlController {
     private boolean isTaxDescriptionError;
     private boolean isTaxAmountError;
 
+    private boolean isUpdateFlag = false;
+
     private TaxRepository taxRepository;
     private MainWindowController mainWindowController;
 
@@ -55,6 +57,13 @@ public class NewTaxWindowController implements FxmlController {
 
     @FXML
     public Button newTaxSaveButton;
+
+    @FXML
+    private Label newTaxIdLabel;
+
+    public void setUpdateFlag(boolean updateFlag) {
+        isUpdateFlag = updateFlag;
+    }
 
     @FXML
     void onNewTaxSaveButtonAction(ActionEvent event) {
@@ -95,8 +104,12 @@ public class NewTaxWindowController implements FxmlController {
             taxAmountErrorLabel.setText("");
         }
 
+
         if(!isTaxNameError && !isTaxDescriptionError && !isTaxAmountError) {
             Tax tax = new Tax();
+            if(isUpdateFlag) {
+                tax.setId(Long.parseLong(newTaxIdLabel.getText()));
+            }
             tax.setName(nameTextField.getText());
             tax.setDescription(descriptionTextField.getText());
             tax.setTaxAmount(taxAmountTextField.getText());
@@ -121,5 +134,15 @@ public class NewTaxWindowController implements FxmlController {
 
         taxAmountErrorLabel.setText("");
         taxAmountErrorLabel.setStyle(redColorFont);
+
+        newTaxIdLabel.setVisible(false);
+        isUpdateFlag = false;
+    }
+
+    public void setTextFields(Tax tax) {
+        newTaxIdLabel.setText(String.valueOf(tax.getId()));
+        nameTextField.setText(tax.getName());
+        descriptionTextField.setText(tax.getDescription());
+        taxAmountTextField.setText(tax.getTaxAmount());
     }
 }
