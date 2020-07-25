@@ -1,7 +1,9 @@
 package com.hubertstruminski.invoice.app.controller;
 
+import com.hubertstruminski.invoice.app.component.NewCustomerWindowComponent;
 import com.hubertstruminski.invoice.app.component.NewTaxWindowComponent;
 import com.hubertstruminski.invoice.app.component.TaxWindowComponent;
+import com.hubertstruminski.invoice.app.service.MainService;
 import de.jensd.fx.glyphs.GlyphsDude;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import javafx.event.ActionEvent;
@@ -9,14 +11,12 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
-import javafx.stage.Stage;
 import moe.tristan.easyfxml.EasyFxml;
 import moe.tristan.easyfxml.api.FxmlController;
 import moe.tristan.easyfxml.model.fxml.FxmlLoadResult;
@@ -30,15 +30,21 @@ public class MainWindowController implements FxmlController {
     private TaxWindowComponent taxWindowComponent;
     private NewTaxWindowComponent newTaxWindowComponent;
     private EasyFxml easyFxml;
+    private MainService mainService;
+    private NewCustomerWindowComponent newCustomerWindowComponent;
 
     @Autowired
     public MainWindowController(
             TaxWindowComponent taxWindowComponent,
             NewTaxWindowComponent newTaxWindowComponent,
-            EasyFxml easyFxml) {
+            EasyFxml easyFxml,
+            MainService mainService,
+            NewCustomerWindowComponent newCustomerWindowComponent) {
         this.taxWindowComponent = taxWindowComponent;
         this.newTaxWindowComponent = newTaxWindowComponent;
         this.easyFxml = easyFxml;
+        this.mainService = mainService;
+        this.newCustomerWindowComponent = newCustomerWindowComponent;
     }
 
     @FXML
@@ -74,23 +80,27 @@ public class MainWindowController implements FxmlController {
     @FXML
     private VBox rightVBoxView;
 
+
     @FXML
     void onNewTaxMenuItemAction(ActionEvent event) {
-        FxmlLoadResult<Pane, FxmlController> load = easyFxml.load(newTaxWindowComponent);
-
-        load.afterNodeLoaded(new Consumer<Pane>() {
-            @Override
-            public void accept(Pane pane) {
-                Scene scene = new Scene(pane, 400, 500);
-                Stage stage = new Stage();
-                stage.setScene(scene);
-                stage.setResizable(false);
-                stage.setTitle("Nowy podatek");
-
-                stage.show();
-            }
-        });
+        mainService.onLoadComponent(
+                newTaxWindowComponent,
+                400,
+                500,
+                false,
+                "Nowy podatek");
     }
+
+    @FXML
+    void onNewCustomerAction(ActionEvent event) {
+        mainService.onLoadComponent(
+                newCustomerWindowComponent,
+                400,
+                500,
+                false,
+                "Nowy klient");
+    }
+
 
     @FXML
     void onTaxButtonClickAction(ActionEvent event) {

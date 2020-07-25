@@ -32,7 +32,7 @@
           </Menu>
             <Menu fx:id="addMenuButton" mnemonicParsing="false" text="Dodaj">
               <items>
-                <MenuItem mnemonicParsing="false" text="Nowy klient" />
+                <MenuItem mnemonicParsing="false" onAction="#onNewCustomerAction" text="Nowy klient" />
                   <MenuItem mnemonicParsing="false" text="Nowa faktura" />
                   <MenuItem mnemonicParsing="false" onAction="#onNewTaxMenuItemAction" text="Nowy podatek" />
               </items>
