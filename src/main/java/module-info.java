@@ -39,13 +39,11 @@ module invoiceApp {
     requires spring.webmvc;
 
     opens com.hubertstruminski.invoice.app;
-    opens com.hubertstruminski.invoice.app.view;
     opens com.hubertstruminski.invoice.app.repository;
     opens com.hubertstruminski.invoice.app.controller;
     opens com.hubertstruminski.invoice.app.config;
     opens com.hubertstruminski.invoice.app.component;
     opens com.hubertstruminski.invoice.app.fx.manager;
     opens com.hubertstruminski.invoice.app.model;
-    opens com.hubertstruminski.invoice.app.service;
 
 }

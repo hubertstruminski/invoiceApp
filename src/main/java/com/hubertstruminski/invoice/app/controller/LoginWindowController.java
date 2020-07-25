@@ -6,7 +6,6 @@ import java.util.ResourceBundle;
 import com.hubertstruminski.invoice.app.config.OAuthAuthenticator;
 import com.hubertstruminski.invoice.app.config.OAuthCompletedCallback;
 import com.hubertstruminski.invoice.app.config.OAuthGoogleAuthenticator;
-import com.hubertstruminski.invoice.app.view.ViewCreator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -16,7 +15,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import org.json.JSONObject;
 
-public class LoginWindowController extends BaseController implements Initializable {
+public class LoginWindowController implements Initializable {
 
     @FXML
     private ResourceBundle resources;
@@ -35,14 +34,6 @@ public class LoginWindowController extends BaseController implements Initializab
 
     @FXML
     private Button googleLoginButton;
-
-    public LoginWindowController() {
-
-    }
-
-    public LoginWindowController(ViewCreator viewCreator, String fxmlName) {
-        super(viewCreator, fxmlName);
-    }
 
     @FXML
     void googleLoginButtonAction(ActionEvent event) {

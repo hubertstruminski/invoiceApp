@@ -3,14 +3,9 @@ package com.hubertstruminski.invoice.app.config;
 import java.util.Properties;
 
 import javax.sql.DataSource;
-import javax.xml.validation.Validator;
 
-//import org.h2.tools.DeleteDbFiles;
 import org.hibernate.jpa.HibernatePersistenceProvider;
-//import org.hibernate.ejb.HibernatePersistence;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -24,7 +19,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories("com.hubertstruminski.invoice.app.repository")
-//@EnableAutoConfiguration(exclude = HibernateJpaAutoConfiguration.class)
 @PropertySource("classpath:application.properties")
 public class DataConfig {
 
