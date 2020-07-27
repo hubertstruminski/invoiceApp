@@ -1,9 +1,15 @@
 package com.hubertstruminski.invoice.app.controller;
 
-import javafx.event.ActionEvent;
+import com.hubertstruminski.invoice.app.component.NewAddressWindowComponent;
+import com.hubertstruminski.invoice.app.model.Address;
+import com.hubertstruminski.invoice.app.model.Customer;
+import com.hubertstruminski.invoice.app.service.MainService;
 import moe.tristan.easyfxml.api.FxmlController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -13,6 +19,24 @@ import javafx.scene.layout.VBox;
 @Controller
 public class NewCustomerWindowController implements FxmlController {
 
+    private boolean isNewAddressStageOpen = false;
+
+    private Customer customer = null;
+
+    private MainService mainService;
+    private NewAddressWindowComponent newAddressWindowComponent;
+    private NewAddressWindowController newAddressWindowController;
+
+    @Autowired
+    public NewCustomerWindowController(
+            MainService mainService,
+            NewAddressWindowComponent newAddressWindowComponent,
+            @Lazy NewAddressWindowController newAddressWindowController) {
+        this.mainService = mainService;
+        this.newAddressWindowComponent = newAddressWindowComponent;
+        this.newAddressWindowController = newAddressWindowController;
+    }
+
     @FXML
     private VBox vBox;
 
@@ -21,9 +45,6 @@ public class NewCustomerWindowController implements FxmlController {
 
     @FXML
     private TextField emailTextField;
-
-    @FXML
-    private TextField addressTextField;
 
     @FXML
     private Button newCustomerSaveButton;
@@ -41,8 +62,23 @@ public class NewCustomerWindowController implements FxmlController {
     private TextField noteTextField;
 
     @FXML
-    void onAddressTextFieldAction(ActionEvent event) {
+    private Button newAddressButton;
 
+    @FXML
+    void onNewAddressButtonAction(ActionEvent event) {
+        mainService.onLoadComponent(
+                newAddressWindowComponent,
+                400,
+                300,
+                false,
+                "Nowy adres"
+        );
+        if(!isNewAddressStageOpen) {
+            isNewAddressStageOpen = true;
+        } else {
+            newAddressWindowController.setUpdateFlag(true);
+            newAddressWindowController.invokeSetTextFieldsForUpdateAddress();
+        }
     }
 
     @FXML
@@ -52,6 +88,16 @@ public class NewCustomerWindowController implements FxmlController {
 
     @Override
     public void initialize() {
+        customer = new Customer();
+        isNewAddressStageOpen = false;
+    }
 
+    public void setCustomerAddress(Address address) {
+        customer.setAddress(address);
+        newAddressButton.setText(address.getAddress() + ", " + address.getCountry());
+    }
+
+    public Address returnAddressObjectForUpdate() {
+        return customer.getAddress();
     }
 }

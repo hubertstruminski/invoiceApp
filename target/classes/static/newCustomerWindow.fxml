@@ -50,7 +50,6 @@
             </Label>
             <TextField fx:id="nameTextField" alignment="TOP_RIGHT" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" />
             <TextField fx:id="emailTextField" alignment="TOP_RIGHT" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="addressTextField" alignment="TOP_RIGHT" onAction="#onAddressTextFieldAction" promptText="&lt;" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Button fx:id="newCustomerSaveButton" mnemonicParsing="false" onAction="#onNewCustomerSaveButtonAction" prefHeight="40.0" prefWidth="118.0" styleClass="newTaxSaveButton" stylesheets="@../css/default.css" text="Zapisz" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="10" />
             <Label text="Telefon" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                <GridPane.margin>
@@ -79,6 +78,7 @@
             </Label>
             <TextField fx:id="nipTextField" alignment="TOP_RIGHT" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" GridPane.columnIndex="1" GridPane.rowIndex="7" />
             <TextField fx:id="noteTextField" alignment="TOP_RIGHT" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Button fx:id="newAddressButton" alignment="TOP_RIGHT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onNewAddressButtonAction" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" text="&lt;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          </children>
       </GridPane>
    </children>

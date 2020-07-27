@@ -9,13 +9,10 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private String street;
-    private String postalCode;
-    private String city;
+    private String address;
     private String country;
 
-    @ManyToOne
-    @JoinColumn(name = "customer_id")
+    @OneToOne(mappedBy = "address")
     private Customer customer;
 
     public long getId() {
@@ -26,28 +23,12 @@ public class Address {
         this.id = id;
     }
 
-    public String getStreet() {
-        return street;
+    public String getAddress() {
+        return address;
     }
 
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
-    public String getPostalCode() {
-        return postalCode;
-    }
-
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getCountry() {
