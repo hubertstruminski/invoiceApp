@@ -24,7 +24,7 @@
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_14">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
@@ -128,20 +128,20 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:5.2.6.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.xmlunit:xmlunit-core:2.7.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework.security:spring-security-test:5.3.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:14" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:mac:14" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-media:14" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-media:mac:14" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:14" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:mac:14" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:14" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:mac:14" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:14" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:mac:14" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-swing:14" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-swing:mac:14" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-web:14" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-web:mac:14" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:11" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:mac:11" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-media:11" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-media:mac:11" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:11" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:mac:11" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:11" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:mac:11" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:11" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:mac:11" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-swing:11" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-swing:mac:11" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-web:11" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-web:mac:11" level="project" />
     <orderEntry type="library" name="Maven: org.json:json:20160810" level="project" />
     <orderEntry type="library" name="Maven: de.jensd:fontawesomefx:8.9" level="project" />
     <orderEntry type="library" name="Maven: moe.tristan:easyfxml:3.3.0" level="project" />
