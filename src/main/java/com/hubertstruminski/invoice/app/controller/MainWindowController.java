@@ -1,5 +1,6 @@
 package com.hubertstruminski.invoice.app.controller;
 
+import com.hubertstruminski.invoice.app.component.CustomerWindowComponent;
 import com.hubertstruminski.invoice.app.component.NewCustomerWindowComponent;
 import com.hubertstruminski.invoice.app.component.NewTaxWindowComponent;
 import com.hubertstruminski.invoice.app.component.TaxWindowComponent;
@@ -22,16 +23,20 @@ import moe.tristan.easyfxml.api.FxmlController;
 import moe.tristan.easyfxml.model.fxml.FxmlLoadResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 
 @Controller
 public class MainWindowController implements FxmlController {
 
-    private TaxWindowComponent taxWindowComponent;
-    private NewTaxWindowComponent newTaxWindowComponent;
-    private EasyFxml easyFxml;
-    private MainService mainService;
-    private NewCustomerWindowComponent newCustomerWindowComponent;
+    private final TaxWindowComponent taxWindowComponent;
+    private final NewTaxWindowComponent newTaxWindowComponent;
+    private final EasyFxml easyFxml;
+    private final MainService mainService;
+    private final NewCustomerWindowComponent newCustomerWindowComponent;
+    private final CustomerWindowComponent customerWindowComponent;
 
     @Autowired
     public MainWindowController(
@@ -39,12 +44,14 @@ public class MainWindowController implements FxmlController {
             NewTaxWindowComponent newTaxWindowComponent,
             EasyFxml easyFxml,
             MainService mainService,
-            NewCustomerWindowComponent newCustomerWindowComponent) {
+            NewCustomerWindowComponent newCustomerWindowComponent,
+            CustomerWindowComponent customerWindowComponent) {
         this.taxWindowComponent = taxWindowComponent;
         this.newTaxWindowComponent = newTaxWindowComponent;
         this.easyFxml = easyFxml;
         this.mainService = mainService;
         this.newCustomerWindowComponent = newCustomerWindowComponent;
+        this.customerWindowComponent = customerWindowComponent;
     }
 
     @FXML
@@ -101,6 +108,23 @@ public class MainWindowController implements FxmlController {
                 "Nowy klient");
     }
 
+    @FXML
+    void onCustomersButtonAction(ActionEvent event) {
+        customersButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                easyFxml.load(customerWindowComponent).afterNodeLoaded(new Consumer<Pane>() {
+                    @Override
+                    public void accept(Pane pane) {
+                        VBox vBox = (VBox) pane;
+                        vBox.prefHeightProperty().bind(rightVBoxView.getScene().heightProperty());
+                        rightVBoxView.getChildren().setAll(vBox);
+                        changeButtonsStyle(customersButton);
+                    }
+                });
+            }
+        });
+    }
 
     @FXML
     void onTaxButtonClickAction(ActionEvent event) {
@@ -114,6 +138,7 @@ public class MainWindowController implements FxmlController {
                         VBox vBox = (VBox) pane;
                         vBox.prefHeightProperty().bind(rightVBoxView.getScene().heightProperty());
                         rightVBoxView.getChildren().setAll(vBox);
+                        changeButtonsStyle(taxButton);
                     }
                 });
             }
@@ -130,6 +155,18 @@ public class MainWindowController implements FxmlController {
                 rightVBoxView.getChildren().setAll(vBox);
             }
         });
+    }
+
+    public void refreshCustomerTableView() {
+        easyFxml.load(customerWindowComponent)
+                .afterNodeLoaded(new Consumer<Pane>() {
+                    @Override
+                    public void accept(Pane pane) {
+                        VBox vBox = (VBox) pane;
+                        vBox.prefHeightProperty().bind(rightVBoxView.getScene().heightProperty());
+                        rightVBoxView.getChildren().setAll(vBox);
+                    }
+                });
     }
 
 
@@ -163,5 +200,23 @@ public class MainWindowController implements FxmlController {
         databaseMenuButton.setGraphic(GlyphsDude.createIcon(FontAwesomeIcon.DATABASE, "15px"));
         fileMenuButton.setGraphic(GlyphsDude.createIcon(FontAwesomeIcon.FILE, "15px"));
         addMenuButton.setGraphic(GlyphsDude.createIcon(FontAwesomeIcon.PLUS_CIRCLE, "15px"));
+    }
+
+    private void changeButtonsStyle(Button _button) {
+        Button[] selectedButtons = new Button[] {
+                dashboardButton,
+                myCompanyButton,
+                customersButton,
+                invoicesButton,
+                productsButton,
+                taxButton};
+
+        for(Button button: selectedButtons) {
+            if(button.equals(_button)) {
+                button.setStyle("-fx-background-color: #ababab;");
+            } else {
+                button.setStyle("-fx-background-color: #E5E5E5;");
+            }
+        }
     }
 }

@@ -41,7 +41,7 @@ public class NewTaxWindowController implements FxmlController {
     private Label taxAmountErrorLabel;
 
     @FXML
-    private Label taxNameErrorLabel;
+    public Label taxNameErrorLabel;
 
     @FXML
     private Label taxDescriptionErrorLabel;

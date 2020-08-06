@@ -21,6 +21,7 @@ public class NewAddressWindowController implements FxmlController {
     private boolean isAddressError = false;
     private boolean isCountryError = false;
     private boolean isUpdateFlag = false;
+    private boolean isUpdateFromTableView = false;
 
     private Address address = null;
 
@@ -51,10 +52,10 @@ public class NewAddressWindowController implements FxmlController {
     private Label countryErrorLabel;
 
     @FXML
-    private Label addressIdLabel;
+    private Button newAddressSaveButton;
 
     @FXML
-    private Button newAddressSaveButton;
+    private Label addressIdLabel;
 
     public void setUpdateFlag(boolean updateFlag) {
         isUpdateFlag = updateFlag;
@@ -87,11 +88,13 @@ public class NewAddressWindowController implements FxmlController {
         }
 
         if(!isAddressError && !isCountryError) {
+            if(newCustomerWindowController.isUpdateFlagWithTableView()) {
+                address.setId(Long.parseLong(addressIdLabel.getText()));
+            }
             address.setAddress(addressTextField.getText());
             address.setCountry(countryTextField.getText());
 
-            Address savedAddress = addressRepository.save(address);
-            newCustomerWindowController.setCustomerAddress(savedAddress);
+            newCustomerWindowController.setCustomerAddress(address);
 
             Stage stage = (Stage) vBox.getScene().getWindow();
             stage.close();
@@ -108,16 +111,14 @@ public class NewAddressWindowController implements FxmlController {
         countryErrorLabel.setText("");
         countryErrorLabel.setStyle(redColorFont);
 
-        addressIdLabel.setVisible(false);
         isUpdateFlag = false;
-
+        isUpdateFromTableView = false;
         address = new Address();
     }
 
     public void setTextFieldsForUpdateAddress(Address address) {
         addressTextField.setText(address.getAddress());
         countryTextField.setText(address.getCountry());
-        addressIdLabel.setText(String.valueOf(address.getId()));
     }
 
     public void invokeSetTextFieldsForUpdateAddress() {
@@ -128,5 +129,11 @@ public class NewAddressWindowController implements FxmlController {
                 setTextFieldsForUpdateAddress(address);
             }
         }
+    }
+
+    public void setTextFields(Address address) {
+        addressIdLabel.setText(String.valueOf(address.getId()));
+        addressTextField.setText(address.getAddress());
+        countryTextField.setText(address.getCountry());
     }
 }

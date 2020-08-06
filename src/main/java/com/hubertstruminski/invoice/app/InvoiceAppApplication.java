@@ -19,7 +19,7 @@ public class InvoiceAppApplication extends FxApplication {
         return new SpringApplicationBuilder(getClass())
                 .main(getClass())
                 .headless(false)
-                .web(WebApplicationType.NONE);
+                .web(WebApplicationType.SERVLET);
     }
 
     @Override

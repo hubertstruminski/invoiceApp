@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="invoiceAppDatabase" uuid="fb459bac-808e-47c1-b978-63f4e99c2316">
+    <data-source source="LOCAL" name="invoiceAppDatabase" uuid="a4734307-d566-49ff-9b27-1c3460e239ca">
       <driver-ref>h2.unified</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.h2.Driver</jdbc-driver>
-      <jdbc-url>jdbc:h2:file:$PROJECT_DIR$/src/main/resources/db/invoiceAppDatabase</jdbc-url>
+      <jdbc-url>jdbc:h2:file:./db/invoiceAppDatabase</jdbc-url>
     </data-source>
   </component>
 </project>

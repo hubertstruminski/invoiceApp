@@ -26,12 +26,12 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Address" GridPane.rowIndex="1">
+            <Label text="Adres" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets right="20.0" />
                </GridPane.margin>
             </Label>
-            <Label text="Country" GridPane.rowIndex="3">
+            <Label text="Kraj" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets right="20.0" />
                </GridPane.margin>
@@ -41,7 +41,7 @@
             <Label fx:id="addressErrorLabel" text="Label" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
             <Label fx:id="countryErrorLabel" text="Label" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4" />
             <Button fx:id="newAddressSaveButton" mnemonicParsing="false" onAction="#onNewAddressSaveButtonAction" prefHeight="40.0" prefWidth="118.0" styleClass="newTaxSaveButton" stylesheets="@../css/default.css" text="Zapisz" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
-            <Label fx:id="addressIdLabel" text="Address id" GridPane.columnIndex="1" />
+            <Label fx:id="addressIdLabel" text="Address Id" GridPane.columnIndex="1" />
          </children>
       </GridPane>
    </children>

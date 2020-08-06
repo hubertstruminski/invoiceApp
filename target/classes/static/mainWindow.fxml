@@ -70,7 +70,7 @@
                               <Insets />
                            </GridPane.margin>
                         </Button>
-                        <Button fx:id="customersButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="leftMenuButtons" stylesheets="@../css/default.css" text="Klienci" GridPane.rowIndex="2" />
+                        <Button fx:id="customersButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onCustomersButtonAction" styleClass="leftMenuButtons" stylesheets="@../css/default.css" text="Klienci" GridPane.rowIndex="2" />
                         <Button fx:id="invoicesButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="leftMenuButtons" stylesheets="@../css/default.css" text="Faktury" GridPane.rowIndex="3" />
                         <Button fx:id="productsButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="leftMenuButtons" stylesheets="@../css/default.css" text="Produkty" GridPane.rowIndex="4" />
                      </children>

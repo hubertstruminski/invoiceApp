@@ -1,6 +1,7 @@
 package com.hubertstruminski.invoice.app.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -16,6 +17,8 @@ public class Customer {
     private String phoneNumber;
     private String website;
     private String nip;
+
+    @Size(max = 2500)
     private String note;
 
     @OneToOne

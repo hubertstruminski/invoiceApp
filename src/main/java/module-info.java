@@ -37,6 +37,7 @@ module invoiceApp {
     requires org.hibernate.orm.core;
 
     requires spring.webmvc;
+    requires java.validation;
 
     opens com.hubertstruminski.invoice.app;
     opens com.hubertstruminski.invoice.app.repository;

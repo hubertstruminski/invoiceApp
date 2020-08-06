@@ -52,8 +52,9 @@
     -fx-padding: 0.0em; /* 0 */
 }
 
-.table-row-cell:selected {
-    -fx-background-color: #005797;
+.table-row-cell:selected, .table-cell:selected {
+    -fx-background-color: #0380ad;
     -fx-background-insets: 0;
     -fx-background-radius: 1;
+    -fx-text-fill: white;
 }

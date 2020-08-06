@@ -19,15 +19,19 @@
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints minHeight="10.0" percentHeight="7.5" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" percentHeight="7.5" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" percentHeight="7.5" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" percentHeight="6.5" prefHeight="20.0" valignment="CENTER" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" percentHeight="7.5" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" percentHeight="7.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="3.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" percentHeight="7.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="3.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" percentHeight="7.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="3.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="4.0" prefHeight="20.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="7.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="7.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="4.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" percentHeight="8.5" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" percentHeight="6.5" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="3.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="8.5" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" percentHeight="6.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
@@ -38,26 +42,26 @@
                   <Insets right="10.0" />
                </GridPane.margin>
             </Label>
-            <Label text="Email" GridPane.rowIndex="1">
+            <Label text="Email" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
             </Label>
-            <Label text="Adres" GridPane.rowIndex="2">
+            <Label text="Adres" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
             </Label>
             <TextField fx:id="nameTextField" alignment="TOP_RIGHT" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" />
-            <TextField fx:id="emailTextField" alignment="TOP_RIGHT" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button fx:id="newCustomerSaveButton" mnemonicParsing="false" onAction="#onNewCustomerSaveButtonAction" prefHeight="40.0" prefWidth="118.0" styleClass="newTaxSaveButton" stylesheets="@../css/default.css" text="Zapisz" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="10" />
-            <Label text="Telefon" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+            <TextField fx:id="emailTextField" alignment="TOP_RIGHT" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="newCustomerSaveButton" mnemonicParsing="false" onAction="#onNewCustomerSaveButtonAction" prefHeight="40.0" prefWidth="118.0" styleClass="newTaxSaveButton" stylesheets="@../css/default.css" text="Zapisz" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="14" />
+            <Label text="Telefon" GridPane.rowIndex="7" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
             </Label>
-            <TextField fx:id="phoneTextField" alignment="TOP_RIGHT" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Label prefHeight="30.0" prefWidth="62.0" text="Strona internetowa" wrapText="true" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+            <TextField fx:id="phoneTextField" alignment="TOP_RIGHT" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label prefHeight="30.0" prefWidth="62.0" text="Strona internetowa" wrapText="true" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
                <font>
                   <Font size="12.0" />
                </font>
@@ -65,20 +69,25 @@
                   <Insets right="10.0" />
                </GridPane.margin>
             </Label>
-            <TextField fx:id="taxAmountTextField11" alignment="TOP_RIGHT" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Label text="NIP" GridPane.rowIndex="7">
+            <TextField fx:id="websiteTextField" alignment="TOP_RIGHT" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label text="NIP" GridPane.rowIndex="10">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
             </Label>
-            <Label text="Uwagi" GridPane.rowIndex="8">
+            <Label text="Uwagi" GridPane.rowIndex="12">
                <padding>
                   <Insets right="10.0" />
                </padding>
             </Label>
-            <TextField fx:id="nipTextField" alignment="TOP_RIGHT" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <TextField fx:id="noteTextField" alignment="TOP_RIGHT" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <Button fx:id="newAddressButton" alignment="TOP_RIGHT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onNewAddressButtonAction" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" text="&lt;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="nipTextField" alignment="TOP_RIGHT" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <TextField fx:id="noteTextField" alignment="TOP_RIGHT" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+            <Button fx:id="newAddressButton" alignment="TOP_RIGHT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onNewAddressButtonAction" styleClass="newTaxTextFieldInputs" stylesheets="@../css/default.css" text="&lt;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label fx:id="nameErrorLabel" text="Label" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+            <Label fx:id="emailErrorLabel" text="Label" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" />
+            <Label fx:id="addressErrorLabel" text="Label" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="5" />
+            <Label fx:id="nipErrorLabel" text="Label" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="11" />
+            <Label fx:id="customerIdLabel" text="Customer Id" GridPane.columnIndex="1" GridPane.rowIndex="13" />
          </children>
       </GridPane>
    </children>
