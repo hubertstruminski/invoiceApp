@@ -38,71 +38,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82dd17d6-8d65-489f-b650-36181d2b8ce8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/CoreService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/CoreServiceInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/CustomerWindowService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/MainWindowService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/TaxWindowService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/util/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ab8d470b-df16-44ac-8d1f-1e6ceaef55e3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ab8d470b-df16-44ac-8d1f-1e6ceaef55e3/storage_v2/_src_/database/INVOICEAPPDATABASE.T6UyHg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ab8d470b-df16-44ac-8d1f-1e6ceaef55e3/storage_v2/_src_/database/INVOICEAPPDATABASE.T6UyHg/schema/INFORMATION_SCHEMA.NBgcMw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fb459bac-808e-47c1-b978-63f4e99c2316.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fb459bac-808e-47c1-b978-63f4e99c2316/storage_v2/_src_/database/INVOICEAPPDATABASE.T6UyHg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fb459bac-808e-47c1-b978-63f4e99c2316/storage_v2/_src_/database/INVOICEAPPDATABASE.T6UyHg/schema/INFORMATION_SCHEMA.NBgcMw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fb459bac-808e-47c1-b978-63f4e99c2316/storage_v2/_src_/database/INVOICEAPPDATABASE.T6UyHg/schema/PUBLIC.aaZQjQ.meta" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/component/NewProductWindowComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/component/ProductDetailsWindowComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/component/ProductWindowComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/NewProductWindowController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/ProductDetailsWindowController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/ProductWindowController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/repository/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/ProductWindowService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/newProductWindow.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/productDetailsWindow.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/productWindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/invoiceAppDatabase.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/invoiceAppDatabase.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/InvoiceAppApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/InvoiceAppApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/config/DataConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/config/DataConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/config/OAuthType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/config/WebSecurityConfigClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/config/WebSecurityConfigClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/CustomerDetailsWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/CustomerDetailsWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/CustomerWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/CustomerWindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/MainWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/MainWindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/NewAddressWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/NewAddressWindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/NewCustomerWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/NewCustomerWindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/NewTaxWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/NewTaxWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/TaxWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/TaxWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/model/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/model/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/repository/AddressRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/repository/AddressRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/repository/TaxRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/repository/TaxRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/MainService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/customerDetailsWindow.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/customerDetailsWindow.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/taxWindow.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/taxWindow.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/customerWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/customerWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hubertstruminski/invoice/app/InvoiceAppApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hubertstruminski/invoice/app/InvoiceAppApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/CustomerDetailsWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/CustomerDetailsWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/CustomerWindowController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/CustomerWindowController$2$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/CustomerWindowController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/CustomerWindowController$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/CoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/CoreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/CustomerWindowService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/CustomerWindowService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/TaxWindowService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/TaxWindowService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/mainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/mainWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/InvoiceAppApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/InvoiceAppApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/config/DataConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/config/DataConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/config/OAuthType.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/CustomerWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/CustomerWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/MainWindowController$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/MainWindowController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/MainWindowController$2$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/MainWindowController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/MainWindowController$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/MainWindowController$4.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/MainWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/MainWindowController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/NewAddressWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/NewAddressWindowController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/NewCustomerWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/NewCustomerWindowController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/NewTaxWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/NewTaxWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/TaxWindowController$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/TaxWindowController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/TaxWindowController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/TaxWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/TaxWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/MainService$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/MainService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/css/customerDetailsWindow.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/css/customerDetailsWindow.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/model/Address.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/model/Address.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/model/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/model/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/repository/TaxRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/repository/TaxRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/CoreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/CoreService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/CustomerWindowService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/CustomerWindowService$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/CustomerWindowService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/CustomerWindowService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/TaxWindowService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/TaxWindowService$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/TaxWindowService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/TaxWindowService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/css/default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/customerWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/customerWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/css/taxWindow.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/css/taxWindow.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/mainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/mainWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hubertstruminski/invoice/app/InvoiceAppApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hubertstruminski/invoice/app/InvoiceAppApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,8 +92,8 @@
       <list>
         <option value="FxmlFile" />
         <option value="CSS File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -245,7 +223,9 @@
       <workItem from="1596574468767" duration="16000" />
       <workItem from="1596660401789" duration="1925000" />
       <workItem from="1596706812617" duration="25357000" />
-      <workItem from="1596787556098" duration="7890000" />
+      <workItem from="1596787556098" duration="10758000" />
+      <workItem from="1596803562661" duration="14991000" />
+      <workItem from="1596823470437" duration="2598000" />
     </task>
     <servers />
   </component>
@@ -275,14 +255,14 @@
     <state x="473" y="280" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1792.1036@0.23.1792.1036" timestamp="1596712078317" />
     <state x="584" y="181" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1792.1041@0.23.1792.1041" timestamp="1594722758542" />
     <state x="584" y="181" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1792.1042@0.23.1792.1042" timestamp="1594725205764" />
-    <state x="1099" y="141" key="#com.intellij.ide.util.MemberChooser" timestamp="1596727028133">
-      <screen x="0" y="23" width="1792" height="1034" />
+    <state x="1099" y="141" key="#com.intellij.ide.util.MemberChooser" timestamp="1596823609661">
+      <screen x="0" y="23" width="1792" height="1033" />
     </state>
     <state x="709" y="251" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1030@0.23.1792.1030" timestamp="1595621696075" />
     <state x="1099" y="141" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1031@0.23.1792.1031" timestamp="1595663863713" />
-    <state x="1099" y="141" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1033@0.23.1792.1033" timestamp="1596724210873" />
+    <state x="1099" y="141" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1033@0.23.1792.1033" timestamp="1596823609661" />
     <state x="1099" y="141" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1034@0.23.1792.1034" timestamp="1596727028133" />
-    <state x="1099" y="141" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1036@0.23.1792.1036" timestamp="1595711110101" />
+    <state x="1099" y="141" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1036@0.23.1792.1036" timestamp="1596804846514" />
     <state x="633" y="336" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1596573948647">
       <screen x="0" y="23" width="1792" height="1033" />
     </state>
@@ -293,6 +273,10 @@
     </state>
     <state x="545" y="252" width="834" height="564" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.23.1792.1030@0.23.1792.1030" timestamp="1594233172487" />
     <state x="545" y="253" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.23.1792.1033@0.23.1792.1033" timestamp="1596569713947" />
+    <state x="601" y="415" width="589" height="256" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1596823728168">
+      <screen x="0" y="23" width="1792" height="1033" />
+    </state>
+    <state x="601" y="415" width="589" height="256" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1792.1033@0.23.1792.1033" timestamp="1596823728168" />
     <state x="362" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1596794607314">
       <screen x="0" y="23" width="1792" height="1036" />
     </state>
@@ -301,142 +285,142 @@
       <screen x="0" y="23" width="1792" height="1034" />
     </state>
     <state x="634" y="292" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1792.1034@0.23.1792.1034" timestamp="1595664614668" />
-    <state width="1750" height="276" key="GridCell.Tab.0.bottom" timestamp="1596795151210">
+    <state width="1750" height="276" key="GridCell.Tab.0.bottom" timestamp="1596828567945">
       <screen x="0" y="23" width="1792" height="1033" />
     </state>
     <state width="1738" height="304" key="GridCell.Tab.0.bottom/0.23.1792.1028@0.23.1792.1028" timestamp="1595453072030" />
     <state width="1750" height="276" key="GridCell.Tab.0.bottom/0.23.1792.1030@0.23.1792.1030" timestamp="1595662649633" />
     <state width="1750" height="276" key="GridCell.Tab.0.bottom/0.23.1792.1031@0.23.1792.1031" timestamp="1595663879588" />
-    <state width="1750" height="276" key="GridCell.Tab.0.bottom/0.23.1792.1033@0.23.1792.1033" timestamp="1596795151210" />
-    <state width="1750" height="276" key="GridCell.Tab.0.bottom/0.23.1792.1034@0.23.1792.1034" timestamp="1596741894527" />
+    <state width="1750" height="276" key="GridCell.Tab.0.bottom/0.23.1792.1033@0.23.1792.1033" timestamp="1596828567945" />
+    <state width="1750" height="305" key="GridCell.Tab.0.bottom/0.23.1792.1034@0.23.1792.1034" timestamp="1596815142754" />
     <state width="1750" height="276" key="GridCell.Tab.0.bottom/0.23.1792.1036@0.23.1792.1036" timestamp="1596794238574" />
     <state width="1750" height="308" key="GridCell.Tab.0.bottom/0.23.1792.1037@0.23.1792.1037" timestamp="1594714847247" />
     <state width="1750" height="308" key="GridCell.Tab.0.bottom/0.23.1792.1041@0.23.1792.1041" timestamp="1594725737451" />
     <state width="1750" height="279" key="GridCell.Tab.0.bottom/0.23.1792.1042@0.23.1792.1042" timestamp="1594724668076" />
-    <state width="1750" height="276" key="GridCell.Tab.0.center" timestamp="1596795151210">
+    <state width="1750" height="276" key="GridCell.Tab.0.center" timestamp="1596828567944">
       <screen x="0" y="23" width="1792" height="1033" />
     </state>
     <state width="1738" height="304" key="GridCell.Tab.0.center/0.23.1792.1028@0.23.1792.1028" timestamp="1595453072029" />
     <state width="1750" height="276" key="GridCell.Tab.0.center/0.23.1792.1030@0.23.1792.1030" timestamp="1595662649633" />
     <state width="1750" height="276" key="GridCell.Tab.0.center/0.23.1792.1031@0.23.1792.1031" timestamp="1595663879588" />
-    <state width="1750" height="276" key="GridCell.Tab.0.center/0.23.1792.1033@0.23.1792.1033" timestamp="1596795151210" />
-    <state width="1750" height="276" key="GridCell.Tab.0.center/0.23.1792.1034@0.23.1792.1034" timestamp="1596741894526" />
+    <state width="1750" height="276" key="GridCell.Tab.0.center/0.23.1792.1033@0.23.1792.1033" timestamp="1596828567944" />
+    <state width="1750" height="305" key="GridCell.Tab.0.center/0.23.1792.1034@0.23.1792.1034" timestamp="1596815142754" />
     <state width="1750" height="276" key="GridCell.Tab.0.center/0.23.1792.1036@0.23.1792.1036" timestamp="1596794238573" />
     <state width="1750" height="308" key="GridCell.Tab.0.center/0.23.1792.1037@0.23.1792.1037" timestamp="1594714847247" />
     <state width="1750" height="308" key="GridCell.Tab.0.center/0.23.1792.1041@0.23.1792.1041" timestamp="1594725737450" />
     <state width="1750" height="279" key="GridCell.Tab.0.center/0.23.1792.1042@0.23.1792.1042" timestamp="1594724668075" />
-    <state width="1750" height="276" key="GridCell.Tab.0.left" timestamp="1596795151210">
+    <state width="1750" height="276" key="GridCell.Tab.0.left" timestamp="1596828567944">
       <screen x="0" y="23" width="1792" height="1033" />
     </state>
     <state width="1738" height="304" key="GridCell.Tab.0.left/0.23.1792.1028@0.23.1792.1028" timestamp="1595453072028" />
     <state width="1750" height="276" key="GridCell.Tab.0.left/0.23.1792.1030@0.23.1792.1030" timestamp="1595662649632" />
     <state width="1750" height="276" key="GridCell.Tab.0.left/0.23.1792.1031@0.23.1792.1031" timestamp="1595663879587" />
-    <state width="1750" height="276" key="GridCell.Tab.0.left/0.23.1792.1033@0.23.1792.1033" timestamp="1596795151210" />
-    <state width="1750" height="276" key="GridCell.Tab.0.left/0.23.1792.1034@0.23.1792.1034" timestamp="1596741894526" />
+    <state width="1750" height="276" key="GridCell.Tab.0.left/0.23.1792.1033@0.23.1792.1033" timestamp="1596828567944" />
+    <state width="1750" height="305" key="GridCell.Tab.0.left/0.23.1792.1034@0.23.1792.1034" timestamp="1596815142753" />
     <state width="1750" height="276" key="GridCell.Tab.0.left/0.23.1792.1036@0.23.1792.1036" timestamp="1596794238573" />
     <state width="1750" height="308" key="GridCell.Tab.0.left/0.23.1792.1037@0.23.1792.1037" timestamp="1594714847247" />
     <state width="1750" height="308" key="GridCell.Tab.0.left/0.23.1792.1041@0.23.1792.1041" timestamp="1594725737450" />
     <state width="1750" height="279" key="GridCell.Tab.0.left/0.23.1792.1042@0.23.1792.1042" timestamp="1594724668075" />
-    <state width="1750" height="276" key="GridCell.Tab.0.right" timestamp="1596795151210">
+    <state width="1750" height="276" key="GridCell.Tab.0.right" timestamp="1596828567945">
       <screen x="0" y="23" width="1792" height="1033" />
     </state>
     <state width="1738" height="304" key="GridCell.Tab.0.right/0.23.1792.1028@0.23.1792.1028" timestamp="1595453072029" />
     <state width="1750" height="276" key="GridCell.Tab.0.right/0.23.1792.1030@0.23.1792.1030" timestamp="1595662649633" />
     <state width="1750" height="276" key="GridCell.Tab.0.right/0.23.1792.1031@0.23.1792.1031" timestamp="1595663879588" />
-    <state width="1750" height="276" key="GridCell.Tab.0.right/0.23.1792.1033@0.23.1792.1033" timestamp="1596795151210" />
-    <state width="1750" height="276" key="GridCell.Tab.0.right/0.23.1792.1034@0.23.1792.1034" timestamp="1596741894526" />
+    <state width="1750" height="276" key="GridCell.Tab.0.right/0.23.1792.1033@0.23.1792.1033" timestamp="1596828567945" />
+    <state width="1750" height="305" key="GridCell.Tab.0.right/0.23.1792.1034@0.23.1792.1034" timestamp="1596815142754" />
     <state width="1750" height="276" key="GridCell.Tab.0.right/0.23.1792.1036@0.23.1792.1036" timestamp="1596794238574" />
     <state width="1750" height="308" key="GridCell.Tab.0.right/0.23.1792.1037@0.23.1792.1037" timestamp="1594714847247" />
     <state width="1750" height="308" key="GridCell.Tab.0.right/0.23.1792.1041@0.23.1792.1041" timestamp="1594725737451" />
     <state width="1750" height="279" key="GridCell.Tab.0.right/0.23.1792.1042@0.23.1792.1042" timestamp="1594724668076" />
-    <state width="1750" height="276" key="GridCell.Tab.1.bottom" timestamp="1596795151211">
+    <state width="1750" height="276" key="GridCell.Tab.1.bottom" timestamp="1596828567946">
       <screen x="0" y="23" width="1792" height="1033" />
     </state>
     <state width="1738" height="276" key="GridCell.Tab.1.bottom/0.23.1792.1028@0.23.1792.1028" timestamp="1595453071889" />
     <state width="1750" height="276" key="GridCell.Tab.1.bottom/0.23.1792.1030@0.23.1792.1030" timestamp="1595662649634" />
     <state width="1750" height="276" key="GridCell.Tab.1.bottom/0.23.1792.1031@0.23.1792.1031" timestamp="1595663879589" />
-    <state width="1750" height="276" key="GridCell.Tab.1.bottom/0.23.1792.1033@0.23.1792.1033" timestamp="1596795151211" />
-    <state width="1750" height="305" key="GridCell.Tab.1.bottom/0.23.1792.1034@0.23.1792.1034" timestamp="1596746173070" />
+    <state width="1750" height="276" key="GridCell.Tab.1.bottom/0.23.1792.1033@0.23.1792.1033" timestamp="1596828567946" />
+    <state width="1750" height="305" key="GridCell.Tab.1.bottom/0.23.1792.1034@0.23.1792.1034" timestamp="1596815715257" />
     <state width="1750" height="276" key="GridCell.Tab.1.bottom/0.23.1792.1036@0.23.1792.1036" timestamp="1596794238575" />
     <state width="1750" height="308" key="GridCell.Tab.1.bottom/0.23.1792.1037@0.23.1792.1037" timestamp="1594714828254" />
     <state width="1750" height="308" key="GridCell.Tab.1.bottom/0.23.1792.1041@0.23.1792.1041" timestamp="1594725737452" />
     <state width="1750" height="279" key="GridCell.Tab.1.bottom/0.23.1792.1042@0.23.1792.1042" timestamp="1594724668077" />
-    <state width="1750" height="276" key="GridCell.Tab.1.center" timestamp="1596795151211">
+    <state width="1750" height="276" key="GridCell.Tab.1.center" timestamp="1596828567945">
       <screen x="0" y="23" width="1792" height="1033" />
     </state>
     <state width="1738" height="276" key="GridCell.Tab.1.center/0.23.1792.1028@0.23.1792.1028" timestamp="1595453071888" />
     <state width="1750" height="276" key="GridCell.Tab.1.center/0.23.1792.1030@0.23.1792.1030" timestamp="1595662649634" />
     <state width="1750" height="276" key="GridCell.Tab.1.center/0.23.1792.1031@0.23.1792.1031" timestamp="1595663879589" />
-    <state width="1750" height="276" key="GridCell.Tab.1.center/0.23.1792.1033@0.23.1792.1033" timestamp="1596795151211" />
-    <state width="1750" height="305" key="GridCell.Tab.1.center/0.23.1792.1034@0.23.1792.1034" timestamp="1596746173069" />
+    <state width="1750" height="276" key="GridCell.Tab.1.center/0.23.1792.1033@0.23.1792.1033" timestamp="1596828567945" />
+    <state width="1750" height="305" key="GridCell.Tab.1.center/0.23.1792.1034@0.23.1792.1034" timestamp="1596815715257" />
     <state width="1750" height="276" key="GridCell.Tab.1.center/0.23.1792.1036@0.23.1792.1036" timestamp="1596794238574" />
     <state width="1750" height="308" key="GridCell.Tab.1.center/0.23.1792.1037@0.23.1792.1037" timestamp="1594714828253" />
     <state width="1750" height="308" key="GridCell.Tab.1.center/0.23.1792.1041@0.23.1792.1041" timestamp="1594725737452" />
     <state width="1750" height="279" key="GridCell.Tab.1.center/0.23.1792.1042@0.23.1792.1042" timestamp="1594724668076" />
-    <state width="1750" height="276" key="GridCell.Tab.1.left" timestamp="1596795151211">
+    <state width="1750" height="276" key="GridCell.Tab.1.left" timestamp="1596828567945">
       <screen x="0" y="23" width="1792" height="1033" />
     </state>
     <state width="1738" height="276" key="GridCell.Tab.1.left/0.23.1792.1028@0.23.1792.1028" timestamp="1595453071888" />
     <state width="1750" height="276" key="GridCell.Tab.1.left/0.23.1792.1030@0.23.1792.1030" timestamp="1595662649633" />
     <state width="1750" height="276" key="GridCell.Tab.1.left/0.23.1792.1031@0.23.1792.1031" timestamp="1595663879588" />
-    <state width="1750" height="276" key="GridCell.Tab.1.left/0.23.1792.1033@0.23.1792.1033" timestamp="1596795151211" />
-    <state width="1750" height="305" key="GridCell.Tab.1.left/0.23.1792.1034@0.23.1792.1034" timestamp="1596746173069" />
+    <state width="1750" height="276" key="GridCell.Tab.1.left/0.23.1792.1033@0.23.1792.1033" timestamp="1596828567945" />
+    <state width="1750" height="305" key="GridCell.Tab.1.left/0.23.1792.1034@0.23.1792.1034" timestamp="1596815715256" />
     <state width="1750" height="276" key="GridCell.Tab.1.left/0.23.1792.1036@0.23.1792.1036" timestamp="1596794238574" />
     <state width="1750" height="308" key="GridCell.Tab.1.left/0.23.1792.1037@0.23.1792.1037" timestamp="1594714828253" />
     <state width="1750" height="308" key="GridCell.Tab.1.left/0.23.1792.1041@0.23.1792.1041" timestamp="1594725737451" />
     <state width="1750" height="279" key="GridCell.Tab.1.left/0.23.1792.1042@0.23.1792.1042" timestamp="1594724668076" />
-    <state width="1750" height="276" key="GridCell.Tab.1.right" timestamp="1596795151211">
+    <state width="1750" height="276" key="GridCell.Tab.1.right" timestamp="1596828567946">
       <screen x="0" y="23" width="1792" height="1033" />
     </state>
     <state width="1738" height="276" key="GridCell.Tab.1.right/0.23.1792.1028@0.23.1792.1028" timestamp="1595453071888" />
     <state width="1750" height="276" key="GridCell.Tab.1.right/0.23.1792.1030@0.23.1792.1030" timestamp="1595662649634" />
     <state width="1750" height="276" key="GridCell.Tab.1.right/0.23.1792.1031@0.23.1792.1031" timestamp="1595663879589" />
-    <state width="1750" height="276" key="GridCell.Tab.1.right/0.23.1792.1033@0.23.1792.1033" timestamp="1596795151211" />
-    <state width="1750" height="305" key="GridCell.Tab.1.right/0.23.1792.1034@0.23.1792.1034" timestamp="1596746173070" />
+    <state width="1750" height="276" key="GridCell.Tab.1.right/0.23.1792.1033@0.23.1792.1033" timestamp="1596828567946" />
+    <state width="1750" height="305" key="GridCell.Tab.1.right/0.23.1792.1034@0.23.1792.1034" timestamp="1596815715257" />
     <state width="1750" height="276" key="GridCell.Tab.1.right/0.23.1792.1036@0.23.1792.1036" timestamp="1596794238575" />
     <state width="1750" height="308" key="GridCell.Tab.1.right/0.23.1792.1037@0.23.1792.1037" timestamp="1594714828253" />
     <state width="1750" height="308" key="GridCell.Tab.1.right/0.23.1792.1041@0.23.1792.1041" timestamp="1594725737452" />
     <state width="1750" height="279" key="GridCell.Tab.1.right/0.23.1792.1042@0.23.1792.1042" timestamp="1594724668077" />
-    <state width="1750" height="305" key="GridCell.Tab.2.bottom" timestamp="1596788406563">
+    <state width="1750" height="305" key="GridCell.Tab.2.bottom" timestamp="1596823467890">
       <screen x="0" y="23" width="1792" height="1033" />
     </state>
     <state width="1536" height="304" key="GridCell.Tab.2.bottom/0.23.1792.1030@0.23.1792.1030" timestamp="1595624012167" />
     <state width="1536" height="304" key="GridCell.Tab.2.bottom/0.23.1792.1031@0.23.1792.1031" timestamp="1595627384740" />
-    <state width="1750" height="305" key="GridCell.Tab.2.bottom/0.23.1792.1033@0.23.1792.1033" timestamp="1596788406563" />
-    <state width="1750" height="305" key="GridCell.Tab.2.bottom/0.23.1792.1034@0.23.1792.1034" timestamp="1596725458353" />
+    <state width="1750" height="305" key="GridCell.Tab.2.bottom/0.23.1792.1033@0.23.1792.1033" timestamp="1596823467890" />
+    <state width="1750" height="305" key="GridCell.Tab.2.bottom/0.23.1792.1034@0.23.1792.1034" timestamp="1596813113982" />
     <state width="1750" height="308" key="GridCell.Tab.2.bottom/0.23.1792.1036@0.23.1792.1036" timestamp="1594721838627" />
     <state width="1750" height="240" key="GridCell.Tab.2.bottom/0.23.1792.1037@0.23.1792.1037" timestamp="1593950020744" />
     <state width="1750" height="308" key="GridCell.Tab.2.bottom/0.23.1792.1041@0.23.1792.1041" timestamp="1594725737453" />
     <state width="1750" height="308" key="GridCell.Tab.2.bottom/0.23.1792.1042@0.23.1792.1042" timestamp="1594722567995" />
-    <state width="1750" height="305" key="GridCell.Tab.2.center" timestamp="1596788406562">
+    <state width="1750" height="305" key="GridCell.Tab.2.center" timestamp="1596823467889">
       <screen x="0" y="23" width="1792" height="1033" />
     </state>
     <state width="1536" height="304" key="GridCell.Tab.2.center/0.23.1792.1030@0.23.1792.1030" timestamp="1595624012167" />
     <state width="1536" height="304" key="GridCell.Tab.2.center/0.23.1792.1031@0.23.1792.1031" timestamp="1595627384740" />
-    <state width="1750" height="305" key="GridCell.Tab.2.center/0.23.1792.1033@0.23.1792.1033" timestamp="1596788406562" />
-    <state width="1750" height="305" key="GridCell.Tab.2.center/0.23.1792.1034@0.23.1792.1034" timestamp="1596725458353" />
+    <state width="1750" height="305" key="GridCell.Tab.2.center/0.23.1792.1033@0.23.1792.1033" timestamp="1596823467889" />
+    <state width="1750" height="305" key="GridCell.Tab.2.center/0.23.1792.1034@0.23.1792.1034" timestamp="1596813113982" />
     <state width="1750" height="308" key="GridCell.Tab.2.center/0.23.1792.1036@0.23.1792.1036" timestamp="1594721838626" />
     <state width="1750" height="240" key="GridCell.Tab.2.center/0.23.1792.1037@0.23.1792.1037" timestamp="1593950020743" />
     <state width="1750" height="308" key="GridCell.Tab.2.center/0.23.1792.1041@0.23.1792.1041" timestamp="1594725737452" />
     <state width="1750" height="308" key="GridCell.Tab.2.center/0.23.1792.1042@0.23.1792.1042" timestamp="1594722567994" />
-    <state width="1750" height="305" key="GridCell.Tab.2.left" timestamp="1596788406562">
+    <state width="1750" height="305" key="GridCell.Tab.2.left" timestamp="1596823467889">
       <screen x="0" y="23" width="1792" height="1033" />
     </state>
     <state width="1536" height="304" key="GridCell.Tab.2.left/0.23.1792.1030@0.23.1792.1030" timestamp="1595624012167" />
     <state width="1536" height="304" key="GridCell.Tab.2.left/0.23.1792.1031@0.23.1792.1031" timestamp="1595627384740" />
-    <state width="1750" height="305" key="GridCell.Tab.2.left/0.23.1792.1033@0.23.1792.1033" timestamp="1596788406562" />
-    <state width="1750" height="305" key="GridCell.Tab.2.left/0.23.1792.1034@0.23.1792.1034" timestamp="1596725458353" />
+    <state width="1750" height="305" key="GridCell.Tab.2.left/0.23.1792.1033@0.23.1792.1033" timestamp="1596823467889" />
+    <state width="1750" height="305" key="GridCell.Tab.2.left/0.23.1792.1034@0.23.1792.1034" timestamp="1596813113981" />
     <state width="1750" height="308" key="GridCell.Tab.2.left/0.23.1792.1036@0.23.1792.1036" timestamp="1594721838626" />
     <state width="1750" height="240" key="GridCell.Tab.2.left/0.23.1792.1037@0.23.1792.1037" timestamp="1593950020743" />
     <state width="1750" height="308" key="GridCell.Tab.2.left/0.23.1792.1041@0.23.1792.1041" timestamp="1594725737452" />
     <state width="1750" height="308" key="GridCell.Tab.2.left/0.23.1792.1042@0.23.1792.1042" timestamp="1594722567994" />
-    <state width="1750" height="305" key="GridCell.Tab.2.right" timestamp="1596788406563">
+    <state width="1750" height="305" key="GridCell.Tab.2.right" timestamp="1596823467889">
       <screen x="0" y="23" width="1792" height="1033" />
     </state>
     <state width="1536" height="304" key="GridCell.Tab.2.right/0.23.1792.1030@0.23.1792.1030" timestamp="1595624012167" />
     <state width="1536" height="304" key="GridCell.Tab.2.right/0.23.1792.1031@0.23.1792.1031" timestamp="1595627384740" />
-    <state width="1750" height="305" key="GridCell.Tab.2.right/0.23.1792.1033@0.23.1792.1033" timestamp="1596788406563" />
-    <state width="1750" height="305" key="GridCell.Tab.2.right/0.23.1792.1034@0.23.1792.1034" timestamp="1596725458353" />
+    <state width="1750" height="305" key="GridCell.Tab.2.right/0.23.1792.1033@0.23.1792.1033" timestamp="1596823467889" />
+    <state width="1750" height="305" key="GridCell.Tab.2.right/0.23.1792.1034@0.23.1792.1034" timestamp="1596813113982" />
     <state width="1750" height="308" key="GridCell.Tab.2.right/0.23.1792.1036@0.23.1792.1036" timestamp="1594721838626" />
     <state width="1750" height="240" key="GridCell.Tab.2.right/0.23.1792.1037@0.23.1792.1037" timestamp="1593950020744" />
     <state width="1750" height="308" key="GridCell.Tab.2.right/0.23.1792.1041@0.23.1792.1041" timestamp="1594725737453" />
@@ -483,6 +467,15 @@
     <state x="561" y="253" width="670" height="678" key="search.everywhere.popup/0.23.1792.1036@0.23.1792.1036" timestamp="1596793419130" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/NewAddressWindowController.java</url>
+          <line>88</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo typeName="com.hubertstruminski.invoice.app.model.Address" fieldName="customer" />

@@ -27,6 +27,7 @@ public class TaxWindowService implements CoreServiceInterface {
     private final NewTaxWindowComponent newTaxWindowComponent;
     private final NewTaxWindowController newTaxWindowController;
     private final MainWindowController mainWindowController;
+    private final CoreService coreService;
 
     @Autowired
     public TaxWindowService(
@@ -34,12 +35,14 @@ public class TaxWindowService implements CoreServiceInterface {
             NewTaxWindowComponent newTaxWindowComponent,
             NewTaxWindowController newTaxWindowController,
             MainWindowController mainWindowController,
-            EasyFxml easyFxml) {
+            EasyFxml easyFxml,
+            CoreService coreService) {
         this.taxRepository = taxRepository;
         this.newTaxWindowComponent = newTaxWindowComponent;
         this.easyFxml = easyFxml;
         this.newTaxWindowController = newTaxWindowController;
         this.mainWindowController = mainWindowController;
+        this.coreService = coreService;
     }
 
     public void setDataForTableView(TableView tableView) {
@@ -82,7 +85,7 @@ public class TaxWindowService implements CoreServiceInterface {
                                     deleteAndRefresh(tax);
                                 }
                             });
-                            setGraphic(getBtn(btn, styles));
+                            setGraphic(coreService.getBtn(btn, styles));
                         }
                     }
                 };
@@ -99,11 +102,5 @@ public class TaxWindowService implements CoreServiceInterface {
     public void deleteAndRefresh(Tax tax) {
         taxRepository.delete(tax);
         mainWindowController.refreshTaxTableView();
-    }
-
-    public Button getBtn(Button btn, String styles) {
-        btn.setStyle(styles);
-        btn.setCursor(Cursor.HAND);
-        return btn;
     }
 }

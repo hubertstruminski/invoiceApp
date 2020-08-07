@@ -33,6 +33,7 @@
             <Menu fx:id="addMenuButton" mnemonicParsing="false" text="Dodaj">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#onNewCustomerAction" text="Nowy klient" />
+                  <MenuItem mnemonicParsing="false" onAction="#onNewProductAction" text="Nowy produkt" />
                   <MenuItem mnemonicParsing="false" text="Nowa faktura" />
                   <MenuItem mnemonicParsing="false" onAction="#onNewTaxMenuItemAction" text="Nowy podatek" />
               </items>
@@ -71,8 +72,8 @@
                            </GridPane.margin>
                         </Button>
                         <Button fx:id="customersButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onCustomersButtonAction" styleClass="leftMenuButtons" stylesheets="@../css/default.css" text="Klienci" GridPane.rowIndex="2" />
-                        <Button fx:id="invoicesButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="leftMenuButtons" stylesheets="@../css/default.css" text="Faktury" GridPane.rowIndex="3" />
-                        <Button fx:id="productsButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="leftMenuButtons" stylesheets="@../css/default.css" text="Produkty" GridPane.rowIndex="4" />
+                        <Button fx:id="invoicesButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onInvoiceButtonAction" styleClass="leftMenuButtons" stylesheets="@../css/default.css" text="Faktury" GridPane.rowIndex="3" />
+                        <Button fx:id="productsButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onProductButtonAction" styleClass="leftMenuButtons" stylesheets="@../css/default.css" text="Produkty" GridPane.rowIndex="4" />
                      </children>
                   </GridPane>
                </children>

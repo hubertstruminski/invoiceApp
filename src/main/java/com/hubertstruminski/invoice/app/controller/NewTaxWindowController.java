@@ -67,9 +67,14 @@ public class NewTaxWindowController implements FxmlController {
 
     @FXML
     void onNewTaxSaveButtonAction() {
-        isTaxNameError = !".{1,255}".matches(nameTextField.getText());
-        isTaxDescriptionError = !taxDescriptionErrorLabel.getText().matches(".{0,255}");
-        isTaxAmountError = !taxAmountTextField.getText().matches("[0-9]+%$");
+        if (!nameTextField.getText().matches(".{1,255}")) isTaxNameError = true;
+        else isTaxNameError = false;
+
+        if (!".{0,255}".matches(taxDescriptionErrorLabel.getText())) isTaxDescriptionError = true;
+        else isTaxDescriptionError = false;
+
+        if (!"[0-9]+%$".matches(taxAmountTextField.getText())) isTaxAmountError = true;
+        else isTaxAmountError = false;
 
         if(isTaxNameError) {
             taxNameErrorLabel.setText("Długość nazwy musi być od 1 do 255 znaków.");

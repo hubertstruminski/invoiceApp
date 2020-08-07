@@ -53,8 +53,6 @@
     -fx-text-fill: white;
 }
 
-
-
 .newTaxSaveButton:hover {
     -fx-background-color: #007fad;
     -fx-cursor: hand;

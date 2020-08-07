@@ -1,9 +1,6 @@
 package com.hubertstruminski.invoice.app.controller;
 
-import com.hubertstruminski.invoice.app.component.CustomerWindowComponent;
-import com.hubertstruminski.invoice.app.component.NewCustomerWindowComponent;
-import com.hubertstruminski.invoice.app.component.NewTaxWindowComponent;
-import com.hubertstruminski.invoice.app.component.TaxWindowComponent;
+import com.hubertstruminski.invoice.app.component.*;
 import com.hubertstruminski.invoice.app.service.MainWindowService;
 import de.jensd.fx.glyphs.GlyphsDude;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
@@ -26,6 +23,8 @@ public class MainWindowController implements FxmlController {
     private final MainWindowService mainWindowService;
     private final NewCustomerWindowComponent newCustomerWindowComponent;
     private final CustomerWindowComponent customerWindowComponent;
+    private final NewProductWindowComponent newProductWindowComponent;
+    private final ProductWindowComponent productWindowComponent;
 
     @Autowired
     public MainWindowController(
@@ -33,12 +32,16 @@ public class MainWindowController implements FxmlController {
             NewTaxWindowComponent newTaxWindowComponent,
             MainWindowService mainWindowService,
             NewCustomerWindowComponent newCustomerWindowComponent,
-            CustomerWindowComponent customerWindowComponent) {
+            CustomerWindowComponent customerWindowComponent,
+            NewProductWindowComponent newProductWindowComponent,
+            ProductWindowComponent productWindowComponent) {
         this.taxWindowComponent = taxWindowComponent;
         this.newTaxWindowComponent = newTaxWindowComponent;
         this.mainWindowService = mainWindowService;
         this.newCustomerWindowComponent = newCustomerWindowComponent;
         this.customerWindowComponent = customerWindowComponent;
+        this.newProductWindowComponent = newProductWindowComponent;
+        this.productWindowComponent = productWindowComponent;
     }
 
     @FXML
@@ -96,9 +99,30 @@ public class MainWindowController implements FxmlController {
     }
 
     @FXML
+    void onNewProductAction() {
+        mainWindowService.onLoadComponent(
+                newProductWindowComponent,
+                400,
+                500,
+                false,
+                "Nowy produkt");
+    }
+
+    @FXML
     void onCustomersButtonAction() {
         mainWindowService.onSubViewChange(customersButton, rightVBoxView, customerWindowComponent);
         changeButtonsStyle(customersButton);
+    }
+
+    @FXML
+    void onInvoiceButtonAction() {
+
+    }
+
+    @FXML
+    void onProductButtonAction() {
+        mainWindowService.onSubViewChange(productsButton, rightVBoxView, productWindowComponent);
+        changeButtonsStyle(productsButton);
     }
 
     @FXML
@@ -115,6 +139,7 @@ public class MainWindowController implements FxmlController {
         mainWindowService.refreshSubView(customerWindowComponent, rightVBoxView);
     }
 
+    public void refreshProductTableView() { mainWindowService.refreshSubView(productWindowComponent, rightVBoxView);}
 
     @Override
     public void initialize() {

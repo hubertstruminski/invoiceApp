@@ -143,23 +143,27 @@ public class NewCustomerWindowController implements FxmlController {
             isNameEmpty = true;
         } else {
             isNameEmpty = false;
-            isNameError = !".{1,255}".matches(nameTextField.getText());
+            if (!nameTextField.getText().matches(".{1,255}")) isNameError = true;
+            else isNameError = false;
         }
 
         if(emailTextField.getText().length() == 0) {
             isEmailEmpty = true;
         } else {
             isEmailEmpty = false;
-            isEmailError = !".{1,255}".matches(emailTextField.getText());
+            if (!emailTextField.getText().matches(".{1,255}")) isEmailError = true;
+            else isEmailError = false;
         }
 
-        isAddressEmpty = newAddressButton.getText().length() == 1;
+        if (newAddressButton.getText().length() == 1) isAddressEmpty = true;
+        else isAddressEmpty = false;
 
         if(nipTextField.getText().length() == 0) {
             isNipEmpty = true;
         } else {
             isNipEmpty = false;
-            isNipError = !".{1,255}".matches(nipTextField.getText());
+            if (!nipTextField.getText().matches(".{1,255}")) isNipError = true;
+            else isNipError = false;
         }
 
         if(isNameEmpty) {

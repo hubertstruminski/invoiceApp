@@ -11,7 +11,6 @@ import com.hubertstruminski.invoice.app.repository.AddressRepository;
 import com.hubertstruminski.invoice.app.repository.CustomerRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseButton;
@@ -33,6 +32,7 @@ public class CustomerWindowService implements CoreServiceInterface {
     private final MainWindowController mainWindowController;
     private final CustomerDetailsWindowComponent customerDetailsWindowComponent;
     private final CustomerDetailsWindowController customerDetailsWindowController;
+    private final CoreService coreService;
 
     @Autowired
     public CustomerWindowService(
@@ -43,6 +43,7 @@ public class CustomerWindowService implements CoreServiceInterface {
             MainWindowController mainWindowController,
             CustomerDetailsWindowComponent customerDetailsWindowComponent,
             CustomerDetailsWindowController customerDetailsWindowController,
+            CoreService coreService,
             NewCustomerWindowComponent newCustomerWindowComponent) {
         this.customerRepository = customerRepository;
         this.easyFxml = easyFxml;
@@ -52,6 +53,7 @@ public class CustomerWindowService implements CoreServiceInterface {
         this.mainWindowController = mainWindowController;
         this.customerDetailsWindowComponent = customerDetailsWindowComponent;
         this.customerDetailsWindowController = customerDetailsWindowController;
+        this.coreService = coreService;
     }
 
     public void setDataForTableView(TableView tableView) {
@@ -62,7 +64,7 @@ public class CustomerWindowService implements CoreServiceInterface {
         tableView.setItems(observableTaxList);
     }
 
-    public void invokeNewTaxWindowForUpdateCustomer() {
+    public void invokeNewCustomerWindowForUpdateCustomer() {
         easyFxml.load(newCustomerWindowComponent)
                 .afterNodeLoaded(pane -> {
                     Scene scene = new Scene(pane, 400, 500);
@@ -75,7 +77,7 @@ public class CustomerWindowService implements CoreServiceInterface {
     }
 
     public void updateAndRefresh(Customer customer, Address address) {
-        invokeNewTaxWindowForUpdateCustomer();
+        invokeNewCustomerWindowForUpdateCustomer();
         newCustomerWindowController.setTextFields(customer);
         newCustomerWindowController.setUpdateFlag(true);
         newCustomerWindowController.setUpdateFlagWithTableView(true);
@@ -109,18 +111,12 @@ public class CustomerWindowService implements CoreServiceInterface {
                                     deleteAndRefresh(customer, address);
                                 }
                             });
-                            setGraphic(getBtn(btn, styles));
+                            setGraphic(coreService.getBtn(btn, styles));
                         }
                     }
                 };
         tableColumn.setCellFactory(callback);
         return tableColumn;
-    }
-
-    public Button getBtn(Button btn, String styles) {
-        btn.setStyle(styles);
-        btn.setCursor(Cursor.HAND);
-        return btn;
     }
 
     public void setOnClickEventHandlerForRowInCustomersTable(TableView tableView, VBox rightVBoxView) {
@@ -129,7 +125,6 @@ public class CustomerWindowService implements CoreServiceInterface {
             row.setOnMouseClicked(event -> {
                 if (!row.isEmpty() && event.getButton() == MouseButton.PRIMARY && event.getClickCount() == 1) {
                     Customer clickedRow = row.getItem();
-                    System.out.println(clickedRow.getAddress());
 
                     easyFxml.load(customerDetailsWindowComponent)
                             .afterNodeLoaded(pane -> {

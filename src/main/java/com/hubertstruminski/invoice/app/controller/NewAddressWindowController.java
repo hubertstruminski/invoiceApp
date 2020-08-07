@@ -52,8 +52,11 @@ public class NewAddressWindowController implements FxmlController {
 
     @FXML
     void onNewAddressSaveButtonAction() {
-        isAddressError = !".{1,255}".matches(addressTextField.getText());
-        isCountryError = !".{0,255}".matches(countryTextField.getText());
+        if (!addressTextField.getText().matches(".{1,255}")) isAddressError = true;
+        else isAddressError = false;
+
+        if (!countryTextField.getText().matches(".{0,255}")) isCountryError = true;
+        else isCountryError = false;
 
         if(isAddressError) {
             addressErrorLabel.setText("Długość adresu musi być od 1 do 255 znaków.");
@@ -90,6 +93,7 @@ public class NewAddressWindowController implements FxmlController {
         countryErrorLabel.setStyle(Constants.RED_COLOR_FONT);
 
         isUpdateFlag = false;
+        addressIdLabel.setVisible(false);
         address = new Address();
 
         isCountryError = false;

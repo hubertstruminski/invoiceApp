@@ -1,5 +1,7 @@
 package com.hubertstruminski.invoice.app.service;
 
+import javafx.scene.Cursor;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -19,5 +21,11 @@ public class CoreService {
 
         coreServiceInterface.setDataForTableView(tableView);
         nameTableColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+    }
+
+    public Button getBtn(Button btn, String styles) {
+        btn.setStyle(styles);
+        btn.setCursor(Cursor.HAND);
+        return btn;
     }
 }
