@@ -23,11 +23,17 @@
 }
 
 .leftMenuButtonsActive {
-    -fx-background-color: #bdbdbd;
-    -fx-text-fill: white;
+    -fx-background-color: #b3b3b3;
+    -fx-text-fill: black;
     -fx-border-style: solid;
     -fx-border-width: 0 1 1 0;
     -fx-border-color: #919191;
+}
+
+.leftMenuButtonsActive:hover {
+    -fx-cursor: hand;
+    -fx-background-color: #0098CE;
+    -fx-text-fill: black;
 }
 
 .newTaxVBoxBackground {
@@ -46,8 +52,6 @@
     -fx-background-color: #009AD3;
     -fx-text-fill: white;
 }
-
-
 
 .newTaxSaveButton:hover {
     -fx-background-color: #007fad;

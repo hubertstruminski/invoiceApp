@@ -2,7 +2,6 @@ package com.hubertstruminski.invoice.app.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
-import java.util.List;
 
 @Entity
 public class Customer {

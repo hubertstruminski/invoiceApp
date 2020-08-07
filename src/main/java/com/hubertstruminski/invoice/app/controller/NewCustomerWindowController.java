@@ -3,10 +3,10 @@ package com.hubertstruminski.invoice.app.controller;
 import com.hubertstruminski.invoice.app.component.NewAddressWindowComponent;
 import com.hubertstruminski.invoice.app.model.Address;
 import com.hubertstruminski.invoice.app.model.Customer;
-import com.hubertstruminski.invoice.app.model.Tax;
 import com.hubertstruminski.invoice.app.repository.AddressRepository;
 import com.hubertstruminski.invoice.app.repository.CustomerRepository;
-import com.hubertstruminski.invoice.app.service.MainService;
+import com.hubertstruminski.invoice.app.service.MainWindowService;
+import com.hubertstruminski.invoice.app.util.Constants;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import moe.tristan.easyfxml.api.FxmlController;
@@ -14,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -34,7 +33,6 @@ public class NewCustomerWindowController implements FxmlController {
     private boolean isEmailError;
     private boolean isEmailEmpty;
 
-    private boolean isAddressError;
     private boolean isAddressEmpty;
 
     private boolean isNipError;
@@ -43,22 +41,22 @@ public class NewCustomerWindowController implements FxmlController {
     private Customer customer = null;
     private Address address = null;
 
-    private MainService mainService;
-    private NewAddressWindowComponent newAddressWindowComponent;
-    private NewAddressWindowController newAddressWindowController;
-    private AddressRepository addressRepository;
-    private CustomerRepository customerRepository;
-    private MainWindowController mainWindowController;
+    private final MainWindowService mainWindowService;
+    private final NewAddressWindowComponent newAddressWindowComponent;
+    private final NewAddressWindowController newAddressWindowController;
+    private final AddressRepository addressRepository;
+    private final CustomerRepository customerRepository;
+    private final MainWindowController mainWindowController;
 
     @Autowired
     public NewCustomerWindowController(
-            MainService mainService,
+            MainWindowService mainWindowService,
             NewAddressWindowComponent newAddressWindowComponent,
             @Lazy NewAddressWindowController newAddressWindowController,
             AddressRepository addressRepository,
             CustomerRepository customerRepository,
             MainWindowController mainWindowController) {
-        this.mainService = mainService;
+        this.mainWindowService = mainWindowService;
         this.newAddressWindowComponent = newAddressWindowComponent;
         this.newAddressWindowController = newAddressWindowController;
         this.addressRepository = addressRepository;
@@ -82,9 +80,6 @@ public class NewCustomerWindowController implements FxmlController {
 
     @FXML
     private TextField emailTextField;
-
-    @FXML
-    private Button newCustomerSaveButton;
 
     @FXML
     private TextField phoneTextField;
@@ -121,8 +116,8 @@ public class NewCustomerWindowController implements FxmlController {
     }
 
     @FXML
-    void onNewAddressButtonAction(ActionEvent event) {
-        mainService.onLoadComponent(
+    void onNewAddressButtonAction() {
+        mainWindowService.onLoadComponent(
                 newAddressWindowComponent,
                 400,
                 300,
@@ -143,44 +138,28 @@ public class NewCustomerWindowController implements FxmlController {
     }
 
     @FXML
-    void onNewCustomerSaveButtonAction(ActionEvent event) {
+    void onNewCustomerSaveButtonAction() {
         if(nameTextField.getText().length() == 0) {
             isNameEmpty = true;
         } else {
             isNameEmpty = false;
-            if(!nameTextField.getText().matches(".{1,255}")) {
-                isNameError = true;
-            } else {
-                isNameError = false;
-            }
+            isNameError = !".{1,255}".matches(nameTextField.getText());
         }
 
         if(emailTextField.getText().length() == 0) {
             isEmailEmpty = true;
         } else {
             isEmailEmpty = false;
-            if(!emailTextField.getText().matches(".{1,255}")) {
-                isEmailError = true;
-            } else {
-                isEmailError = false;
-            }
+            isEmailError = !".{1,255}".matches(emailTextField.getText());
         }
 
-        if(newAddressButton.getText().length() == 1) {
-            isAddressEmpty = true;
-        } else {
-            isAddressEmpty = false;
-        }
+        isAddressEmpty = newAddressButton.getText().length() == 1;
 
         if(nipTextField.getText().length() == 0) {
             isNipEmpty = true;
         } else {
             isNipEmpty = false;
-            if(!nipTextField.getText().matches(".{1,255}")) {
-                isNipError = true;
-            } else {
-                isNipError = false;
-            }
+            isNipError = !".{1,255}".matches(nipTextField.getText());
         }
 
         if(isNameEmpty) {
@@ -244,8 +223,6 @@ public class NewCustomerWindowController implements FxmlController {
 
     @Override
     public void initialize() {
-        String redColorFont = "-fx-text-fill: red; -fx-font-size: 12px;";
-
         customer = new Customer();
         address = new Address();
         isNewAddressStageOpen = false;
@@ -260,23 +237,22 @@ public class NewCustomerWindowController implements FxmlController {
         isEmailError = false;
         isEmailEmpty = false;
 
-        isAddressError = false;
         isAddressEmpty = false;
 
         isNipError = false;
         isNipEmpty = false;
 
         nameErrorLabel.setText("");
-        nameErrorLabel.setStyle(redColorFont);
+        nameErrorLabel.setStyle(Constants.RED_COLOR_FONT);
 
         emailErrorLabel.setText("");
-        emailErrorLabel.setStyle(redColorFont);
+        emailErrorLabel.setStyle(Constants.RED_COLOR_FONT);
 
         addressErrorLabel.setText("");
-        addressErrorLabel.setStyle(redColorFont);
+        addressErrorLabel.setStyle(Constants.RED_COLOR_FONT);
 
         nipErrorLabel.setText("");
-        nipErrorLabel.setStyle(redColorFont);
+        nipErrorLabel.setStyle(Constants.RED_COLOR_FONT);
     }
 
     public void setCustomerAddress(Address _address) {

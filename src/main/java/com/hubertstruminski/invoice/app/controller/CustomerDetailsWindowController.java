@@ -3,10 +3,8 @@ package com.hubertstruminski.invoice.app.controller;
 import com.hubertstruminski.invoice.app.model.Customer;
 import de.jensd.fx.glyphs.GlyphsDude;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
-import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.text.Text;
 import moe.tristan.easyfxml.api.FxmlController;
 import org.springframework.stereotype.Controller;
 
@@ -39,7 +37,7 @@ public class CustomerDetailsWindowController implements FxmlController {
     private Label countryValueLabel;
 
     @FXML
-    void onEmailSendButtonAction(ActionEvent event) {
+    void onEmailSendButtonAction() {
 
     }
 

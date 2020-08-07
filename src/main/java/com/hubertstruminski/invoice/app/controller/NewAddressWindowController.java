@@ -1,16 +1,13 @@
 package com.hubertstruminski.invoice.app.controller;
 
 import com.hubertstruminski.invoice.app.model.Address;
-import com.hubertstruminski.invoice.app.model.Tax;
-import com.hubertstruminski.invoice.app.repository.AddressRepository;
-import javafx.event.ActionEvent;
+import com.hubertstruminski.invoice.app.util.Constants;
 import javafx.stage.Stage;
 import moe.tristan.easyfxml.api.FxmlController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
@@ -21,18 +18,13 @@ public class NewAddressWindowController implements FxmlController {
     private boolean isAddressError = false;
     private boolean isCountryError = false;
     private boolean isUpdateFlag = false;
-    private boolean isUpdateFromTableView = false;
 
     private Address address = null;
 
-    private AddressRepository addressRepository;
-    private NewCustomerWindowController newCustomerWindowController;
+    private final NewCustomerWindowController newCustomerWindowController;
 
     @Autowired
-    public NewAddressWindowController(
-            AddressRepository addressRepository,
-            NewCustomerWindowController newCustomerWindowController) {
-        this.addressRepository = addressRepository;
+    public NewAddressWindowController(NewCustomerWindowController newCustomerWindowController) {
         this.newCustomerWindowController = newCustomerWindowController;
     }
 
@@ -52,9 +44,6 @@ public class NewAddressWindowController implements FxmlController {
     private Label countryErrorLabel;
 
     @FXML
-    private Button newAddressSaveButton;
-
-    @FXML
     private Label addressIdLabel;
 
     public void setUpdateFlag(boolean updateFlag) {
@@ -62,18 +51,9 @@ public class NewAddressWindowController implements FxmlController {
     }
 
     @FXML
-    void onNewAddressSaveButtonAction(ActionEvent event) {
-        if(!addressTextField.getText().matches(".{1,255}")) {
-            isAddressError = true;
-        } else {
-            isAddressError = false;
-        }
-
-        if(!countryTextField.getText().matches(".{0,255}")) {
-            isCountryError = true;
-        } else {
-            isCountryError = false;
-        }
+    void onNewAddressSaveButtonAction() {
+        isAddressError = !".{1,255}".matches(addressTextField.getText());
+        isCountryError = !".{0,255}".matches(countryTextField.getText());
 
         if(isAddressError) {
             addressErrorLabel.setText("Długość adresu musi być od 1 do 255 znaków.");
@@ -103,17 +83,17 @@ public class NewAddressWindowController implements FxmlController {
 
     @Override
     public void initialize() {
-        String redColorFont = "-fx-text-fill: red; -fx-font-size: 12px;";
-
         addressErrorLabel.setText("");
-        addressErrorLabel.setStyle(redColorFont);
+        addressErrorLabel.setStyle(Constants.RED_COLOR_FONT);
 
         countryErrorLabel.setText("");
-        countryErrorLabel.setStyle(redColorFont);
+        countryErrorLabel.setStyle(Constants.RED_COLOR_FONT);
 
         isUpdateFlag = false;
-        isUpdateFromTableView = false;
         address = new Address();
+
+        isCountryError = false;
+        isAddressError = false;
     }
 
     public void setTextFieldsForUpdateAddress(Address address) {

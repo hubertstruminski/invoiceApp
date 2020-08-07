@@ -1,5 +1,6 @@
 package com.hubertstruminski.invoice.app.config;
 
+import java.util.Objects;
 import java.util.Properties;
 
 import javax.sql.DataSource;
@@ -22,15 +23,17 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @PropertySource("classpath:application.properties")
 public class DataConfig {
 
-    private final String PROPERTY_DRIVER = "driver";
-    private final String PROPERTY_URL = "url";
-    private final String PROPERTY_USERNAME = "user";
-    private final String PROPERTY_PASSWORD = "password";
-    private final String PROPERTY_SHOW_SQL = "hibernate.show_sql";
-    private final String PROPERTY_DIALECT = "hibernate.dialect";
+    private static final String PROPERTY_DRIVER = "driver";
+    private static final String PROPERTY_URL = "url";
+    private static final String PROPERTY_SHOW_SQL = "hibernate.show_sql";
+    private static final String PROPERTY_DIALECT = "hibernate.dialect";
+
+    Environment environment;
 
     @Autowired
-    Environment environment;
+    public DataConfig(Environment environment) {
+        this.environment = environment;
+    }
 
     @Bean
     LocalContainerEntityManagerFactoryBean entityManagerFactory() {
@@ -46,9 +49,7 @@ public class DataConfig {
     DataSource dataSource() {
         DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setUrl(environment.getProperty(PROPERTY_URL));
-//        ds.setUsername(environment.getProperty(PROPERTY_USERNAME));
-//        ds.setPassword(environment.getProperty(PROPERTY_PASSWORD));
-        ds.setDriverClassName(environment.getProperty(PROPERTY_DRIVER));
+        ds.setDriverClassName(Objects.requireNonNull(environment.getProperty(PROPERTY_DRIVER)));
         return ds;
     }
 

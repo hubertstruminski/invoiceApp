@@ -4,37 +4,26 @@ import com.hubertstruminski.invoice.app.component.CustomerWindowComponent;
 import com.hubertstruminski.invoice.app.component.NewCustomerWindowComponent;
 import com.hubertstruminski.invoice.app.component.NewTaxWindowComponent;
 import com.hubertstruminski.invoice.app.component.TaxWindowComponent;
-import com.hubertstruminski.invoice.app.service.MainService;
+import com.hubertstruminski.invoice.app.service.MainWindowService;
 import de.jensd.fx.glyphs.GlyphsDude;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
-import moe.tristan.easyfxml.EasyFxml;
 import moe.tristan.easyfxml.api.FxmlController;
-import moe.tristan.easyfxml.model.fxml.FxmlLoadResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
 
 @Controller
 public class MainWindowController implements FxmlController {
 
     private final TaxWindowComponent taxWindowComponent;
     private final NewTaxWindowComponent newTaxWindowComponent;
-    private final EasyFxml easyFxml;
-    private final MainService mainService;
+    private final MainWindowService mainWindowService;
     private final NewCustomerWindowComponent newCustomerWindowComponent;
     private final CustomerWindowComponent customerWindowComponent;
 
@@ -42,14 +31,12 @@ public class MainWindowController implements FxmlController {
     public MainWindowController(
             TaxWindowComponent taxWindowComponent,
             NewTaxWindowComponent newTaxWindowComponent,
-            EasyFxml easyFxml,
-            MainService mainService,
+            MainWindowService mainWindowService,
             NewCustomerWindowComponent newCustomerWindowComponent,
             CustomerWindowComponent customerWindowComponent) {
         this.taxWindowComponent = taxWindowComponent;
         this.newTaxWindowComponent = newTaxWindowComponent;
-        this.easyFxml = easyFxml;
-        this.mainService = mainService;
+        this.mainWindowService = mainWindowService;
         this.newCustomerWindowComponent = newCustomerWindowComponent;
         this.customerWindowComponent = customerWindowComponent;
     }
@@ -89,8 +76,8 @@ public class MainWindowController implements FxmlController {
 
 
     @FXML
-    void onNewTaxMenuItemAction(ActionEvent event) {
-        mainService.onLoadComponent(
+    void onNewTaxMenuItemAction() {
+        mainWindowService.onLoadComponent(
                 newTaxWindowComponent,
                 400,
                 500,
@@ -99,8 +86,8 @@ public class MainWindowController implements FxmlController {
     }
 
     @FXML
-    void onNewCustomerAction(ActionEvent event) {
-        mainService.onLoadComponent(
+    void onNewCustomerAction() {
+        mainWindowService.onLoadComponent(
                 newCustomerWindowComponent,
                 400,
                 500,
@@ -109,64 +96,23 @@ public class MainWindowController implements FxmlController {
     }
 
     @FXML
-    void onCustomersButtonAction(ActionEvent event) {
-        customersButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                easyFxml.load(customerWindowComponent).afterNodeLoaded(new Consumer<Pane>() {
-                    @Override
-                    public void accept(Pane pane) {
-                        VBox vBox = (VBox) pane;
-                        vBox.prefHeightProperty().bind(rightVBoxView.getScene().heightProperty());
-                        rightVBoxView.getChildren().setAll(vBox);
-                        changeButtonsStyle(customersButton);
-                    }
-                });
-            }
-        });
+    void onCustomersButtonAction() {
+        mainWindowService.onSubViewChange(customersButton, rightVBoxView, customerWindowComponent);
+        changeButtonsStyle(customersButton);
     }
 
     @FXML
-    void onTaxButtonClickAction(ActionEvent event) {
-        taxButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                FxmlLoadResult<Pane, FxmlController> load = easyFxml.load(taxWindowComponent);
-                load.afterNodeLoaded(new Consumer<Pane>() {
-                    @Override
-                    public void accept(Pane pane) {
-                        VBox vBox = (VBox) pane;
-                        vBox.prefHeightProperty().bind(rightVBoxView.getScene().heightProperty());
-                        rightVBoxView.getChildren().setAll(vBox);
-                        changeButtonsStyle(taxButton);
-                    }
-                });
-            }
-        });
+    void onTaxButtonClickAction() {
+        mainWindowService.onSubViewChange(taxButton, rightVBoxView, taxWindowComponent);
+        changeButtonsStyle(taxButton);
     }
 
     public void refreshTaxTableView() {
-        easyFxml.load(taxWindowComponent)
-        .afterNodeLoaded(new Consumer<Pane>() {
-            @Override
-            public void accept(Pane pane) {
-                VBox vBox = (VBox) pane;
-                vBox.prefHeightProperty().bind(rightVBoxView.getScene().heightProperty());
-                rightVBoxView.getChildren().setAll(vBox);
-            }
-        });
+        mainWindowService.refreshSubView(taxWindowComponent, rightVBoxView);
     }
 
     public void refreshCustomerTableView() {
-        easyFxml.load(customerWindowComponent)
-                .afterNodeLoaded(new Consumer<Pane>() {
-                    @Override
-                    public void accept(Pane pane) {
-                        VBox vBox = (VBox) pane;
-                        vBox.prefHeightProperty().bind(rightVBoxView.getScene().heightProperty());
-                        rightVBoxView.getChildren().setAll(vBox);
-                    }
-                });
+        mainWindowService.refreshSubView(customerWindowComponent, rightVBoxView);
     }
 
 
@@ -210,13 +156,6 @@ public class MainWindowController implements FxmlController {
                 invoicesButton,
                 productsButton,
                 taxButton};
-
-        for(Button button: selectedButtons) {
-            if(button.equals(_button)) {
-                button.setStyle("-fx-background-color: #ababab;");
-            } else {
-                button.setStyle("-fx-background-color: #E5E5E5;");
-            }
-        }
+        mainWindowService.findButtonForStyleChange(selectedButtons, _button);
     }
 }

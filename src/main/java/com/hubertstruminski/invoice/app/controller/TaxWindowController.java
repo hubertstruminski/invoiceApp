@@ -1,53 +1,30 @@
 package com.hubertstruminski.invoice.app.controller;
 
-import com.hubertstruminski.invoice.app.component.NewTaxWindowComponent;
 import com.hubertstruminski.invoice.app.model.Tax;
-import com.hubertstruminski.invoice.app.repository.TaxRepository;
+import com.hubertstruminski.invoice.app.service.CoreService;
+import com.hubertstruminski.invoice.app.service.TaxWindowService;
+import com.hubertstruminski.invoice.app.util.Constants;
 import javafx.beans.property.ReadOnlyObjectWrapper;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.Cursor;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
-import javafx.util.Callback;
-import moe.tristan.easyfxml.EasyFxml;
 import moe.tristan.easyfxml.api.FxmlController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import java.util.function.Consumer;
-
 @Controller
 public class TaxWindowController implements FxmlController {
 
-    private static final String warningButtonStyles = "-fx-background-color: #FFC108; -fx-text-fill: #212529;";
-    private static final String dangerButtonStyles = "-fx-background-color: #DC3545; -fx-text-fill: white;";
-
-    private TaxRepository taxRepository;
-    private NewTaxWindowComponent newTaxWindowComponent;
-    private EasyFxml easyFxml;
-    private NewTaxWindowController newTaxWindowController;
-    private MainWindowController mainWindowController;
+    private final TaxWindowService taxWindowService;
+    private final CoreService coreService;
 
     @Autowired
     public TaxWindowController(
-            TaxRepository taxRepository,
-            NewTaxWindowComponent newTaxWindowComponent,
-            EasyFxml easyFxml,
-            NewTaxWindowController newTaxWindowController,
-            MainWindowController mainWindowController) {
-        this.taxRepository = taxRepository;
-        this.newTaxWindowComponent = newTaxWindowComponent;
-        this.easyFxml = easyFxml;
-        this.newTaxWindowController = newTaxWindowController;
-        this.mainWindowController = mainWindowController;
+            TaxWindowService taxWindowService,
+            CoreService coreService) {
+        this.taxWindowService = taxWindowService;
+        this.coreService = coreService;
     }
 
     @FXML
@@ -88,32 +65,23 @@ public class TaxWindowController implements FxmlController {
         editTableColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.1));
         editTableColumn.setResizable(false);
 
-        deleteTableColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.1));
-        deleteTableColumn.setResizable(false);
-
-        Iterable<Tax> taxIterable = taxRepository.findAll();
-        ObservableList<Tax> observableTaxList = FXCollections.observableArrayList();
-        taxIterable.forEach(observableTaxList::add);
-
-
-        tableView.setItems(observableTaxList);
+        coreService.setColumnsAndDataInTableView(deleteTableColumn, nameTableColumn, tableView, taxWindowService);
 
         numberTableColumn.setCellValueFactory(parameter ->
                 new ReadOnlyObjectWrapper(tableView.getItems().indexOf(parameter.getValue()) + 1));
         numberTableColumn.setSortable(false);
 
-        nameTableColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         descriptionTableColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
         taxAmountTableColumn.setCellValueFactory(new PropertyValueFactory<>("taxAmount"));
 
-        editTableColumn = setOnClickEditDeleteAction(editTableColumn,
+        editTableColumn = taxWindowService.setOnClickEditDeleteAction(editTableColumn,
                 "Edytuj",
                 true,
-                warningButtonStyles);
-        deleteTableColumn = setOnClickEditDeleteAction(deleteTableColumn,
+                Constants.WARNING_BUTTON_STYLES);
+        deleteTableColumn = taxWindowService.setOnClickEditDeleteAction(deleteTableColumn,
                 "Usuń",
                 false,
-                dangerButtonStyles);
+                Constants.DANGER_BUTTON_STYLES);
 
         tableView.getColumns().setAll(
                 numberTableColumn,
@@ -122,63 +90,5 @@ public class TaxWindowController implements FxmlController {
                 descriptionTableColumn,
                 editTableColumn,
                 deleteTableColumn);
-    }
-
-    public TableColumn setOnClickEditDeleteAction(TableColumn tableColumn, String actionString, boolean isUpdating,
-                                                  String styles) {
-        Callback<TableColumn<Tax, String>, TableCell<Tax, String>> callback
-                =
-                new Callback<>() {
-                    @Override
-                    public TableCell call(final TableColumn<Tax, String> param) {
-                        final TableCell<Tax, String> cell = new TableCell<Tax, String>() {
-                            Button btn = new Button(actionString);
-
-                            public Button getBtn() {
-                                btn.setStyle(styles);
-                                btn.setCursor(Cursor.HAND);
-                                return btn;
-                            }
-
-                            @Override
-                            public void updateItem(String item, boolean empty) {
-                                if (empty) {
-                                    setGraphic(null);
-                                } else {
-                                    btn.setOnAction(event -> {
-                                        Tax tax = getTableView().getItems().get(getIndex());
-                                        if(isUpdating) {
-                                            invokeNewTaxWindowForUpdateTax();
-                                            newTaxWindowController.setTextFields(tax);
-                                            newTaxWindowController.setUpdateFlag(true);
-                                        } else {
-                                            taxRepository.delete(tax);
-                                            mainWindowController.refreshTaxTableView();
-                                        }
-                                    });
-                                    setGraphic(getBtn());
-                                }
-                            }
-                        };
-                        return cell;
-                    }
-                };
-        tableColumn.setCellFactory(callback);
-        return tableColumn;
-    }
-
-    public void invokeNewTaxWindowForUpdateTax() {
-        easyFxml.load(newTaxWindowComponent)
-                .afterNodeLoaded(new Consumer<Pane>() {
-                    @Override
-                    public void accept(Pane pane) {
-                        Scene scene = new Scene(pane, 400, 500);
-                        Stage stage = new Stage();
-                        stage.setScene(scene);
-                        stage.setResizable(false);
-
-                        stage.show();
-                    }
-                });
     }
 }

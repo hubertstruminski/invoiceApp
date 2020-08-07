@@ -47,5 +47,6 @@ module invoiceApp {
     opens com.hubertstruminski.invoice.app.fx.manager;
     opens com.hubertstruminski.invoice.app.model;
     opens com.hubertstruminski.invoice.app.service;
+    opens com.hubertstruminski.invoice.app.util;
 
 }

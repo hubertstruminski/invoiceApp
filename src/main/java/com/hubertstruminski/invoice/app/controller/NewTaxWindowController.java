@@ -2,7 +2,7 @@ package com.hubertstruminski.invoice.app.controller;
 
 import com.hubertstruminski.invoice.app.model.Tax;
 import com.hubertstruminski.invoice.app.repository.TaxRepository;
-import javafx.event.ActionEvent;
+import com.hubertstruminski.invoice.app.util.Constants;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -23,8 +23,8 @@ public class NewTaxWindowController implements FxmlController {
 
     private boolean isUpdateFlag = false;
 
-    private TaxRepository taxRepository;
-    private MainWindowController mainWindowController;
+    private final TaxRepository taxRepository;
+    private final MainWindowController mainWindowController;
 
     @Autowired
     public NewTaxWindowController(
@@ -66,25 +66,10 @@ public class NewTaxWindowController implements FxmlController {
     }
 
     @FXML
-    void onNewTaxSaveButtonAction(ActionEvent event) {
-
-        if(!nameTextField.getText().matches(".{1,255}")) {
-            isTaxNameError = true;
-        } else {
-            isTaxNameError = false;
-        }
-
-        if(!taxDescriptionErrorLabel.getText().matches(".{0,255}")) {
-            isTaxDescriptionError = true;
-        } else {
-            isTaxDescriptionError = false;
-        }
-
-        if(!taxAmountTextField.getText().matches("[0-9]+%$")) {
-            isTaxAmountError = true;
-        } else {
-            isTaxAmountError = false;
-        }
+    void onNewTaxSaveButtonAction() {
+        isTaxNameError = !".{1,255}".matches(nameTextField.getText());
+        isTaxDescriptionError = !taxDescriptionErrorLabel.getText().matches(".{0,255}");
+        isTaxAmountError = !taxAmountTextField.getText().matches("[0-9]+%$");
 
         if(isTaxNameError) {
             taxNameErrorLabel.setText("Długość nazwy musi być od 1 do 255 znaków.");
@@ -124,19 +109,21 @@ public class NewTaxWindowController implements FxmlController {
 
     @Override
     public void initialize() {
-        String redColorFont = "-fx-text-fill: red; -fx-font-size: 12px;";
-
         taxNameErrorLabel.setText("");
-        taxNameErrorLabel.setStyle(redColorFont);
+        taxNameErrorLabel.setStyle(Constants.RED_COLOR_FONT);
 
         taxDescriptionErrorLabel.setText("");
-        taxDescriptionErrorLabel.setStyle(redColorFont);
+        taxDescriptionErrorLabel.setStyle(Constants.RED_COLOR_FONT);
 
         taxAmountErrorLabel.setText("");
-        taxAmountErrorLabel.setStyle(redColorFont);
+        taxAmountErrorLabel.setStyle(Constants.RED_COLOR_FONT);
 
         newTaxIdLabel.setVisible(false);
         isUpdateFlag = false;
+
+        isTaxAmountError = false;
+        isTaxDescriptionError = false;
+        isTaxNameError = false;
     }
 
     public void setTextFields(Tax tax) {
