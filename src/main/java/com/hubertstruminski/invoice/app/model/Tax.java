@@ -1,11 +1,10 @@
 package com.hubertstruminski.invoice.app.model;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Tax implements Serializable {
+public class Tax {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

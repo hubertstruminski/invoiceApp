@@ -1,10 +1,9 @@
 package com.hubertstruminski.invoice.app.model;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
-public class Address implements Serializable {
+public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

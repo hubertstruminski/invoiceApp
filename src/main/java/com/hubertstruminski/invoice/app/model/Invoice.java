@@ -1,13 +1,11 @@
 package com.hubertstruminski.invoice.app.model;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-public class Invoice implements Serializable {
+public class Invoice {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -10,15 +10,11 @@ import com.hubertstruminski.invoice.app.repository.ProductRepository;
 import com.hubertstruminski.invoice.app.repository.TaxRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.Cursor;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.stage.Stage;
 import javafx.util.Callback;
-import moe.tristan.easyfxml.EasyFxml;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,7 +24,6 @@ import java.util.List;
 public class TaxWindowService implements CoreServiceInterface {
 
     private final TaxRepository taxRepository;
-    private final EasyFxml easyFxml;
     private final NewTaxWindowComponent newTaxWindowComponent;
     private final NewTaxWindowController newTaxWindowController;
     private final MainWindowController mainWindowController;
@@ -43,14 +38,12 @@ public class TaxWindowService implements CoreServiceInterface {
             NewTaxWindowComponent newTaxWindowComponent,
             NewTaxWindowController newTaxWindowController,
             MainWindowController mainWindowController,
-            EasyFxml easyFxml,
             CoreService coreService,
             ProductRepository productRepository,
             MainWindowService mainWindowService,
             TaxWindowErrorAssignComponent taxWindowErrorAssignComponent) {
         this.taxRepository = taxRepository;
         this.newTaxWindowComponent = newTaxWindowComponent;
-        this.easyFxml = easyFxml;
         this.newTaxWindowController = newTaxWindowController;
         this.mainWindowController = mainWindowController;
         this.coreService = coreService;
@@ -67,17 +60,17 @@ public class TaxWindowService implements CoreServiceInterface {
         tableView.setItems(observableTaxList);
     }
 
-    public void invokeNewTaxWindowForUpdateTax() {
-        easyFxml.load(newTaxWindowComponent)
-                .afterNodeLoaded(pane -> {
-                    Scene scene = new Scene(pane, 400, 500);
-                    Stage stage = new Stage();
-                    stage.setScene(scene);
-                    stage.setResizable(false);
-
-                    stage.show();
-                });
-    }
+//    public void invokeNewTaxWindowForUpdateTax() {
+//        easyFxml.load(newTaxWindowComponent)
+//                .afterNodeLoaded(pane -> {
+//                    Scene scene = new Scene(pane, 400, 500);
+//                    Stage stage = new Stage();
+//                    stage.setScene(scene);
+//                    stage.setResizable(false);
+//
+//                    stage.show();
+//                });
+//    }
 
     public TableColumn setOnClickEditDeleteAction(TableColumn tableColumn, String actionString, boolean isUpdating,
                                                   String styles) {
@@ -119,7 +112,7 @@ public class TaxWindowService implements CoreServiceInterface {
     }
 
     public void updateAndRefresh(Tax tax) {
-        invokeNewTaxWindowForUpdateTax();
+        coreService.invokeNewItemWindow(newTaxWindowComponent);
         newTaxWindowController.setTextFields(tax);
         newTaxWindowController.setUpdateFlag(true);
     }

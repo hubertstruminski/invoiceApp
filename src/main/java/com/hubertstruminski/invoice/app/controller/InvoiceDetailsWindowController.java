@@ -2,8 +2,7 @@ package com.hubertstruminski.invoice.app.controller;
 
 import com.hubertstruminski.invoice.app.model.Invoice;
 import com.hubertstruminski.invoice.app.model.Product;
-import com.hubertstruminski.invoice.app.repository.ProductRepository;
-import com.hubertstruminski.invoice.app.util.Constants;
+import com.hubertstruminski.invoice.app.service.InvoiceDetailsWindowService;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import moe.tristan.easyfxml.api.FxmlController;
@@ -14,16 +13,16 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 public class InvoiceDetailsWindowController implements FxmlController {
-    private final ProductRepository productRepository;
+
+    private final InvoiceDetailsWindowService invoiceDetailsWindowService;
 
     @Autowired
-    public InvoiceDetailsWindowController(ProductRepository productRepository) {
-        this.productRepository = productRepository;
+    public InvoiceDetailsWindowController(InvoiceDetailsWindowService invoiceDetailsWindowService) {
+        this.invoiceDetailsWindowService = invoiceDetailsWindowService;
     }
 
     @FXML
@@ -66,22 +65,14 @@ public class InvoiceDetailsWindowController implements FxmlController {
         scrollPane.setFitToWidth(true);
         scrollPane.setContent(mainVBox);
 
-        Iterable<Product> productsIterable = productRepository.findAllByInvoice(invoice);
-        List<Product> products = new ArrayList<>();
-        productsIterable.forEach(products::add);
+        List<Product> products = invoiceDetailsWindowService.findProducts(invoice);
 
         for(Product product: products) {
-            GridPane gridPane = new GridPane();
-
-            gridPane.add(new Label(product.getName()), 0, 0);
-            gridPane.add(new Label("Ilość: " + product.getAmount()), 0 ,1);
-            gridPane.add(new Label("Cena: " + product.getPrice() + Constants.CURRENCY), 0 ,2);
-
-            VBox vBox = new VBox(gridPane);
-            vBox.setFillWidth(true);
-
-            vBox.setStyle(Constants.INVOICE_DETAILS_PRODUCTS_ITEMS);
+            GridPane gridPane = invoiceDetailsWindowService.setGridPane(product);
+            VBox vBox = invoiceDetailsWindowService.createVBox(gridPane);
             mainVBox.getChildren().add(vBox);
         }
     }
+
+
 }

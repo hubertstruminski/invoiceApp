@@ -1,10 +1,9 @@
 package com.hubertstruminski.invoice.app.model;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
-public class Token implements Serializable {
+public class Token {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,10 +21,6 @@ public class Token implements Serializable {
         this.id = id;
     }
 
-    public String getAccessToken() {
-        return accessToken;
-    }
-
     public void setAccessToken(String accessToken) {
         this.accessToken = accessToken;
     }
@@ -36,10 +31,6 @@ public class Token implements Serializable {
 
     public void setRefreshToken(String refreshToken) {
         this.refreshToken = refreshToken;
-    }
-
-    public long getExpiresIn() {
-        return expiresIn;
     }
 
     public void setExpiresIn(long expiresIn) {

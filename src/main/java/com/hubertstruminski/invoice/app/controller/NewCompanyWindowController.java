@@ -1,12 +1,9 @@
 package com.hubertstruminski.invoice.app.controller;
 
-import com.hubertstruminski.invoice.app.component.NewNextCompanyErrorWindowComponent;
 import com.hubertstruminski.invoice.app.model.Company;
 import com.hubertstruminski.invoice.app.repository.CompanyRepository;
-import com.hubertstruminski.invoice.app.service.MainWindowService;
 import com.hubertstruminski.invoice.app.util.Constants;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 import moe.tristan.easyfxml.api.FxmlController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -16,9 +13,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 public class NewCompanyWindowController implements FxmlController {
@@ -44,36 +38,21 @@ public class NewCompanyWindowController implements FxmlController {
     private final CompanyDetailsWindowController companyDetailsWindowController;
     private final CompanyWindowController companyWindowController;
     private final MainWindowController mainWindowController;
-    private final MainWindowService mainWindowService;
-    private final NewNextCompanyErrorWindowComponent newNextCompanyErrorWindowComponent;
 
     @Autowired
     public NewCompanyWindowController(
             CompanyRepository companyRepository,
             CompanyDetailsWindowController companyDetailsWindowController,
             @Lazy CompanyWindowController companyWindowController,
-            MainWindowController mainWindowController,
-            MainWindowService mainWindowService,
-            NewNextCompanyErrorWindowComponent newNextCompanyErrorWindowComponent) {
+            MainWindowController mainWindowController) {
         this.companyRepository = companyRepository;
         this.companyDetailsWindowController = companyDetailsWindowController;
         this.companyWindowController = companyWindowController;
         this.mainWindowController = mainWindowController;
-        this.mainWindowService = mainWindowService;
-        this.newNextCompanyErrorWindowComponent = newNextCompanyErrorWindowComponent;
     }
 
     @FXML
     private VBox vBox;
-
-    @FXML
-    private Label nameLabel;
-
-    @FXML
-    private Label descriptionLabel;
-
-    @FXML
-    private Label taxAmountLabel;
 
     @FXML
     private TextField companyNameTextField;
@@ -206,8 +185,6 @@ public class NewCompanyWindowController implements FxmlController {
             if(isUpdateFlag) {
                 company.setId(Long.parseLong(companyIdLabel.getText()));
             }
-
-
 
             company.setCompanyName(companyNameTextField.getText());
             company.setAddress(addressTextField.getText());

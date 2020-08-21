@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Label?>
+
 <VBox fx:id="vBox" alignment="CENTER" prefHeight="200" prefWidth="550" styleClass="newTaxVBoxBackground" stylesheets="@../css/default.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hubertstruminski.invoice.app.controller.TaxWindowErrorAssignController">
    <children>
       <Label text="Nie można usunąć tego podatku, ponieważ jest przypisany do produktu!" />

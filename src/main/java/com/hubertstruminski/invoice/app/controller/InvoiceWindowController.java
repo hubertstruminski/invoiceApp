@@ -1,10 +1,8 @@
 package com.hubertstruminski.invoice.app.controller;
 
-import com.hubertstruminski.invoice.app.model.Customer;
 import com.hubertstruminski.invoice.app.model.Invoice;
 import com.hubertstruminski.invoice.app.model.Product;
 import com.hubertstruminski.invoice.app.service.CoreService;
-import com.hubertstruminski.invoice.app.service.CustomerWindowService;
 import com.hubertstruminski.invoice.app.service.InvoiceWindowService;
 import com.hubertstruminski.invoice.app.util.Constants;
 import javafx.beans.property.ReadOnlyObjectWrapper;

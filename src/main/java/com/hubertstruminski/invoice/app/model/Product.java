@@ -1,11 +1,10 @@
 package com.hubertstruminski.invoice.app.model;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Entity
-public class Product implements Serializable {
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -233,11 +233,9 @@ public class NewProductWindowController implements FxmlController {
 
         if(!isNameEmpty && !isNameError && !isDescriptionEmpty && !isPriceEmpty && !isTaxEmpty &&
                 !isPriceError && !isDiscountError && !isAmountEmpty && !isAmountError && !isUnitError && !isUnitEmpty) {
-
             if(isUpdateFlag) {
                 product.setId(Long.parseLong(productIdLabel.getText()));
             }
-
             product.setName(nameTextField.getText());
             product.setDescription(descriptionTextField.getText());
             product.setPrice(new BigDecimal(priceTextField.getText()));
@@ -247,7 +245,6 @@ public class NewProductWindowController implements FxmlController {
             if(discountTextField.getText().length() != 0) {
                 product.setDiscount(Integer.parseInt(discountTextField.getText()));
             }
-
             product.setTax(tax);
             taxRepository.save(tax);
 

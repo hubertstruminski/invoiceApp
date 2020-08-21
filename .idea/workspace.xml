@@ -38,219 +38,90 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82dd17d6-8d65-489f-b650-36181d2b8ce8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_api_client_google_api_client_1_23_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_apis_google_api_services_gmail_v1_rev83_1_23_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_1_3_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_jdk5_17_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_http_client_google_http_client_1_23_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_http_client_google_http_client_jackson2_1_23_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_oauth_client_google_oauth_client_1_23_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_oauth_client_google_oauth_client_java6_1_23_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_oauth_client_google_oauth_client_jetty_1_23_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_barcodes_7_1_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_font_asian_7_1_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_forms_7_1_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_html2pdf_2_1_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_hyph_7_1_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_io_7_1_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_kernel_7_1_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_layout_7_1_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_pdfa_7_1_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_sign_7_1_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_styled_xml_parser_7_1_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_svg_7_1_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_javax_mail_1_6_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_net_httpserver_http_20070405.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_14.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mortbay_jetty_jetty_6_1_26.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mortbay_jetty_jetty_util_6_1_26.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mortbay_jetty_servlet_api_2_5_20081211.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/component/ChooseCustomerWindowComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/component/ChooseProductWindowComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/component/ChooseTaxWindowComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/component/CompanyDetailsWindowComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/component/CompanyWindowComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/component/EasyFxmlGreetingsWindowComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/component/EmailFailureSendWindowComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/component/EmailSuccessfullySendWindowComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/component/EmailWindowComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/component/InvoiceDetailsWindowComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/component/InvoiceWindowComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/component/LoginWindowComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/component/NewCompanyWindowComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/component/NewInvoiceWindowComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/component/NewNextCompanyErrorWindowComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/component/PdfWindowComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/component/TaxWindowErrorAssignComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/ChooseCustomerWindowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/ChooseProductWindowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/ChooseTaxWindowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/CompanyDetailsWindowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/CompanyWindowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/EasyFxmlGreetingsWindowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/EmailFailureSendWindowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/EmailSuccessfullySendWindowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/EmailWindowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/InvoiceDetailsWindowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/InvoiceWindowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/NewCompanyWindowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/NewInvoiceWindowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/NewNextCompanyErrorWindowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/PdfWindowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/TaxWindowErrorAssignController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/dto/ExchangeAuthorizationCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/dto/GoogleTokenResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/dto/RefreshTokenDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/dto/RefreshTokenResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/model/Company.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/model/Invoice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/model/Status.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/model/Token.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/repository/CompanyRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/repository/InvoiceRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/repository/TokenRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/CompanyWindowService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/GmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/InvoiceWindowService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/chooseCustomerWindow.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/chooseProductWindow.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/chooseTaxWindow.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/companyDetailsWindow.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/companyWindow.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/easyFxml.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/easyFxmlGreetingsWindow.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/emailFailureSendWindow.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/emailSuccessfullySendWindow.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/emailWindow.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/invoiceDetailsWindow.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/invoiceWindow.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/newCompanyWindow.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/newInvoiceWindow.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/newNextCompanyErrorWindow.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pdf.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pdfWindow.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/taxWindowErrorAssign.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/invoiceApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/invoiceApp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_12.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_mac_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_mac_12.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_12.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_mac_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_mac_12.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_12.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_mac_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_mac_12.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_12.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_mac_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_mac_12.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_12.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_mac_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_mac_12.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_swing_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_swing_12.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_swing_mac_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_swing_mac_12.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_web_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_web_14.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_web_mac_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_web_mac_14.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/ChooseCoreService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/ChooseCustomerWindowService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/ChooseProductWindowService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/ChooseTaxWindowService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/CustomerDetailsWindowService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/EmailWindowService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/InvoiceDetailsWindowService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/LoginWindowService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/NewInvoiceWindowService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/PdfWindowService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/invoiceAppDatabase.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/invoiceAppDatabase.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/invoiceAppDatabase.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/invoiceAppDatabase.trace.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/invoiceApp_jar/invoiceApp.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/invoiceApp_jar/invoiceApp.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/InvoiceAppApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/InvoiceAppApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index-to-pdf.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/config/DataConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/config/DataConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/config/OAuthAuthenticator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/config/OAuthCompletedCallback.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/config/OAuthGoogleAuthenticator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/ChooseCustomerWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/ChooseCustomerWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/ChooseProductWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/ChooseProductWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/ChooseTaxWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/ChooseTaxWindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/CustomerDetailsWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/CustomerDetailsWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/CustomerWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/CustomerWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/EmailWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/EmailWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/InvoiceDetailsWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/InvoiceDetailsWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/InvoiceWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/InvoiceWindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/LoginWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/LoginWindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/MainWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/MainWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/NewCustomerWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/NewCustomerWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/NewCompanyWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/NewCompanyWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/NewInvoiceWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/NewInvoiceWindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/NewProductWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/NewProductWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/NewTaxWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/NewTaxWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/ProductDetailsWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/ProductDetailsWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/ProductWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/ProductWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/TaxWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/TaxWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/PdfWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/PdfWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/dto/ExchangeAuthorizationCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/dto/ExchangeAuthorizationCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/dto/GoogleTokenResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/dto/GoogleTokenResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/dto/RefreshTokenDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/dto/RefreshTokenDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/dto/RefreshTokenResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/dto/RefreshTokenResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/model/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/model/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/model/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/model/Company.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/model/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/model/Invoice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/model/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/model/Status.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/model/Tax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/model/Tax.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/model/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/model/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/CompanyWindowService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/CompanyWindowService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/CoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/CoreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/MainWindowService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/MainWindowService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/CustomerWindowService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/CustomerWindowService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/InvoiceWindowService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/InvoiceWindowService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/ProductWindowService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/ProductWindowService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/TaxWindowService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/TaxWindowService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/util/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/customerDetailsWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/customerDetailsWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/loginWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/loginWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/mainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/mainWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/newProductWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/newProductWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productDetailsWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/productDetailsWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/googleLogin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/InvoiceAppApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/InvoiceAppApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/component/CustomerDetailsWindowComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/component/CustomerDetailsWindowComponent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/component/CustomerWindowComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/component/CustomerWindowComponent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/component/MainWindowComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/component/MainWindowComponent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/component/NewAddressWindowComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/component/NewAddressWindowComponent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/component/NewCustomerWindowComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/component/NewCustomerWindowComponent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/component/NewProductWindowComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/component/NewProductWindowComponent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/component/NewTaxWindowComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/component/NewTaxWindowComponent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/component/ProductDetailsWindowComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/component/ProductDetailsWindowComponent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/component/ProductWindowComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/component/ProductWindowComponent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/component/TaxWindowComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/component/TaxWindowComponent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/credentials/tokens.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/chooseCustomerWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/chooseCustomerWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/chooseProductWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/chooseProductWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/chooseTaxWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/chooseTaxWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/emailFailureSendWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/emailFailureSendWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/emailSuccessfullySendWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/emailSuccessfullySendWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/newNextCompanyErrorWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/newNextCompanyErrorWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/pdf.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/pdf.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/taxWindowErrorAssign.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/taxWindowErrorAssign.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hubertstruminski/invoice/app/InvoiceAppApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hubertstruminski/invoice/app/InvoiceAppApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/config/DataConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/config/DataConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/config/OAuthAuthenticator$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/config/OAuthAuthenticator$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/config/OAuthAuthenticator$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/config/OAuthAuthenticator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/config/OAuthAuthenticator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/config/OAuthCompletedCallback.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/config/OAuthGoogleAuthenticator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/config/WebSecurityConfigClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/config/WebSecurityConfigClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/CustomerDetailsWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/CustomerDetailsWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/CustomerWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/CustomerWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/LoginWindowController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/LoginWindowController$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/config/OAuthAuthenticator$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/config/OAuthAuthenticator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/ChooseCustomerWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/ChooseCustomerWindowController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/ChooseProductWindowController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/ChooseTaxWindowController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/CustomerDetailsWindowController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/EmailWindowController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/InvoiceDetailsWindowController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/InvoiceWindowController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/LoginWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/LoginWindowController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/MainWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/MainWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/NewAddressWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/NewAddressWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/NewCustomerWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/NewCustomerWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/NewProductWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/NewProductWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/NewTaxWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/NewTaxWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/ProductDetailsWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/ProductDetailsWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/ProductWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/ProductWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/TaxWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/TaxWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/fx/manager/MainWindowUiManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/fx/manager/MainWindowUiManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/fx/manager/NewTaxWindowUiManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/fx/manager/NewTaxWindowUiManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/NewCompanyWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/NewCompanyWindowController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/NewInvoiceWindowController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/NewProductWindowController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/controller/PdfWindowController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/dto/ExchangeAuthorizationCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/dto/ExchangeAuthorizationCode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/dto/GoogleTokenResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/dto/GoogleTokenResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/dto/RefreshTokenDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/dto/RefreshTokenDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/dto/RefreshTokenResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/dto/RefreshTokenResponse.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/model/Address.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/model/Address.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/model/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/model/Company.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/model/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/model/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/model/Invoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/model/Invoice.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/model/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/model/Status.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/model/Status.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/model/Tax.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/model/Tax.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/repository/AddressRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/repository/AddressRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/repository/CustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/repository/CustomerRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/repository/ProductRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/repository/ProductRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/repository/TaxRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/repository/TaxRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/CoreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/CoreService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/CoreServiceInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/CoreServiceInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/CustomerWindowService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/CustomerWindowService$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/CustomerWindowService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/CustomerWindowService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/MainWindowService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/MainWindowService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/ProductWindowService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/ProductWindowService$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/ProductWindowService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/ProductWindowService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/TaxWindowService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/TaxWindowService$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/TaxWindowService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/service/TaxWindowService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/util/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/util/Constants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/css/default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/customerDetailsWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/customerDetailsWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/loginWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/loginWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/mainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/mainWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/newProductWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/newProductWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productDetailsWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productDetailsWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/googleLogin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hubertstruminski/invoice/app/InvoiceAppApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hubertstruminski/invoice/app/InvoiceAppApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/model/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hubertstruminski/invoice/app/model/Token.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -410,7 +281,7 @@
       <workItem from="1597930042414" duration="224000" />
       <workItem from="1597930281589" duration="7159000" />
       <workItem from="1597937812869" duration="11788000" />
-      <workItem from="1598013901080" duration="7152000" />
+      <workItem from="1598013901080" duration="18264000" />
     </task>
     <servers />
   </component>
@@ -495,105 +366,105 @@
       <screen x="0" y="23" width="1792" height="1034" />
     </state>
     <state width="569" height="466" key="DebuggerActiveHint/0.23.1792.1034@0.23.1792.1034" timestamp="1597934640441" />
-    <state width="1750" height="312" key="GridCell.Tab.0.bottom" timestamp="1598023478762">
-      <screen x="0" y="23" width="1792" height="1033" />
+    <state width="1750" height="236" key="GridCell.Tab.0.bottom" timestamp="1598036715755">
+      <screen x="0" y="23" width="1792" height="1034" />
     </state>
     <state width="1738" height="304" key="GridCell.Tab.0.bottom/0.23.1792.1028@0.23.1792.1028" timestamp="1595453072030" />
     <state width="1750" height="276" key="GridCell.Tab.0.bottom/0.23.1792.1030@0.23.1792.1030" timestamp="1595662649633" />
     <state width="1750" height="276" key="GridCell.Tab.0.bottom/0.23.1792.1031@0.23.1792.1031" timestamp="1595663879588" />
     <state width="1750" height="312" key="GridCell.Tab.0.bottom/0.23.1792.1033@0.23.1792.1033" timestamp="1598023478762" />
-    <state width="1750" height="312" key="GridCell.Tab.0.bottom/0.23.1792.1034@0.23.1792.1034" timestamp="1598023024463" />
+    <state width="1750" height="236" key="GridCell.Tab.0.bottom/0.23.1792.1034@0.23.1792.1034" timestamp="1598036715755" />
     <state width="1750" height="312" key="GridCell.Tab.0.bottom/0.23.1792.1036@0.23.1792.1036" timestamp="1598013883408" />
     <state width="1750" height="312" key="GridCell.Tab.0.bottom/0.23.1792.1037@0.23.1792.1037" timestamp="1597946321723" />
     <state width="1417" height="262" key="GridCell.Tab.0.bottom/0.23.1792.1041@0.23.1792.1041" timestamp="1597424486128" />
     <state width="1749" height="262" key="GridCell.Tab.0.bottom/0.23.1792.1042@0.23.1792.1042" timestamp="1597404275479" />
     <state width="1750" height="306" key="GridCell.Tab.0.bottom/0.23.1792.1043@0.23.1792.1043" timestamp="1596986847418" />
-    <state width="1750" height="312" key="GridCell.Tab.0.center" timestamp="1598023478762">
-      <screen x="0" y="23" width="1792" height="1033" />
+    <state width="1750" height="236" key="GridCell.Tab.0.center" timestamp="1598036715755">
+      <screen x="0" y="23" width="1792" height="1034" />
     </state>
     <state width="1738" height="304" key="GridCell.Tab.0.center/0.23.1792.1028@0.23.1792.1028" timestamp="1595453072029" />
     <state width="1750" height="276" key="GridCell.Tab.0.center/0.23.1792.1030@0.23.1792.1030" timestamp="1595662649633" />
     <state width="1750" height="276" key="GridCell.Tab.0.center/0.23.1792.1031@0.23.1792.1031" timestamp="1595663879588" />
     <state width="1750" height="312" key="GridCell.Tab.0.center/0.23.1792.1033@0.23.1792.1033" timestamp="1598023478762" />
-    <state width="1750" height="312" key="GridCell.Tab.0.center/0.23.1792.1034@0.23.1792.1034" timestamp="1598023024462" />
+    <state width="1750" height="236" key="GridCell.Tab.0.center/0.23.1792.1034@0.23.1792.1034" timestamp="1598036715755" />
     <state width="1750" height="312" key="GridCell.Tab.0.center/0.23.1792.1036@0.23.1792.1036" timestamp="1598013883407" />
     <state width="1750" height="312" key="GridCell.Tab.0.center/0.23.1792.1037@0.23.1792.1037" timestamp="1597946321722" />
     <state width="1417" height="262" key="GridCell.Tab.0.center/0.23.1792.1041@0.23.1792.1041" timestamp="1597424486127" />
     <state width="1749" height="262" key="GridCell.Tab.0.center/0.23.1792.1042@0.23.1792.1042" timestamp="1597404275479" />
     <state width="1750" height="306" key="GridCell.Tab.0.center/0.23.1792.1043@0.23.1792.1043" timestamp="1596986847418" />
-    <state width="1750" height="312" key="GridCell.Tab.0.left" timestamp="1598023478761">
-      <screen x="0" y="23" width="1792" height="1033" />
+    <state width="1750" height="236" key="GridCell.Tab.0.left" timestamp="1598036715754">
+      <screen x="0" y="23" width="1792" height="1034" />
     </state>
     <state width="1738" height="304" key="GridCell.Tab.0.left/0.23.1792.1028@0.23.1792.1028" timestamp="1595453072028" />
     <state width="1750" height="276" key="GridCell.Tab.0.left/0.23.1792.1030@0.23.1792.1030" timestamp="1595662649632" />
     <state width="1750" height="276" key="GridCell.Tab.0.left/0.23.1792.1031@0.23.1792.1031" timestamp="1595663879587" />
     <state width="1750" height="312" key="GridCell.Tab.0.left/0.23.1792.1033@0.23.1792.1033" timestamp="1598023478761" />
-    <state width="1750" height="312" key="GridCell.Tab.0.left/0.23.1792.1034@0.23.1792.1034" timestamp="1598023024462" />
+    <state width="1750" height="236" key="GridCell.Tab.0.left/0.23.1792.1034@0.23.1792.1034" timestamp="1598036715754" />
     <state width="1750" height="312" key="GridCell.Tab.0.left/0.23.1792.1036@0.23.1792.1036" timestamp="1598013883407" />
     <state width="1750" height="312" key="GridCell.Tab.0.left/0.23.1792.1037@0.23.1792.1037" timestamp="1597946321721" />
     <state width="1417" height="262" key="GridCell.Tab.0.left/0.23.1792.1041@0.23.1792.1041" timestamp="1597424486127" />
     <state width="1749" height="262" key="GridCell.Tab.0.left/0.23.1792.1042@0.23.1792.1042" timestamp="1597404275479" />
     <state width="1750" height="306" key="GridCell.Tab.0.left/0.23.1792.1043@0.23.1792.1043" timestamp="1596986847417" />
-    <state width="1750" height="312" key="GridCell.Tab.0.right" timestamp="1598023478762">
-      <screen x="0" y="23" width="1792" height="1033" />
+    <state width="1750" height="236" key="GridCell.Tab.0.right" timestamp="1598036715755">
+      <screen x="0" y="23" width="1792" height="1034" />
     </state>
     <state width="1738" height="304" key="GridCell.Tab.0.right/0.23.1792.1028@0.23.1792.1028" timestamp="1595453072029" />
     <state width="1750" height="276" key="GridCell.Tab.0.right/0.23.1792.1030@0.23.1792.1030" timestamp="1595662649633" />
     <state width="1750" height="276" key="GridCell.Tab.0.right/0.23.1792.1031@0.23.1792.1031" timestamp="1595663879588" />
     <state width="1750" height="312" key="GridCell.Tab.0.right/0.23.1792.1033@0.23.1792.1033" timestamp="1598023478762" />
-    <state width="1750" height="312" key="GridCell.Tab.0.right/0.23.1792.1034@0.23.1792.1034" timestamp="1598023024463" />
+    <state width="1750" height="236" key="GridCell.Tab.0.right/0.23.1792.1034@0.23.1792.1034" timestamp="1598036715755" />
     <state width="1750" height="312" key="GridCell.Tab.0.right/0.23.1792.1036@0.23.1792.1036" timestamp="1598013883408" />
     <state width="1750" height="312" key="GridCell.Tab.0.right/0.23.1792.1037@0.23.1792.1037" timestamp="1597946321722" />
     <state width="1417" height="262" key="GridCell.Tab.0.right/0.23.1792.1041@0.23.1792.1041" timestamp="1597424486127" />
     <state width="1749" height="262" key="GridCell.Tab.0.right/0.23.1792.1042@0.23.1792.1042" timestamp="1597404275479" />
     <state width="1750" height="306" key="GridCell.Tab.0.right/0.23.1792.1043@0.23.1792.1043" timestamp="1596986847418" />
-    <state width="1750" height="312" key="GridCell.Tab.1.bottom" timestamp="1598023478763">
-      <screen x="0" y="23" width="1792" height="1033" />
+    <state width="1750" height="236" key="GridCell.Tab.1.bottom" timestamp="1598036715756">
+      <screen x="0" y="23" width="1792" height="1034" />
     </state>
     <state width="1738" height="276" key="GridCell.Tab.1.bottom/0.23.1792.1028@0.23.1792.1028" timestamp="1595453071889" />
     <state width="1750" height="276" key="GridCell.Tab.1.bottom/0.23.1792.1030@0.23.1792.1030" timestamp="1595662649634" />
     <state width="1750" height="276" key="GridCell.Tab.1.bottom/0.23.1792.1031@0.23.1792.1031" timestamp="1595663879589" />
     <state width="1750" height="312" key="GridCell.Tab.1.bottom/0.23.1792.1033@0.23.1792.1033" timestamp="1598023478763" />
-    <state width="1750" height="312" key="GridCell.Tab.1.bottom/0.23.1792.1034@0.23.1792.1034" timestamp="1598023012320" />
+    <state width="1750" height="236" key="GridCell.Tab.1.bottom/0.23.1792.1034@0.23.1792.1034" timestamp="1598036715756" />
     <state width="1750" height="312" key="GridCell.Tab.1.bottom/0.23.1792.1036@0.23.1792.1036" timestamp="1598013883408" />
     <state width="1750" height="312" key="GridCell.Tab.1.bottom/0.23.1792.1037@0.23.1792.1037" timestamp="1597946273445" />
     <state width="1417" height="262" key="GridCell.Tab.1.bottom/0.23.1792.1041@0.23.1792.1041" timestamp="1597424486128" />
     <state width="1749" height="262" key="GridCell.Tab.1.bottom/0.23.1792.1042@0.23.1792.1042" timestamp="1597404275480" />
     <state width="1750" height="306" key="GridCell.Tab.1.bottom/0.23.1792.1043@0.23.1792.1043" timestamp="1596986851258" />
-    <state width="1750" height="312" key="GridCell.Tab.1.center" timestamp="1598023478763">
-      <screen x="0" y="23" width="1792" height="1033" />
+    <state width="1750" height="236" key="GridCell.Tab.1.center" timestamp="1598036715756">
+      <screen x="0" y="23" width="1792" height="1034" />
     </state>
     <state width="1738" height="276" key="GridCell.Tab.1.center/0.23.1792.1028@0.23.1792.1028" timestamp="1595453071888" />
     <state width="1750" height="276" key="GridCell.Tab.1.center/0.23.1792.1030@0.23.1792.1030" timestamp="1595662649634" />
     <state width="1750" height="276" key="GridCell.Tab.1.center/0.23.1792.1031@0.23.1792.1031" timestamp="1595663879589" />
     <state width="1750" height="312" key="GridCell.Tab.1.center/0.23.1792.1033@0.23.1792.1033" timestamp="1598023478763" />
-    <state width="1750" height="312" key="GridCell.Tab.1.center/0.23.1792.1034@0.23.1792.1034" timestamp="1598023012320" />
+    <state width="1750" height="236" key="GridCell.Tab.1.center/0.23.1792.1034@0.23.1792.1034" timestamp="1598036715756" />
     <state width="1750" height="312" key="GridCell.Tab.1.center/0.23.1792.1036@0.23.1792.1036" timestamp="1598013883408" />
     <state width="1750" height="312" key="GridCell.Tab.1.center/0.23.1792.1037@0.23.1792.1037" timestamp="1597946273445" />
     <state width="1417" height="262" key="GridCell.Tab.1.center/0.23.1792.1041@0.23.1792.1041" timestamp="1597424486128" />
     <state width="1749" height="262" key="GridCell.Tab.1.center/0.23.1792.1042@0.23.1792.1042" timestamp="1597404275480" />
     <state width="1750" height="306" key="GridCell.Tab.1.center/0.23.1792.1043@0.23.1792.1043" timestamp="1596986851258" />
-    <state width="1750" height="312" key="GridCell.Tab.1.left" timestamp="1598023478762">
-      <screen x="0" y="23" width="1792" height="1033" />
+    <state width="1750" height="236" key="GridCell.Tab.1.left" timestamp="1598036715755">
+      <screen x="0" y="23" width="1792" height="1034" />
     </state>
     <state width="1738" height="276" key="GridCell.Tab.1.left/0.23.1792.1028@0.23.1792.1028" timestamp="1595453071888" />
     <state width="1750" height="276" key="GridCell.Tab.1.left/0.23.1792.1030@0.23.1792.1030" timestamp="1595662649633" />
     <state width="1750" height="276" key="GridCell.Tab.1.left/0.23.1792.1031@0.23.1792.1031" timestamp="1595663879588" />
     <state width="1750" height="312" key="GridCell.Tab.1.left/0.23.1792.1033@0.23.1792.1033" timestamp="1598023478762" />
-    <state width="1750" height="312" key="GridCell.Tab.1.left/0.23.1792.1034@0.23.1792.1034" timestamp="1598023012319" />
+    <state width="1750" height="236" key="GridCell.Tab.1.left/0.23.1792.1034@0.23.1792.1034" timestamp="1598036715755" />
     <state width="1750" height="312" key="GridCell.Tab.1.left/0.23.1792.1036@0.23.1792.1036" timestamp="1598013883408" />
     <state width="1750" height="312" key="GridCell.Tab.1.left/0.23.1792.1037@0.23.1792.1037" timestamp="1597946273444" />
     <state width="1417" height="262" key="GridCell.Tab.1.left/0.23.1792.1041@0.23.1792.1041" timestamp="1597424486128" />
     <state width="1749" height="262" key="GridCell.Tab.1.left/0.23.1792.1042@0.23.1792.1042" timestamp="1597404275479" />
     <state width="1750" height="306" key="GridCell.Tab.1.left/0.23.1792.1043@0.23.1792.1043" timestamp="1596986851257" />
-    <state width="1750" height="312" key="GridCell.Tab.1.right" timestamp="1598023478763">
-      <screen x="0" y="23" width="1792" height="1033" />
+    <state width="1750" height="236" key="GridCell.Tab.1.right" timestamp="1598036715756">
+      <screen x="0" y="23" width="1792" height="1034" />
     </state>
     <state width="1738" height="276" key="GridCell.Tab.1.right/0.23.1792.1028@0.23.1792.1028" timestamp="1595453071888" />
     <state width="1750" height="276" key="GridCell.Tab.1.right/0.23.1792.1030@0.23.1792.1030" timestamp="1595662649634" />
     <state width="1750" height="276" key="GridCell.Tab.1.right/0.23.1792.1031@0.23.1792.1031" timestamp="1595663879589" />
     <state width="1750" height="312" key="GridCell.Tab.1.right/0.23.1792.1033@0.23.1792.1033" timestamp="1598023478763" />
-    <state width="1750" height="312" key="GridCell.Tab.1.right/0.23.1792.1034@0.23.1792.1034" timestamp="1598023012320" />
+    <state width="1750" height="236" key="GridCell.Tab.1.right/0.23.1792.1034@0.23.1792.1034" timestamp="1598036715756" />
     <state width="1750" height="312" key="GridCell.Tab.1.right/0.23.1792.1036@0.23.1792.1036" timestamp="1598013883408" />
     <state width="1750" height="312" key="GridCell.Tab.1.right/0.23.1792.1037@0.23.1792.1037" timestamp="1597946273445" />
     <state width="1417" height="262" key="GridCell.Tab.1.right/0.23.1792.1041@0.23.1792.1041" timestamp="1597424486128" />
@@ -703,60 +574,6 @@
     <state x="561" y="253" width="670" height="678" key="search.everywhere.popup/0.23.1792.1036@0.23.1792.1036" timestamp="1597864706696" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/InvoiceWindowService.java</url>
-          <line>101</line>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/service/InvoiceWindowService.java</url>
-          <line>98</line>
-          <option name="timeStamp" value="62" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/PdfWindowController.java</url>
-          <line>110</line>
-          <option name="timeStamp" value="169" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/PdfWindowController.java</url>
-          <line>113</line>
-          <option name="timeStamp" value="170" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/PdfWindowController.java</url>
-          <line>117</line>
-          <option name="timeStamp" value="171" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/PdfWindowController.java</url>
-          <line>125</line>
-          <option name="timeStamp" value="173" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/PdfWindowController.java</url>
-          <line>126</line>
-          <option name="timeStamp" value="174" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/PdfWindowController.java</url>
-          <line>129</line>
-          <option name="timeStamp" value="175" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/PdfWindowController.java</url>
-          <line>134</line>
-          <option name="timeStamp" value="176" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hubertstruminski/invoice/app/controller/PdfWindowController.java</url>
-          <line>80</line>
-          <option name="timeStamp" value="177" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo typeName="com.hubertstruminski.invoice.app.model.Address" fieldName="customer" />

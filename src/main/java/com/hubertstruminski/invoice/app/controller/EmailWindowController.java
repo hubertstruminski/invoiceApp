@@ -1,19 +1,12 @@
 package com.hubertstruminski.invoice.app.controller;
 
-import com.google.api.client.googleapis.json.GoogleJsonError;
-import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.services.gmail.Gmail;
-import com.hubertstruminski.invoice.app.component.EmailFailureSendWindowComponent;
-import com.hubertstruminski.invoice.app.component.EmailSuccessfullySendWindowComponent;
 import com.hubertstruminski.invoice.app.model.Invoice;
-import com.hubertstruminski.invoice.app.model.Status;
-import com.hubertstruminski.invoice.app.repository.InvoiceRepository;
+import com.hubertstruminski.invoice.app.service.EmailWindowService;
 import com.hubertstruminski.invoice.app.service.GmailService;
-import com.hubertstruminski.invoice.app.service.MainWindowService;
 import com.hubertstruminski.invoice.app.util.Constants;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.stage.Window;
 import moe.tristan.easyfxml.api.FxmlController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -37,11 +30,7 @@ import javax.mail.MessagingException;
 public class EmailWindowController implements FxmlController {
 
     private final GmailService gmailService;
-    private final InvoiceRepository invoiceRepository;
-    private final MainWindowController mainWindowController;
-    private final MainWindowService mainWindowService;
-    private final EmailSuccessfullySendWindowComponent emailSuccessfullySendWindowComponent;
-    private final EmailFailureSendWindowComponent emailFailureSendWindowComponent;
+    private final EmailWindowService emailWindowService;
 
     private Invoice invoice = null;
     private VBox mainVBox = null;
@@ -54,17 +43,9 @@ public class EmailWindowController implements FxmlController {
     @Autowired
     public EmailWindowController(
             GmailService gmailService,
-            InvoiceRepository invoiceRepository,
-            MainWindowController mainWindowController,
-            MainWindowService mainWindowService,
-            EmailSuccessfullySendWindowComponent emailSuccessfullySendWindowComponent,
-            EmailFailureSendWindowComponent emailFailureSendWindowComponent) {
+            EmailWindowService emailWindowService) {
         this.gmailService = gmailService;
-        this.invoiceRepository = invoiceRepository;
-        this.mainWindowController = mainWindowController;
-        this.mainWindowService = mainWindowService;
-        this.emailSuccessfullySendWindowComponent = emailSuccessfullySendWindowComponent;
-        this.emailFailureSendWindowComponent = emailFailureSendWindowComponent;
+        this.emailWindowService = emailWindowService;
     }
 
     @FXML
@@ -127,28 +108,7 @@ public class EmailWindowController implements FxmlController {
                 isError = true;
                 e.printStackTrace();
             }
-
-            if(!isError) {
-                invoice.setStatus(Status.SENT);
-                invoiceRepository.save(invoice);
-
-                mainWindowController.refreshCustomerTableView();
-                mainWindowService.onLoadComponent(
-                        emailSuccessfullySendWindowComponent,
-                        550,
-                        200,
-                        false,
-                        "Sukces");
-                Stage stage = (Stage) vBox.getScene().getWindow();
-                stage.close();
-            } else {
-                mainWindowService.onLoadComponent(
-                        emailFailureSendWindowComponent,
-                        550,
-                        200,
-                        false,
-                        "Błąd");
-            }
+            emailWindowService.handleError(isError, invoice, vBox);
         }
     }
 

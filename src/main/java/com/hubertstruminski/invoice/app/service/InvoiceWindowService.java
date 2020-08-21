@@ -5,18 +5,15 @@ import com.hubertstruminski.invoice.app.component.NewInvoiceWindowComponent;
 import com.hubertstruminski.invoice.app.controller.InvoiceDetailsWindowController;
 import com.hubertstruminski.invoice.app.controller.MainWindowController;
 import com.hubertstruminski.invoice.app.controller.NewInvoiceWindowController;
-import com.hubertstruminski.invoice.app.model.Customer;
 import com.hubertstruminski.invoice.app.model.Invoice;
 import com.hubertstruminski.invoice.app.model.Product;
 import com.hubertstruminski.invoice.app.repository.InvoiceRepository;
 import com.hubertstruminski.invoice.app.repository.ProductRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import javafx.util.Callback;
 import moe.tristan.easyfxml.EasyFxml;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,7 +66,7 @@ public class InvoiceWindowService implements CoreServiceInterface {
         List<Invoice> invoices = new ArrayList<>();
         invoicesIterable.forEach(invoices::add);
 
-        invoices.stream().forEach(invoice -> {
+        invoices.forEach(invoice -> {
             List<Product> allByInvoice = productRepository.findAllByInvoice(invoice);
             invoice.setProducts(allByInvoice);
         });
@@ -92,13 +89,13 @@ public class InvoiceWindowService implements CoreServiceInterface {
                             btn.setOnAction(event -> {
                                 Invoice invoice = getTableView().getItems().get(getIndex());
                                 if (isUpdating) {
-                                    invokeNewInvoiceWindowForUpdateInvoice();
+                                    coreService.invokeNewItemWindow(newInvoiceWindowComponent);
                                     newInvoiceWindowController.setTextFields(invoice);
                                     newInvoiceWindowController.setUpdateFlag(true);
                                 } else {
                                     List<Product> allByInvoice = productRepository.findAllByInvoice(invoice);
-                                    allByInvoice.stream().forEach(x -> x.setInvoice(null));
-                                    allByInvoice.stream().forEach(productRepository::save);
+                                    allByInvoice.forEach(x -> x.setInvoice(null));
+                                    allByInvoice.forEach(productRepository::save);
                                     invoiceRepository.delete(invoice);
                                     mainWindowController.refreshInvoiceTableView();
                                 }
@@ -130,17 +127,5 @@ public class InvoiceWindowService implements CoreServiceInterface {
             });
             return row;
         });
-    }
-
-    public void invokeNewInvoiceWindowForUpdateInvoice() {
-        easyFxml.load(newInvoiceWindowComponent)
-                .afterNodeLoaded(pane -> {
-                    Scene scene = new Scene(pane, 400, 500);
-                    Stage stage = new Stage();
-                    stage.setScene(scene);
-                    stage.setResizable(false);
-
-                    stage.show();
-                });
     }
 }

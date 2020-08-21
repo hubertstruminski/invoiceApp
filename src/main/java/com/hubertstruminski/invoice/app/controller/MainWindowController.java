@@ -2,7 +2,6 @@ package com.hubertstruminski.invoice.app.controller;
 
 import com.hubertstruminski.invoice.app.component.*;
 import com.hubertstruminski.invoice.app.model.Company;
-import com.hubertstruminski.invoice.app.repository.CompanyRepository;
 import com.hubertstruminski.invoice.app.service.MainWindowService;
 import de.jensd.fx.glyphs.GlyphsDude;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
@@ -13,12 +12,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
 import javafx.scene.layout.VBox;
 
-import javafx.stage.Stage;
 import moe.tristan.easyfxml.api.FxmlController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller

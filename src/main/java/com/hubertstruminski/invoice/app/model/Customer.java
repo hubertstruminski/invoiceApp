@@ -2,10 +2,9 @@ package com.hubertstruminski.invoice.app.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
-import java.io.Serializable;
 
 @Entity
-public class Customer implements Serializable {
+public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

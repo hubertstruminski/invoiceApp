@@ -11,11 +11,9 @@ import com.hubertstruminski.invoice.app.repository.AddressRepository;
 import com.hubertstruminski.invoice.app.repository.CustomerRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import javafx.util.Callback;
 import moe.tristan.easyfxml.EasyFxml;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,20 +62,8 @@ public class CustomerWindowService implements CoreServiceInterface {
         tableView.setItems(observableTaxList);
     }
 
-    public void invokeNewCustomerWindowForUpdateCustomer() {
-        easyFxml.load(newCustomerWindowComponent)
-                .afterNodeLoaded(pane -> {
-                    Scene scene = new Scene(pane, 400, 500);
-                    Stage stage = new Stage();
-                    stage.setScene(scene);
-                    stage.setResizable(false);
-
-                    stage.show();
-                });
-    }
-
     public void updateAndRefresh(Customer customer, Address address) {
-        invokeNewCustomerWindowForUpdateCustomer();
+        coreService.invokeNewItemWindow(newCustomerWindowComponent);
         newCustomerWindowController.setTextFields(customer);
         newCustomerWindowController.setUpdateFlag(true);
         newCustomerWindowController.setUpdateFlagWithTableView(true);

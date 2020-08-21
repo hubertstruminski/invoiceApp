@@ -9,5 +9,4 @@ class InvoiceAppApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }

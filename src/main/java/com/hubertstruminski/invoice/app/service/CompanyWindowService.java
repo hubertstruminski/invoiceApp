@@ -6,15 +6,12 @@ import com.hubertstruminski.invoice.app.controller.CompanyDetailsWindowControlle
 import com.hubertstruminski.invoice.app.controller.MainWindowController;
 import com.hubertstruminski.invoice.app.controller.NewCompanyWindowController;
 import com.hubertstruminski.invoice.app.model.Company;
-import com.hubertstruminski.invoice.app.model.Product;
 import com.hubertstruminski.invoice.app.repository.CompanyRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import javafx.util.Callback;
 import moe.tristan.easyfxml.EasyFxml;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,7 +73,7 @@ public class CompanyWindowService implements CoreServiceInterface {
                             btn.setOnAction(event -> {
                                 Company company = getTableView().getItems().get(getIndex());
                                 if (isUpdating) {
-                                    invokeNewCompanyWindowForUpdateCompany();
+                                    coreService.invokeNewItemWindow(newCompanyWindowComponent);
                                     newCompanyWindowController.setTextFields(company);
                                     newCompanyWindowController.setUpdateFlag(true);
                                 } else {
@@ -90,18 +87,6 @@ public class CompanyWindowService implements CoreServiceInterface {
                 };
         tableColumn.setCellFactory(callback);
         return tableColumn;
-    }
-
-    public void invokeNewCompanyWindowForUpdateCompany() {
-        easyFxml.load(newCompanyWindowComponent)
-                .afterNodeLoaded(pane -> {
-                    Scene scene = new Scene(pane, 400, 500);
-                    Stage stage = new Stage();
-                    stage.setScene(scene);
-                    stage.setResizable(false);
-
-                    stage.show();
-                });
     }
 
     public void setOnClickEventHandlerForRowInCompaniesTable(TableView<Company> tableView, VBox rightVBoxView) {

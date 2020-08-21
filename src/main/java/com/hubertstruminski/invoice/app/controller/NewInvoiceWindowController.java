@@ -2,13 +2,12 @@ package com.hubertstruminski.invoice.app.controller;
 
 import com.hubertstruminski.invoice.app.component.ChooseCustomerWindowComponent;
 import com.hubertstruminski.invoice.app.component.ChooseProductWindowComponent;
-import com.hubertstruminski.invoice.app.component.ChooseTaxWindowComponent;
 import com.hubertstruminski.invoice.app.model.*;
 import com.hubertstruminski.invoice.app.repository.CustomerRepository;
 import com.hubertstruminski.invoice.app.repository.InvoiceRepository;
 import com.hubertstruminski.invoice.app.repository.ProductRepository;
-import com.hubertstruminski.invoice.app.repository.TaxRepository;
 import com.hubertstruminski.invoice.app.service.MainWindowService;
+import com.hubertstruminski.invoice.app.service.NewInvoiceWindowService;
 import com.hubertstruminski.invoice.app.util.Constants;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
@@ -22,7 +21,6 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
-import java.text.ParseException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,9 +36,9 @@ public class NewInvoiceWindowController implements FxmlController {
     private final MainWindowController mainWindowController;
     private final ProductRepository productRepository;
     private final CustomerRepository customerRepository;
+    private final NewInvoiceWindowService newInvoiceWindowService;
 
     private Customer customer = null;
-    private Product product = null;
     private List<Product> products = new ArrayList<>();
 
     private boolean isNumberEmpty = false;
@@ -58,7 +56,8 @@ public class NewInvoiceWindowController implements FxmlController {
             InvoiceRepository invoiceRepository,
             MainWindowController mainWindowController,
             CustomerRepository customerRepository,
-            ProductRepository productRepository) {
+            ProductRepository productRepository,
+            NewInvoiceWindowService newInvoiceWindowService) {
         this.mainWindowService = mainWindowService;
         this.chooseCustomerWindowComponent = chooseCustomerWindowComponent;
         this.chooseProductWindowComponent = chooseProductWindowComponent;
@@ -66,6 +65,7 @@ public class NewInvoiceWindowController implements FxmlController {
         this.mainWindowController = mainWindowController;
         this.productRepository = productRepository;
         this.customerRepository = customerRepository;
+        this.newInvoiceWindowService = newInvoiceWindowService;
     }
 
     @FXML
@@ -90,9 +90,6 @@ public class NewInvoiceWindowController implements FxmlController {
     private TextField commentTextField;
 
     @FXML
-    private Button saveInvoiceButton;
-
-    @FXML
     private Label numberErrorLabel;
 
     @FXML
@@ -106,9 +103,6 @@ public class NewInvoiceWindowController implements FxmlController {
 
     @FXML
     private Label invoiceIdLabel;
-
-    @FXML
-    private Button onAddProductClearButton;
 
     @FXML
     private Button listProductsButton;
@@ -146,15 +140,13 @@ public class NewInvoiceWindowController implements FxmlController {
             List<Product> processedProducts = invoiceById.getProducts();
             processedProducts.forEach(x -> x.setInvoice(null));
             processedProducts.forEach(productRepository::delete);
-
-
         }
         products = new ArrayList<>();
         listProductsButton.setText(">");
     }
 
     @FXML
-    void onSaveInvoiceButtonAction() throws ParseException {
+    void onSaveInvoiceButtonAction() {
         if (numberTextField.getText().length() == 0) isNumberEmpty = true;
         else isNumberEmpty = false;
 
@@ -243,7 +235,6 @@ public class NewInvoiceWindowController implements FxmlController {
     @Override
     public void initialize() {
         customer = new Customer();
-        product = new Product();
         products = new ArrayList<>();
 
         isNumberEmpty = false;
@@ -281,6 +272,20 @@ public class NewInvoiceWindowController implements FxmlController {
         addCustomerButton.setText(_customer.getName() + " NIP: " + _customer.getNip());
     }
 
+    public void setTextFields(Invoice invoice) {
+        invoiceIdLabel.setText(String.valueOf(invoice.getId()));
+        numberTextField.setText(invoice.getNumber());
+        datePicker.setValue(invoice.getDate());
+        deadlinePicker.setValue(invoice.getDeadline());
+
+        products = invoice.getProducts();
+        String productButtonText = newInvoiceWindowService.renderTextForProductButton(products);
+        listProductsButton.setText(productButtonText);
+
+        addCustomerButton.setText(invoice.getCustomer().getName() + " NIP: " + invoice.getCustomer().getNip());
+        commentTextField.setText(invoice.getComment());
+    }
+
     public void setProduct(Product _product) {
         Product product = new Product();
 
@@ -295,37 +300,11 @@ public class NewInvoiceWindowController implements FxmlController {
 
         products.add(product);
 
-        String productButtonText = renderTextForProductButton();
+        String productButtonText = newInvoiceWindowService.renderTextForProductButton(products);
         listProductsButton.setText(productButtonText);
-    }
-
-    public void setTextFields(Invoice invoice) {
-        invoiceIdLabel.setText(String.valueOf(invoice.getId()));
-        numberTextField.setText(invoice.getNumber());
-        datePicker.setValue(invoice.getDate());
-        deadlinePicker.setValue(invoice.getDeadline());
-
-        products = invoice.getProducts();
-        String productButtonText = renderTextForProductButton();
-        listProductsButton.setText(productButtonText);
-
-        addCustomerButton.setText(invoice.getCustomer().getName() + " NIP: " + invoice.getCustomer().getNip());
-        commentTextField.setText(invoice.getComment());
     }
 
     public List<Product> getChosenProducts() {
         return products;
-    }
-
-    private String renderTextForProductButton() {
-        StringBuilder builder = new StringBuilder();
-        for(int i=0; i<products.size(); i++) {
-            if(i == products.size() - 1) {
-                builder.append(products.get(i).getName());
-                break;
-            }
-            builder.append(products.get(i).getName() + ", ");
-        }
-        return builder.toString();
     }
 }
