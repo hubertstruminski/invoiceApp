@@ -1,8 +1,13 @@
 package com.hubertstruminski.invoice.app.controller;
 
+import com.hubertstruminski.invoice.app.component.ChooseTaxWindowComponent;
 import com.hubertstruminski.invoice.app.model.Product;
+import com.hubertstruminski.invoice.app.model.Tax;
 import com.hubertstruminski.invoice.app.repository.ProductRepository;
+import com.hubertstruminski.invoice.app.repository.TaxRepository;
+import com.hubertstruminski.invoice.app.service.MainWindowService;
 import com.hubertstruminski.invoice.app.util.Constants;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import moe.tristan.easyfxml.api.FxmlController;
@@ -31,17 +36,34 @@ public class NewProductWindowController implements FxmlController {
     private boolean isAmountEmpty = false;
     private boolean isAmountError = false;
 
+    private boolean isUnitEmpty = false;
+    private boolean isUnitError = false;
+
+    private boolean isTaxEmpty = false;
+
     private boolean isUpdateFlag = false;
+
+    private Tax tax = null;
+    private Product product = null;
 
     private final ProductRepository productRepository;
     private final MainWindowController mainWindowController;
+    private final ChooseTaxWindowComponent chooseTaxWindowComponent;
+    private final MainWindowService mainWindowService;
+    private final TaxRepository taxRepository;
 
     @Autowired
     public NewProductWindowController(
             ProductRepository productRepository,
-            MainWindowController mainWindowController) {
+            MainWindowController mainWindowController,
+            ChooseTaxWindowComponent chooseTaxWindowComponent,
+            MainWindowService mainWindowService,
+            TaxRepository taxRepository) {
         this.productRepository = productRepository;
         this.mainWindowController = mainWindowController;
+        this.chooseTaxWindowComponent = chooseTaxWindowComponent;
+        this.mainWindowService = mainWindowService;
+        this.taxRepository = taxRepository;
     }
 
     @FXML
@@ -80,8 +102,30 @@ public class NewProductWindowController implements FxmlController {
     @FXML
     private Label productIdLabel;
 
+    @FXML
+    private TextField unitTextField;
+
+    @FXML
+    private Label errorUnitLabel;
+
+    @FXML
+    private Button addTaxButton;
+
+    @FXML
+    private Label taxErrorLabel;
+
     public void setUpdateFlag(boolean updateFlag) {
         isUpdateFlag = updateFlag;
+    }
+
+    @FXML
+    void onAddTaxButtonAction() {
+        mainWindowService.onLoadComponent(
+                chooseTaxWindowComponent,
+                400,
+                350,
+                false,
+                "Wybierz podatek");
     }
 
     @FXML
@@ -114,9 +158,20 @@ public class NewProductWindowController implements FxmlController {
             isAmountEmpty = true;
         } else {
             isAmountEmpty = false;
-            if (!amountTextField.getText().matches("[0-9]+")) isAmountError = true;
+            if (!amountTextField.getText().matches("\\d+(\\.\\d{1,2})?")) isAmountError = true;
             else isAmountError = false;
         }
+
+        if(unitTextField.getText().length() == 0) {
+            isUnitEmpty = true;
+        } else {
+            isUnitEmpty = false;
+            if (!unitTextField.getText().matches(".{1,255}")) isUnitError = true;
+            else isUnitError = false;
+        }
+
+        if(addTaxButton.getText().equalsIgnoreCase(">")) isTaxEmpty = true;
+        else isTaxEmpty = false;
 
         if(isNameEmpty) {
             nameErrorLabel.setText("Pole nazwa jest wymagane.");
@@ -129,16 +184,16 @@ public class NewProductWindowController implements FxmlController {
         }
 
         if(isDescriptionEmpty) {
-            descriptionErrorLabel.setText("");
+            descriptionErrorLabel.setText("Maksymalna długość to 255 znaków.");
         } else {
-            descriptionErrorLabel.setText("Wymagana długość od 1 do 255 znaków.");
+            descriptionErrorLabel.setText("");
         }
 
         if(isPriceEmpty) {
             priceErrorLabel.setText("Pole cena jest wymagane.");
         } else {
             if(isPriceError) {
-                priceErrorLabel.setText("Wartość musi być np. 7412.36 lub 7412");
+                priceErrorLabel.setText("Wartość musi być zawierać kropkę lub liczbę całkowitą");
             } else {
                 priceErrorLabel.setText("");
             }
@@ -154,15 +209,30 @@ public class NewProductWindowController implements FxmlController {
             amountErrorLabel.setText("Pole ilość jest wymagane.");
         } else {
             if(isAmountError) {
-                amountErrorLabel.setText("Wymagana liczba całkowita powyżej 0.");
+                amountErrorLabel.setText("Wartość musi być zawierać kropkę lub liczbę całkowitą");
             } else {
                 amountErrorLabel.setText("");
             }
         }
 
-        if(!isNameEmpty && !isNameError && !isDescriptionEmpty && !isPriceEmpty &&
-                !isPriceError && !isDiscountError && !isAmountEmpty && !isAmountError) {
-            Product product = new Product();
+        if(isUnitEmpty) {
+            errorUnitLabel.setText("Pole jednostka jest wymagane.");
+        } else {
+            if(isUnitError) {
+                errorUnitLabel.setText("Wymagana długość od 1 do 255 znaków.");
+            } else {
+                errorUnitLabel.setText("");
+            }
+        }
+
+        if(isTaxEmpty) {
+            taxErrorLabel.setText("Pole podatek jest wymagane.");
+        } else {
+            taxErrorLabel.setText("");
+        }
+
+        if(!isNameEmpty && !isNameError && !isDescriptionEmpty && !isPriceEmpty && !isTaxEmpty &&
+                !isPriceError && !isDiscountError && !isAmountEmpty && !isAmountError && !isUnitError && !isUnitEmpty) {
 
             if(isUpdateFlag) {
                 product.setId(Long.parseLong(productIdLabel.getText()));
@@ -171,8 +241,15 @@ public class NewProductWindowController implements FxmlController {
             product.setName(nameTextField.getText());
             product.setDescription(descriptionTextField.getText());
             product.setPrice(new BigDecimal(priceTextField.getText()));
-            product.setAmount(Integer.parseInt(amountTextField.getText()));
-            product.setDiscount(Integer.parseInt(discountTextField.getText()));
+            product.setAmount(Double.parseDouble(amountTextField.getText()));
+            product.setUnit(unitTextField.getText());
+
+            if(discountTextField.getText().length() != 0) {
+                product.setDiscount(Integer.parseInt(discountTextField.getText()));
+            }
+
+            product.setTax(tax);
+            taxRepository.save(tax);
 
             productRepository.save(product);
             mainWindowController.refreshProductTableView();
@@ -184,6 +261,8 @@ public class NewProductWindowController implements FxmlController {
 
     @Override
     public void initialize() {
+        tax = new Tax();
+        product = new Product();
         isNameEmpty = false;
         isNameError = false;
 
@@ -196,6 +275,11 @@ public class NewProductWindowController implements FxmlController {
 
         isAmountEmpty = false;
         isAmountError = false;
+
+        isUnitEmpty = false;
+        isUnitError = false;
+
+        isTaxEmpty = false;
 
         productIdLabel.setVisible(false);
         isUpdateFlag = false;
@@ -214,14 +298,34 @@ public class NewProductWindowController implements FxmlController {
 
         amountErrorLabel.setText("");
         amountErrorLabel.setStyle(Constants.RED_COLOR_FONT);
+
+        errorUnitLabel.setText("");
+        errorUnitLabel.setStyle(Constants.RED_COLOR_FONT);
+
+        taxErrorLabel.setText("");
+        taxErrorLabel.setStyle(Constants.RED_COLOR_FONT);
     }
 
-    public void setTextFields(Product product) {
-        productIdLabel.setText(String.valueOf(product.getId()));
-        nameTextField.setText(product.getName());
-        descriptionTextField.setText(product.getDescription());
-        priceTextField.setText(String.valueOf(product.getPrice()));
-        amountTextField.setText(String.valueOf(product.getAmount()));
-        discountTextField.setText(String.valueOf(product.getDiscount()));
+    public void setTax(Tax _tax) {
+        tax.setId(_tax.getId());
+        tax.setTaxAmount(_tax.getTaxAmount());
+        tax.setDescription(_tax.getDescription());
+        tax.setName(_tax.getName());
+
+        addTaxButton.setText(_tax.getName() + " Stawka: " + _tax.getTaxAmount());
+    }
+
+    public void setTextFields(Product _product) {
+        productIdLabel.setText(String.valueOf(_product.getId()));
+        nameTextField.setText(_product.getName());
+        descriptionTextField.setText(_product.getDescription());
+        priceTextField.setText(String.valueOf(_product.getPrice()));
+        amountTextField.setText(String.valueOf(_product.getAmount()));
+        discountTextField.setText(String.valueOf(_product.getDiscount()));
+        unitTextField.setText(_product.getUnit());
+
+        addTaxButton.setText(_product.getTax().getName() + " Stawka: " + _product.getTax().getTaxAmount());
+
+        product = _product;
     }
 }

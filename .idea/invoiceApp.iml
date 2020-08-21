@@ -24,7 +24,7 @@
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_14">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
@@ -33,7 +33,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="14" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-data-jpa:2.3.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-aop:2.3.0.RELEASE" level="project" />
@@ -74,7 +74,6 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:5.2.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.2.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-oauth2-client:2.3.0.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: com.sun.mail:jakarta.mail:1.6.5" level="project" />
     <orderEntry type="library" name="Maven: com.sun.activation:jakarta.activation:1.2.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-config:5.3.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:5.3.2.RELEASE" level="project" />
@@ -106,7 +105,6 @@
     <orderEntry type="library" name="Maven: net.minidev:accessors-smart:1.2" level="project" />
     <orderEntry type="library" name="Maven: org.ow2.asm:asm:5.0.4" level="project" />
     <orderEntry type="library" name="Maven: jakarta.xml.bind:jakarta.xml.bind-api:2.3.3" level="project" />
-    <orderEntry type="library" name="Maven: jakarta.activation:jakarta.activation-api:1.2.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.assertj:assertj-core:3.16.1" level="project" />
     <orderEntry type="library" name="Maven: org.hamcrest:hamcrest:2.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter:5.6.2" level="project" />
@@ -128,20 +126,20 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:5.2.6.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.xmlunit:xmlunit-core:2.7.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework.security:spring-security-test:5.3.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:mac:11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-media:11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-media:mac:11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:mac:11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:mac:11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:mac:11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-swing:11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-swing:mac:11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-web:11" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx-web:mac:11" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:12" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:mac:12" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-media:12" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-media:mac:12" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:12" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:mac:12" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:12" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:mac:12" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:12" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:mac:12" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-swing:12" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-swing:mac:12" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-web:14" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-web:mac:14" level="project" />
     <orderEntry type="library" name="Maven: org.json:json:20160810" level="project" />
     <orderEntry type="library" name="Maven: de.jensd:fontawesomefx:8.9" level="project" />
     <orderEntry type="library" name="Maven: moe.tristan:easyfxml:3.3.0" level="project" />
@@ -159,5 +157,32 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.7.4" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.7.4" level="project" />
     <orderEntry type="library" name="Maven: jakarta.validation:jakarta.validation-api:2.0.1" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:barcodes:7.1.9" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:font-asian:7.1.9" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:forms:7.1.9" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:hyph:7.1.9" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:io:7.1.9" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:kernel:7.1.9" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:layout:7.1.9" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:pdfa:7.1.9" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:sign:7.1.9" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:styled-xml-parser:7.1.9" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:svg:7.1.9" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:html2pdf:2.1.6" level="project" />
+    <orderEntry type="library" name="Maven: com.google.oauth-client:google-oauth-client-jetty:1.23.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.oauth-client:google-oauth-client-java6:1.23.0" level="project" />
+    <orderEntry type="library" name="Maven: org.mortbay.jetty:jetty:6.1.26" level="project" />
+    <orderEntry type="library" name="Maven: org.mortbay.jetty:jetty-util:6.1.26" level="project" />
+    <orderEntry type="library" name="Maven: com.google.apis:google-api-services-gmail:v1-rev83-1.23.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.api-client:google-api-client:1.23.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.oauth-client:google-oauth-client:1.23.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.http-client:google-http-client:1.23.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.5.12" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.13" level="project" />
+    <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.14" level="project" />
+    <orderEntry type="library" name="Maven: com.google.http-client:google-http-client-jackson2:1.23.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava-jdk5:17.0" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.net.httpserver:http:20070405" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.mail:javax.mail:1.6.2" level="project" />
   </component>
 </module>

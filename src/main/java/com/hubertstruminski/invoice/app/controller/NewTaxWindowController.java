@@ -70,10 +70,10 @@ public class NewTaxWindowController implements FxmlController {
         if (!nameTextField.getText().matches(".{1,255}")) isTaxNameError = true;
         else isTaxNameError = false;
 
-        if (!".{0,255}".matches(taxDescriptionErrorLabel.getText())) isTaxDescriptionError = true;
+        if (!taxDescriptionErrorLabel.getText().matches(".{0,255}")) isTaxDescriptionError = true;
         else isTaxDescriptionError = false;
 
-        if (!"[0-9]+%$".matches(taxAmountTextField.getText())) isTaxAmountError = true;
+        if (!taxAmountTextField.getText().matches("[0-9]+%$")) isTaxAmountError = true;
         else isTaxAmountError = false;
 
         if(isTaxNameError) {

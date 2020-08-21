@@ -51,21 +51,22 @@ public class TaxWindowController implements FxmlController {
     @Override
     public void initialize() {
         numberTableColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.05));
-        numberTableColumn.setResizable(false);
+        numberTableColumn.setResizable(true);
 
         nameTableColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.3));
-        nameTableColumn.setResizable(false);
+        nameTableColumn.setResizable(true);
 
         descriptionTableColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.4));
-        descriptionTableColumn.setResizable(false);
+        descriptionTableColumn.setResizable(true);
 
         taxAmountTableColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.05));
-        taxAmountTableColumn.setResizable(false);
+        taxAmountTableColumn.setResizable(true);
 
         editTableColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.1));
         editTableColumn.setResizable(false);
 
-        coreService.setColumnsAndDataInTableView(deleteTableColumn, nameTableColumn, tableView, taxWindowService);
+        coreService.setColumnsAndDataInTableView(deleteTableColumn, nameTableColumn, tableView, taxWindowService,
+                0.1, "name");
 
         numberTableColumn.setCellValueFactory(parameter ->
                 new ReadOnlyObjectWrapper(tableView.getItems().indexOf(parameter.getValue()) + 1));

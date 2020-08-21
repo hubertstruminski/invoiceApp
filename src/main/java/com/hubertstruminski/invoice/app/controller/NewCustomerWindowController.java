@@ -261,7 +261,7 @@ public class NewCustomerWindowController implements FxmlController {
 
     public void setCustomerAddress(Address _address) {
         address = _address;
-        newAddressButton.setText(address.getAddress() + ", " + address.getCountry());
+        newAddressButton.setText(address.getAddress() + " " + address.getCountry());
     }
 
     public Address returnAddressObjectForUpdate() {

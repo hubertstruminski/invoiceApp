@@ -2,9 +2,10 @@ package com.hubertstruminski.invoice.app.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 
 @Entity
-public class Customer {
+public class Customer implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,6 +23,9 @@ public class Customer {
 
     @OneToOne
     private Address address;
+
+    @OneToOne(mappedBy = "customer")
+    private Invoice invoice;
 
 
     public long getId() {
@@ -86,5 +90,13 @@ public class Customer {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public Invoice getInvoice() {
+        return invoice;
+    }
+
+    public void setInvoice(Invoice invoice) {
+        this.invoice = invoice;
     }
 }

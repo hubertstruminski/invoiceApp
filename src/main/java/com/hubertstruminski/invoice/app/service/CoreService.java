@@ -14,18 +14,30 @@ public class CoreService {
             TableColumn deleteTableColumn,
             TableColumn nameTableColumn,
             TableView tableView,
-            CoreServiceInterface coreServiceInterface) {
+            CoreServiceInterface coreServiceInterface,
+            double width,
+            String nameProperty) {
 
-        deleteTableColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.1));
+        deleteTableColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(width));
         deleteTableColumn.setResizable(false);
 
         coreServiceInterface.setDataForTableView(tableView);
-        nameTableColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        nameTableColumn.setCellValueFactory(new PropertyValueFactory<>(nameProperty));
     }
 
     public Button getBtn(Button btn, String styles) {
         btn.setStyle(styles);
         btn.setCursor(Cursor.HAND);
         return btn;
+    }
+
+    public void setColumnsAndDataInTableViewForInvoices(
+            TableColumn deleteTableColumn,
+            TableView tableView,
+            CoreServiceInterface coreServiceInterface) {
+
+        deleteTableColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.1));
+        deleteTableColumn.setResizable(false);
+        coreServiceInterface.setDataForTableView(tableView);
     }
 }

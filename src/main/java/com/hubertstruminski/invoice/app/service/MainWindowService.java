@@ -1,5 +1,7 @@
 package com.hubertstruminski.invoice.app.service;
 
+import com.hubertstruminski.invoice.app.model.Company;
+import com.hubertstruminski.invoice.app.repository.CompanyRepository;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
@@ -12,14 +14,21 @@ import moe.tristan.easyfxml.model.fxml.FxmlLoadResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class MainWindowService {
 
     private final EasyFxml easyFxml;
+    private final CompanyRepository companyRepository;
 
     @Autowired
-    public MainWindowService(EasyFxml easyFxml) {
+    public MainWindowService(
+            EasyFxml easyFxml,
+            CompanyRepository companyRepository) {
         this.easyFxml = easyFxml;
+        this.companyRepository = companyRepository;
     }
 
     public void onLoadComponent(FxmlComponent fxmlComponent, int width, int height, boolean isResizable, String title) {
@@ -64,5 +73,12 @@ public class MainWindowService {
                 button.getStyleClass().add("leftMenuButtons");
             }
         }
+    }
+
+    public List<Company> findCompanies() {
+        Iterable<Company> all = companyRepository.findAll();
+        List<Company> companies = new ArrayList<>();
+        all.forEach(companies::add);
+        return companies;
     }
 }

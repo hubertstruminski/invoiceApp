@@ -1,9 +1,11 @@
 package com.hubertstruminski.invoice.app.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 
 @Entity
-public class Tax {
+public class Tax implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -12,6 +14,9 @@ public class Tax {
     private String name;
     private String description;
     private String taxAmount;
+
+    @OneToMany(mappedBy = "tax")
+    private List<Product> products;
 
     public long getId() {
         return id;
@@ -43,5 +48,13 @@ public class Tax {
 
     public void setTaxAmount(String taxAmount) {
         this.taxAmount = taxAmount;
+    }
+
+    public List<Product> getProduct() {
+        return products;
+    }
+
+    public void setProduct(List<Product> products) {
+        this.products = products;
     }
 }

@@ -10,6 +10,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 public class InvoiceAppApplication extends FxApplication {
 
     public static void main(String[] args) {
+        System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
         launch(args);
     }
 

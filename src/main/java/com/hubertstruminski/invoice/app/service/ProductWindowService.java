@@ -79,6 +79,7 @@ public class ProductWindowService implements CoreServiceInterface {
                                 if (isUpdating) {
                                     invokeNewProductWindowForUpdateProduct();
                                     newProductWindowController.setTextFields(product);
+                                    newProductWindowController.setTax(product.getTax());
                                     newProductWindowController.setUpdateFlag(true);
                                 } else {
                                     productRepository.delete(product);

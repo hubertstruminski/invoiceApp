@@ -14,30 +14,20 @@
    <children>
       <MenuBar>
         <menus>
-          <Menu fx:id="fileMenuButton" mnemonicParsing="false" text="Plik">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu fx:id="databaseMenuButton" mnemonicParsing="false" text="Baza danych">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Importuj bazę danych" />
-                  <MenuItem mnemonicParsing="false" text="Eksportuj bazę danych" />
-            </items>
-          </Menu>
-          <Menu fx:id="helpMenuButton" mnemonicParsing="false" text="Pomoc">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
             <Menu fx:id="addMenuButton" mnemonicParsing="false" text="Dodaj">
               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onNewCompanyAction" text="Nowa firma" />
                 <MenuItem mnemonicParsing="false" onAction="#onNewCustomerAction" text="Nowy klient" />
                   <MenuItem mnemonicParsing="false" onAction="#onNewProductAction" text="Nowy produkt" />
-                  <MenuItem mnemonicParsing="false" text="Nowa faktura" />
+                  <MenuItem mnemonicParsing="false" onAction="#onNewInvoiceAction" text="Nowa faktura" />
                   <MenuItem mnemonicParsing="false" onAction="#onNewTaxMenuItemAction" text="Nowy podatek" />
               </items>
             </Menu>
+          <Menu fx:id="helpMenuButton" mnemonicParsing="false" text="Pomoc">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onEasyFxmlButtonAction" text="EasyFXML" />
+            </items>
+          </Menu>
         </menus>
       </MenuBar>
       <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="871.0" prefWidth="1298.0" VBox.vgrow="ALWAYS">
@@ -61,19 +51,17 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Button fx:id="taxButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="42.0" mnemonicParsing="false" onAction="#onTaxButtonClickAction" prefHeight="118.0" prefWidth="42.0" styleClass="leftMenuButtons" stylesheets="@../css/default.css" text="Podatek" GridPane.rowIndex="5" />
-                        <Button fx:id="dashboardButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="113.0" prefWidth="177.0" styleClass="leftMenuButtons" stylesheets="@../css/default.css" text="Tablica" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                        <Button fx:id="myCompanyButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="leftMenuButtons" stylesheets="@../css/default.css" text="Moja Firma" GridPane.rowIndex="1">
+                        <Button fx:id="taxButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="42.0" mnemonicParsing="false" onAction="#onTaxButtonClickAction" prefHeight="118.0" prefWidth="42.0" styleClass="leftMenuButtons" stylesheets="@../css/default.css" text="Podatek" GridPane.rowIndex="4" />
+                        <Button fx:id="myCompanyButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onCompanyButtonAction" styleClass="leftMenuButtons" stylesheets="@../css/default.css" text="Moja Firma">
                            <GridPane.margin>
                               <Insets />
                            </GridPane.margin>
                         </Button>
-                        <Button fx:id="customersButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onCustomersButtonAction" styleClass="leftMenuButtons" stylesheets="@../css/default.css" text="Klienci" GridPane.rowIndex="2" />
-                        <Button fx:id="invoicesButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onInvoiceButtonAction" styleClass="leftMenuButtons" stylesheets="@../css/default.css" text="Faktury" GridPane.rowIndex="3" />
-                        <Button fx:id="productsButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onProductButtonAction" styleClass="leftMenuButtons" stylesheets="@../css/default.css" text="Produkty" GridPane.rowIndex="4" />
+                        <Button fx:id="customersButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onCustomersButtonAction" styleClass="leftMenuButtons" stylesheets="@../css/default.css" text="Klienci" GridPane.rowIndex="1" />
+                        <Button fx:id="invoicesButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onInvoiceButtonAction" styleClass="leftMenuButtons" stylesheets="@../css/default.css" text="Faktury" GridPane.rowIndex="2" />
+                        <Button fx:id="productsButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onProductButtonAction" styleClass="leftMenuButtons" stylesheets="@../css/default.css" text="Produkty" GridPane.rowIndex="3" />
                      </children>
                   </GridPane>
                </children>

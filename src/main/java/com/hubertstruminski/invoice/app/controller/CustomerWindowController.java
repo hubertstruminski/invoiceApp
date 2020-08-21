@@ -54,21 +54,22 @@ public class CustomerWindowController implements FxmlController {
     @Override
     public void initialize() {
         numberTableColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.05));
-        numberTableColumn.setResizable(false);
+        numberTableColumn.setResizable(true);
 
         nameTableColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.25));
-        nameTableColumn.setResizable(false);
+        nameTableColumn.setResizable(true);
 
         phoneNumberTableColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.225));
-        phoneNumberTableColumn.setResizable(false);
+        phoneNumberTableColumn.setResizable(true);
 
         emailTableColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.225));
-        emailTableColumn.setResizable(false);
+        emailTableColumn.setResizable(true);
 
         editTableColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.15));
         editTableColumn.setResizable(false);
 
-        coreService.setColumnsAndDataInTableView(deleteTableColumn, nameTableColumn, tableView, customerWindowService);
+        coreService.setColumnsAndDataInTableView(deleteTableColumn, nameTableColumn, tableView, customerWindowService,
+                0.1, "name");
 
         numberTableColumn.setCellValueFactory(parameter ->
                 new ReadOnlyObjectWrapper(tableView.getItems().indexOf(parameter.getValue()) + 1));

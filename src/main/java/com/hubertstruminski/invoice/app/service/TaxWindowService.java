@@ -1,9 +1,12 @@
 package com.hubertstruminski.invoice.app.service;
 
 import com.hubertstruminski.invoice.app.component.NewTaxWindowComponent;
+import com.hubertstruminski.invoice.app.component.TaxWindowErrorAssignComponent;
 import com.hubertstruminski.invoice.app.controller.MainWindowController;
 import com.hubertstruminski.invoice.app.controller.NewTaxWindowController;
+import com.hubertstruminski.invoice.app.model.Product;
 import com.hubertstruminski.invoice.app.model.Tax;
+import com.hubertstruminski.invoice.app.repository.ProductRepository;
 import com.hubertstruminski.invoice.app.repository.TaxRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,6 +22,8 @@ import moe.tristan.easyfxml.EasyFxml;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TaxWindowService implements CoreServiceInterface {
 
@@ -28,6 +33,9 @@ public class TaxWindowService implements CoreServiceInterface {
     private final NewTaxWindowController newTaxWindowController;
     private final MainWindowController mainWindowController;
     private final CoreService coreService;
+    private final ProductRepository productRepository;
+    private final MainWindowService mainWindowService;
+    private final TaxWindowErrorAssignComponent taxWindowErrorAssignComponent;
 
     @Autowired
     public TaxWindowService(
@@ -36,13 +44,19 @@ public class TaxWindowService implements CoreServiceInterface {
             NewTaxWindowController newTaxWindowController,
             MainWindowController mainWindowController,
             EasyFxml easyFxml,
-            CoreService coreService) {
+            CoreService coreService,
+            ProductRepository productRepository,
+            MainWindowService mainWindowService,
+            TaxWindowErrorAssignComponent taxWindowErrorAssignComponent) {
         this.taxRepository = taxRepository;
         this.newTaxWindowComponent = newTaxWindowComponent;
         this.easyFxml = easyFxml;
         this.newTaxWindowController = newTaxWindowController;
         this.mainWindowController = mainWindowController;
         this.coreService = coreService;
+        this.productRepository = productRepository;
+        this.mainWindowService = mainWindowService;
+        this.taxWindowErrorAssignComponent = taxWindowErrorAssignComponent;
     }
 
     public void setDataForTableView(TableView tableView) {
@@ -82,7 +96,18 @@ public class TaxWindowService implements CoreServiceInterface {
                                 if (isUpdating) {
                                     updateAndRefresh(tax);
                                 } else {
-                                    deleteAndRefresh(tax);
+                                    List<Product> products = productRepository.findAllByTax(tax);
+
+                                    if(products.size() != 0) {
+                                        mainWindowService.onLoadComponent(
+                                                taxWindowErrorAssignComponent,
+                                                550,
+                                                200,
+                                                false,
+                                                "Ostrzeżenie");
+                                    } else {
+                                        deleteAndRefresh(tax);
+                                    }
                                 }
                             });
                             setGraphic(coreService.getBtn(btn, styles));

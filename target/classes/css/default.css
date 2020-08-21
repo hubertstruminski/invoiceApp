@@ -58,3 +58,19 @@
     -fx-cursor: hand;
 }
 
+.chooseCustomerField {
+    -fx-background-color: red;
+}
+
+.chooseCustomerField:hover {
+    -fx-background-color: blue;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
