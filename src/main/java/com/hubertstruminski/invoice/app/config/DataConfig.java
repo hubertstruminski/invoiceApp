@@ -1,16 +1,12 @@
 package com.hubertstruminski.invoice.app.config;
 
+import java.util.Objects;
 import java.util.Properties;
 
 import javax.sql.DataSource;
-import javax.xml.validation.Validator;
 
-//import org.h2.tools.DeleteDbFiles;
 import org.hibernate.jpa.HibernatePersistenceProvider;
-//import org.hibernate.ejb.HibernatePersistence;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -24,19 +20,20 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories("com.hubertstruminski.invoice.app.repository")
-//@EnableAutoConfiguration(exclude = HibernateJpaAutoConfiguration.class)
 @PropertySource("classpath:application.properties")
 public class DataConfig {
 
-    private final String PROPERTY_DRIVER = "driver";
-    private final String PROPERTY_URL = "url";
-    private final String PROPERTY_USERNAME = "user";
-    private final String PROPERTY_PASSWORD = "password";
-    private final String PROPERTY_SHOW_SQL = "hibernate.show_sql";
-    private final String PROPERTY_DIALECT = "hibernate.dialect";
+    private static final String PROPERTY_DRIVER = "driver";
+    private static final String PROPERTY_URL = "url";
+    private static final String PROPERTY_SHOW_SQL = "hibernate.show_sql";
+    private static final String PROPERTY_DIALECT = "hibernate.dialect";
+
+    Environment environment;
 
     @Autowired
-    Environment environment;
+    public DataConfig(Environment environment) {
+        this.environment = environment;
+    }
 
     @Bean
     LocalContainerEntityManagerFactoryBean entityManagerFactory() {
@@ -52,9 +49,7 @@ public class DataConfig {
     DataSource dataSource() {
         DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setUrl(environment.getProperty(PROPERTY_URL));
-//        ds.setUsername(environment.getProperty(PROPERTY_USERNAME));
-//        ds.setPassword(environment.getProperty(PROPERTY_PASSWORD));
-        ds.setDriverClassName(environment.getProperty(PROPERTY_DRIVER));
+        ds.setDriverClassName(Objects.requireNonNull(environment.getProperty(PROPERTY_DRIVER)));
         return ds;
     }
 
@@ -62,7 +57,7 @@ public class DataConfig {
         Properties properties = new Properties();
         properties.setProperty(PROPERTY_DIALECT, environment.getProperty(PROPERTY_DIALECT));
         properties.setProperty(PROPERTY_SHOW_SQL, environment.getProperty(PROPERTY_SHOW_SQL));
-        properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+        properties.setProperty("hibernate.hbm2ddl.auto", "update");
         return properties;
     }
 

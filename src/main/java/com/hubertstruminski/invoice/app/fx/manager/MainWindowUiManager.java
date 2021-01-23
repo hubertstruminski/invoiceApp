@@ -1,9 +1,6 @@
 package com.hubertstruminski.invoice.app.fx.manager;
 
 import com.hubertstruminski.invoice.app.component.MainWindowComponent;
-import com.hubertstruminski.invoice.app.controller.MainWindowController;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 import moe.tristan.easyfxml.FxUiManager;
 import moe.tristan.easyfxml.api.FxmlComponent;
 import org.springframework.beans.factory.annotation.Autowired;

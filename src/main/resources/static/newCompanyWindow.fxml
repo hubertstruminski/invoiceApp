@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="vBox" alignment="CENTER" prefHeight="500" prefWidth="400" styleClass="newTaxVBoxBackground" stylesheets="@../css/default.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hubertstruminski.invoice.app.controller.NewCompanyWindowController">
+   <children>
+      <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="501.0" prefWidth="400.0" VBox.vgrow="ALWAYS">
+        <columnConstraints>
+          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" percentWidth="30.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="60.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="3.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="3.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="3.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="20.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="3.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="3.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="nameLabel" text="Nazwa firmy">
+               <GridPane.margin>
+                  <Insets right="20.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="descriptionLabel" text="Adres" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets right="20.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="taxAmountLabel" text="Kod pocztowy" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets right="20.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Miasto" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets right="20.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Kraj" GridPane.rowIndex="8">
+               <GridPane.margin>
+                  <Insets right="20.0" />
+               </GridPane.margin>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#onNewCompanySaveButton" prefHeight="41.0" prefWidth="105.0" styleClass="newTaxSaveButton" stylesheets="@../css/taxWindow.css" text="Zapisz" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="11" GridPane.valignment="TOP" />
+            <TextField fx:id="companyNameTextField" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" promptText="np. AJ Bygg AS" styleClass="newTaxTextFieldInputs" stylesheets="@../css/taxWindow.css" GridPane.columnIndex="1" />
+            <TextField fx:id="addressTextField" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" promptText="np. Gamle Emblemsvei 34" styleClass="newTaxTextFieldInputs" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="postalcodeTextField" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" promptText="np. 6013" styleClass="newTaxTextFieldInputs" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="cityTextField" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" promptText="np. Alesund" styleClass="newTaxTextFieldInputs" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="countryTextField" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" promptText="np. NORGE" styleClass="newTaxTextFieldInputs" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label fx:id="companyNameErrorLabel" text="Label" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+            <Label fx:id="addressErrorLabel" text="Label" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" />
+            <Label fx:id="postalcodeErrorLabel" text="Label" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="5" />
+            <Label fx:id="cityErrorLabel" text="Label" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="7" />
+            <Label fx:id="countryErrorLabel" text="Label" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="9" />
+            <Label fx:id="companyIdLabel" text="companyId" GridPane.rowIndex="11" />
+         </children>
+      </GridPane>
+   </children>
+</VBox>

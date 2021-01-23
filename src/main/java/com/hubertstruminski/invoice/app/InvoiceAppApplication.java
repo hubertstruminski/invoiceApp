@@ -1,17 +1,16 @@
 package com.hubertstruminski.invoice.app;
 
+import javafx.stage.Stage;
 import moe.tristan.easyfxml.FxApplication;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 public class InvoiceAppApplication extends FxApplication {
 
     public static void main(String[] args) {
-//        System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
+        System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
         launch(args);
     }
 
@@ -21,5 +20,11 @@ public class InvoiceAppApplication extends FxApplication {
                 .main(getClass())
                 .headless(false)
                 .web(WebApplicationType.SERVLET);
+    }
+
+    @Override
+    public void start(Stage primaryStage) {
+        super.start(primaryStage);
+        primaryStage.setTitle("System do zarządzania fakturami");
     }
 }

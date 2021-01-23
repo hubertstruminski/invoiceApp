@@ -1,92 +1,49 @@
 package com.hubertstruminski.invoice.app.controller;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+import com.hubertstruminski.invoice.app.dto.*;
+import com.hubertstruminski.invoice.app.model.Token;
+import com.hubertstruminski.invoice.app.repository.TokenRepository;
+import com.hubertstruminski.invoice.app.service.LoginWindowService;
 
-import com.hubertstruminski.invoice.app.config.OAuthAuthenticator;
-import com.hubertstruminski.invoice.app.config.OAuthCompletedCallback;
-import com.hubertstruminski.invoice.app.config.OAuthGoogleAuthenticator;
-import com.hubertstruminski.invoice.app.view.ViewCreator;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+import javafx.stage.Stage;
+import moe.tristan.easyfxml.api.FxmlController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import org.json.JSONObject;
+import java.util.ArrayList;
+import java.util.List;
 
-public class LoginWindowController extends BaseController implements Initializable {
+@Controller
+public class LoginWindowController implements FxmlController {
 
-    @FXML
-    private ResourceBundle resources;
+    private final TokenRepository tokenRepository;
+    private final LoginWindowService loginWindowService;
 
-    @FXML
-    private URL location;
+    private Stage stage = null;
 
-    @FXML
-    private TextField emailTextField;
-
-    @FXML
-    private PasswordField passwordTextField;
-
-    @FXML
-    private Button loginButton;
-
-    @FXML
-    private Button googleLoginButton;
-
-    public LoginWindowController() {
-
-    }
-
-    public LoginWindowController(ViewCreator viewCreator, String fxmlName) {
-        super(viewCreator, fxmlName);
-    }
-
-    @FXML
-    void googleLoginButtonAction(ActionEvent event) {
-        OAuthGoogleAuthenticator auth = new OAuthGoogleAuthenticator(
-                "192634648100-d0kdeqe1nn37ijisirvp5rm7hq8ipiq4.apps.googleusercontent.com",
-                "oob",
-//                "urn:ietf:wg:oauth:2.0:oob:auto",
-                "w2cY8VknWPMT_xSm07rlyKRX",
-                "https://www.googleapis.com/auth/userinfo.profile");
-
-        auth.startLogin();
-
-        new OAuthCompletedCallback() {
-            @Override
-            public void oAuthCallback(OAuthAuthenticator authenticator) {
-                String accessToken = authenticator.getAccessToken();
-                JSONObject jsonData = authenticator.getJsonData();
-                System.out.println("Hubert Strumiński => " + accessToken);
-            }
-        }.oAuthCallback(auth);
-        OAuthCompletedCallback oAuthCompletedCallback = new OAuthCompletedCallback() {
-            @Override
-            public void oAuthCallback(OAuthAuthenticator authenticator) {
-                String accessToken = authenticator.getAccessToken();
-                JSONObject jsonData = authenticator.getJsonData();
-                System.out.println("Hubert Strumiński => " + accessToken);
-            }
-        };
-    }
-
-    @FXML
-    void loginButtonAction(ActionEvent event) {
-    }
-
-    @FXML
-    void initialize() {
-        assert emailTextField != null : "fx:id=\"emailTextField\" was not injected: check your FXML file 'loginWindow.fxml'.";
-        assert passwordTextField != null : "fx:id=\"passwordTextField\" was not injected: check your FXML file 'loginWindow.fxml'.";
-        assert loginButton != null : "fx:id=\"loginButton\" was not injected: check your FXML file 'loginWindow.fxml'.";
-        assert googleLoginButton != null : "fx:id=\"googleLoginButton\" was not injected: check your FXML file 'loginWindow.fxml'.";
-
+    @Autowired
+    public LoginWindowController(
+            TokenRepository tokenRepository,
+            LoginWindowService loginWindowService) {
+        this.tokenRepository = tokenRepository;
+        this.loginWindowService = loginWindowService;
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize() {
+        loginWindowService.initGoogleCredentials();
+
+        Iterable<Token> all = tokenRepository.findAll();
+        List<Token> tokens = new ArrayList<>();
+        all.forEach(tokens::add);
+
+        if(tokens.size() > 0) {
+            Token token = tokens.get(0);
+
+            RefreshTokenResponse response = loginWindowService.refreshAccessToken(token.getRefreshToken());
+            loginWindowService.saveAfterRefreshToken(token, response);
+        } else {
+            loginWindowService.logIn(stage);
+        }
     }
 }

@@ -2,18 +2,38 @@
     -fx-background-color: rgba(166, 166, 166, .1);
 }
 
+.background {
+    -fx-background-color: #E5E5E5;
+    -fx-min-height: 100%;
+    -fx-min-width: 100%;
+}
+
 .leftMenuButtons {
     -fx-background-color: rgba(166, 166, 166, .1);
     -fx-text-fill: black;
     -fx-border-style: solid;
-    -fx-border-width: 0 0 1 0;
+    -fx-border-width: 0 1 1 0;
     -fx-border-color: #919191;
 }
 
 .leftMenuButtons:hover {
     -fx-cursor: hand;
     -fx-background-color: #0098CE;
-    -fx-text-fill: white;
+    -fx-text-fill: black;
+}
+
+.leftMenuButtonsActive {
+    -fx-background-color: #b3b3b3;
+    -fx-text-fill: black;
+    -fx-border-style: solid;
+    -fx-border-width: 0 1 1 0;
+    -fx-border-color: #919191;
+}
+
+.leftMenuButtonsActive:hover {
+    -fx-cursor: hand;
+    -fx-background-color: #0098CE;
+    -fx-text-fill: black;
 }
 
 .newTaxVBoxBackground {
@@ -33,9 +53,24 @@
     -fx-text-fill: white;
 }
 
-
-
 .newTaxSaveButton:hover {
     -fx-background-color: #007fad;
     -fx-cursor: hand;
 }
+
+.chooseCustomerField {
+    -fx-background-color: red;
+}
+
+.chooseCustomerField:hover {
+    -fx-background-color: blue;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+

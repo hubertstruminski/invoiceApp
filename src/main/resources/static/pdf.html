@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Faktura - PDF</title>
+		<meta charset="UTF-8">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.0.0/jspdf.umd.min.js"></script>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				height: 100vh;
+				font-size: 13px;
+			}
+			.information-invoice {
+				width: 100%;
+				height: 30%;
+				background-color: #EAEAEA;
+			}
+			.company-info {
+				width: 50%;
+				height: 100%;
+				float: left;
+				display: flex;
+				justify-content: left;
+				align-items: center;
+			
+			}
+			.company-details-text {
+				padding-left: 20%;
+			}
+			.customer-info {
+				width: 50%;
+				height: 100%;
+				float: left;
+				display: flex;
+				justify-content: right;
+				align-items: center;
+			}
+			.customer-details-text {
+				width: 100%;
+				padding-right : 20%;
+				text-align: right;
+			}
+			.invoice-tags {
+				float: left;
+				width: 50%;
+				min-height: 100%;
+				text-align: left;
+			}
+			.invoice-values {
+				float: left;
+				width: 50%;
+				min-height: 100%;
+				text-align: left;
+			}
+			.products-table {
+				width: 100%;
+				height: 70%;
+				background-color: white;
+			}
+			table {
+				width: 100%;
+				padding-left: 10%;
+				padding-right: 10%;
+			}
+			.beskrivelse-class {
+				text-align: left;
+			}
+			.right-cells {
+				text-align: center;
+			}
+			td {
+				padding: 1%;
+			}
+			th {
+				padding: 1%;
+				border-bottom: 1px solid black;
+			}
+			tfoot {
+				border-top: 1px solid black;
+				text-align: left;
+			}
+	    </style>
+	</head>
+	
+	<body>
+		<br /><br /><br />
+		<div class="information-invoice" style="background-color: #EAEAEA;">
+			<div class="company-info">
+				<br />
+				<div class="company-details-text">
+					<span id="companyName" style="font-weight: 800;">AJ Bygg AS</span>
+					<br />
+					<span id="companyAddress">Gamle Emblemsvei 34</span>
+					<br />
+					<span id="companyPostalCodeCity">6013 Alesund</span>
+					<br />
+					<span id="companyCountry">NORGE</span>
+				</div>
+			</div>
+			<div class="customer-info">
+				<div class="customer-details-text">
+					<div class="invoice-tags">
+						<span id="invoiceLabel" style="font-weight: 800;">
+							FAKTURA
+						</span>
+						<br />
+						<br />
+						Fakturadato:
+						<br />
+						Betalingsfirst:
+						<br /><br />
+						Deres ref:
+						<br />
+						Kundenr:
+					</div>
+					<div class="invoice-values">
+						<span id="invoiceNumber" style="font-weight: 800; font-size: 18px;">
+							420182
+						</span>
+						<br />
+						<br />
+						<span id="invoiceDate">29.05.2020</span>
+						<br />
+						<span id="invoiceDeadline">22.06.2020</span>
+						<br /><br />
+						<span id="customerName">Jaroslaw Struminski</span>
+						<br />
+						<span id="customerNip">100114</span>
+					</div>
+				</div>
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+		<br /><br /><br /><br /><br /><br /><br /><br />
+		<div class="products-table">
+			<table>
+				<thead>
+					<tr>
+						<th class="beskrivelse-class">Beskrivelse</th>
+						<th>Antall</th>
+						<th>Enhet</th>
+						<th>Pris</th>
+						<th>Mva</th>
+						<th>Rab %</th>
+						<th>Sum</th>
+					</tr>
+				</thead>
+				<tbody>	
+					 <!-- it's (tag tbody) needed to render rows dynamically -->
+				</tbody>
+				<tfoot>
+					<tr>
+						<th><th>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th>Beløp å betale</th>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td class="right-cells" id="sum">2 217,00 NOK</td>
+					</tr>
+				</tfoot>
+			</table>
+			<h1 id="test"></h1>
+		</div>
+
+		
+		<script>
+			let count = 0;
+			let partialTax = 0;
+
+			function renderInvoice() {
+				document.getElementById("invoiceNumber").innerHTML = invoice.getNumber();
+				document.getElementById("invoiceDate").innerHTML = invoice.getDate();
+				document.getElementById("invoiceDeadline").innerHTML = invoice.getDeadline();
+			}
+
+			function renderCustomer() {
+				document.getElementById("customerName").innerHTML = customer.getName();
+				document.getElementById("customerNip").innerHTML = customer.getNip();
+			}
+
+			function renderSingleProduct() {
+				let name = product.getName();
+				let description = product.getDescription();
+				let amount = product.getAmount();
+				let unit = product.getUnit();
+				let price = product.getPrice();
+				let tax = _tax.getTaxAmount();
+				let discount = product.getDiscount();
+				let sum = product.getAmount() * product.getPrice();
+				partialTax += sum * tax.replace(/%/, "");
+				count += sum;
+
+				let tr = document.createElement("tr");
+				let tbody = document.getElementsByTagName("tbody")[0];
+				tbody.appendChild(tr);
+
+				let tdDescription = document.createElement("td");
+				let tdAmount = document.createElement("td");
+				let tdUnit = document.createElement("td");
+				let tdPrice = document.createElement("td");
+				let tdTax = document.createElement("td");
+				let tdDiscount = document.createElement("td");
+				let tdSum = document.createElement("td");
+
+				tdDescription.innerHTML = "<b>" + name + "</b>" + "<br />" + description;
+				tdAmount.innerHTML = (Math.round(amount * 100) / 100).toFixed(2);
+				tdUnit.innerHTML = unit;
+				tdPrice.innerHTML = (Math.round(price * 100) / 100).toFixed(2);
+				tdTax.innerHTML = tax;
+				tdDiscount.innerHTML = discount;
+				tdSum.innerHTML = (Math.round(sum * 100) / 100).toFixed(2);
+
+				tdAmount.classList.add("right-cells");
+				tdUnit.classList.add("right-cells");
+				tdPrice.classList.add("right-cells");
+				tdTax.classList.add("right-cells");
+				tdDiscount.classList.add("right-cells");
+				tdSum.classList.add("right-cells");
+
+				tr.appendChild(tdDescription);
+				tr.appendChild(tdAmount);
+				tr.appendChild(tdUnit);
+				tr.appendChild(tdPrice);
+				tr.appendChild(tdTax);
+				tr.appendChild(tdDiscount);
+				tr.appendChild(tdSum);
+			}
+
+			function renderSum() {
+				let result = (Math.round((count + partialTax) * 100) / 100).toFixed(2);
+				document.getElementById("sum").innerHTML = result + " NOK";
+			}
+
+			var html = "";
+
+			function takeDataForGeneratePdf() {
+				html = document.getElementsByTagName("html")[0].innerHTML;
+			}
+
+			function renderCompany() {
+				document.getElementById("companyName").innerHTML = company.getCompanyName();
+				document.getElementById("companyAddress").innerHTML = company.getAddress();
+				document.getElementById("companyPostalCodeCity").innerHTML = company.getPostalCode() + " " + company.getCity();
+				document.getElementById("companyCountry").innerHTML = company.getCountry();
+			}
+		</script>
+	</body>
+</html>

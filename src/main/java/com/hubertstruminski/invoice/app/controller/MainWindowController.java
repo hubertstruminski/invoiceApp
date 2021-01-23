@@ -1,73 +1,72 @@
 package com.hubertstruminski.invoice.app.controller;
 
-import com.hubertstruminski.invoice.app.component.NewTaxWindowComponent;
-import com.hubertstruminski.invoice.app.fx.manager.MainWindowUiManager;
-import com.hubertstruminski.invoice.app.fx.manager.NewTaxWindowUiManager;
-import com.hubertstruminski.invoice.app.repository.TaxRepository;
-import com.hubertstruminski.invoice.app.view.ViewCreator;
+import com.hubertstruminski.invoice.app.component.*;
+import com.hubertstruminski.invoice.app.model.Company;
+import com.hubertstruminski.invoice.app.service.MainWindowService;
 import de.jensd.fx.glyphs.GlyphsDude;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
-import io.vavr.control.Try;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
-import javafx.stage.Stage;
-import moe.tristan.easyfxml.EasyFxml;
-import moe.tristan.easyfxml.FxUiManager;
-import moe.tristan.easyfxml.api.FxmlComponent;
 import moe.tristan.easyfxml.api.FxmlController;
-import moe.tristan.easyfxml.model.fxml.FxmlLoadResult;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Controller;
 
-import java.io.IOException;
-import java.util.function.Consumer;
+import java.util.List;
 
 @Controller
 public class MainWindowController implements FxmlController {
 
-    @Autowired
-    private ViewCreator viewCreator;
+    private final TaxWindowComponent taxWindowComponent;
+    private final NewTaxWindowComponent newTaxWindowComponent;
+    private final MainWindowService mainWindowService;
+    private final NewCustomerWindowComponent newCustomerWindowComponent;
+    private final CustomerWindowComponent customerWindowComponent;
+    private final NewProductWindowComponent newProductWindowComponent;
+    private final ProductWindowComponent productWindowComponent;
+    private final NewInvoiceWindowComponent newInvoiceWindowComponent;
+    private final InvoiceWindowComponent invoiceWindowComponent;
+    private final NewCompanyWindowComponent newCompanyWindowComponent;
+    private final CompanyWindowComponent companyWindowComponent;
+    private final EasyFxmlGreetingsWindowComponent easyFxmlGreetingsWindowComponent;
+    private final NewNextCompanyErrorWindowComponent newNextCompanyErrorWindowComponent;
 
     @Autowired
-    private TaxRepository taxRepository;
-
-    @Autowired
-    private NewTaxWindowComponent newTaxWindowComponent;
-
-    @Autowired
-    private EasyFxml easyFxml;
-
-    @Autowired
-    private MainWindowUiManager mainWindowUiManager;
-
-    @Autowired
-    private NewTaxWindowUiManager newTaxWindowUiManager;
-
-    @FXML
-    private VBox leftMenuVBox;
-
-    @FXML
-    private GridPane leftMenuGridPane;
+    public MainWindowController(
+            TaxWindowComponent taxWindowComponent,
+            NewTaxWindowComponent newTaxWindowComponent,
+            MainWindowService mainWindowService,
+            NewCustomerWindowComponent newCustomerWindowComponent,
+            CustomerWindowComponent customerWindowComponent,
+            NewProductWindowComponent newProductWindowComponent,
+            ProductWindowComponent productWindowComponent,
+            InvoiceWindowComponent invoiceWindowComponent,
+            NewCompanyWindowComponent newCompanyWindowComponent,
+            CompanyWindowComponent companyWindowComponent,
+            NewInvoiceWindowComponent newInvoiceWindowComponent,
+            EasyFxmlGreetingsWindowComponent easyFxmlGreetingsWindowComponent,
+            NewNextCompanyErrorWindowComponent newNextCompanyErrorWindowComponent) {
+        this.taxWindowComponent = taxWindowComponent;
+        this.newTaxWindowComponent = newTaxWindowComponent;
+        this.mainWindowService = mainWindowService;
+        this.newCustomerWindowComponent = newCustomerWindowComponent;
+        this.customerWindowComponent = customerWindowComponent;
+        this.newProductWindowComponent = newProductWindowComponent;
+        this.productWindowComponent = productWindowComponent;
+        this.newInvoiceWindowComponent = newInvoiceWindowComponent;
+        this.invoiceWindowComponent = invoiceWindowComponent;
+        this.newCompanyWindowComponent = newCompanyWindowComponent;
+        this.companyWindowComponent = companyWindowComponent;
+        this.easyFxmlGreetingsWindowComponent = easyFxmlGreetingsWindowComponent;
+        this.newNextCompanyErrorWindowComponent = newNextCompanyErrorWindowComponent;
+    }
 
     @FXML
     private Button taxButton;
-
-    @FXML
-    private Button dashboardButton;
 
     @FXML
     private Button myCompanyButton;
@@ -85,38 +84,130 @@ public class MainWindowController implements FxmlController {
     private Menu helpMenuButton;
 
     @FXML
-    private Menu databaseMenuButton;
-
-    @FXML
-    private Menu fileMenuButton;
-
-    @FXML
     private Menu addMenuButton;
 
     @FXML
-    void onNewTaxMenuItemAction(ActionEvent event) {
-        FxmlLoadResult<Pane, FxmlController> load = easyFxml.load(newTaxWindowComponent);
+    private VBox rightVBoxView;
 
+    @FXML
+    void onNewCompanyAction() {
+        List<Company> companies = mainWindowService.findCompanies();
+        if(companies.size() != 0) {
+            mainWindowService.onLoadComponent(
+                    newNextCompanyErrorWindowComponent,
+                    450,
+                    200,
+                    false,
+                    "Uwaga!");
 
-
-        load.afterNodeLoaded(new Consumer<Pane>() {
-            @Override
-            public void accept(Pane pane) {
-                Scene scene = new Scene(pane, 400, 500);
-                Stage stage = new Stage();
-                stage.setScene(scene);
-
-                stage.show();
-            }
-        });
+        } else {
+            mainWindowService.onLoadComponent(
+                    newCompanyWindowComponent,
+                    400,
+                    500,
+                    false,
+                    "Nowa firma");
+        }
     }
+
+    @FXML
+    void onNewTaxMenuItemAction() {
+        mainWindowService.onLoadComponent(
+                newTaxWindowComponent,
+                400,
+                500,
+                false,
+                "Nowy podatek");
+    }
+
+    @FXML
+    void onNewCustomerAction() {
+        mainWindowService.onLoadComponent(
+                newCustomerWindowComponent,
+                400,
+                500,
+                false,
+                "Nowy klient");
+    }
+
+    @FXML
+    void onNewProductAction() {
+        mainWindowService.onLoadComponent(
+                newProductWindowComponent,
+                400,
+                500,
+                false,
+                "Nowy produkt");
+    }
+
+    @FXML
+    void onNewInvoiceAction() {
+        mainWindowService.onLoadComponent(
+                newInvoiceWindowComponent,
+                400,
+                500,
+                false,
+                "Nowa faktura");
+    }
+
+    @FXML
+    void onEasyFxmlButtonAction() {
+        mainWindowService.onLoadComponent(
+                easyFxmlGreetingsWindowComponent,
+                600,
+                350,
+                false,
+                "Greetings"
+        );
+    }
+
+
+    @FXML
+    void onCompanyButtonAction() {
+        mainWindowService.onSubViewChange(myCompanyButton, rightVBoxView, companyWindowComponent);
+        changeButtonsStyle(myCompanyButton);
+    }
+
+    @FXML
+    void onCustomersButtonAction() {
+        mainWindowService.onSubViewChange(customersButton, rightVBoxView, customerWindowComponent);
+        changeButtonsStyle(customersButton);
+    }
+
+    @FXML
+    void onInvoiceButtonAction() {
+        mainWindowService.onSubViewChange(invoicesButton, rightVBoxView, invoiceWindowComponent);
+        changeButtonsStyle(invoicesButton);
+    }
+
+    @FXML
+    void onProductButtonAction() {
+        mainWindowService.onSubViewChange(productsButton, rightVBoxView, productWindowComponent);
+        changeButtonsStyle(productsButton);
+    }
+
+    @FXML
+    void onTaxButtonClickAction() {
+        mainWindowService.onSubViewChange(taxButton, rightVBoxView, taxWindowComponent);
+        changeButtonsStyle(taxButton);
+    }
+
+    public void refreshTaxTableView() {
+        mainWindowService.refreshSubView(taxWindowComponent, rightVBoxView);
+    }
+
+    public void refreshCustomerTableView() {
+        mainWindowService.refreshSubView(customerWindowComponent, rightVBoxView);
+    }
+
+    public void refreshProductTableView() { mainWindowService.refreshSubView(productWindowComponent, rightVBoxView);}
+
+    public void refreshInvoiceTableView() { mainWindowService.refreshSubView(invoiceWindowComponent, rightVBoxView);}
+
+    public void refreshCompanyTableView() { mainWindowService.refreshSubView(companyWindowComponent, rightVBoxView);}
 
     @Override
     public void initialize() {
-        dashboardButton.setGraphic(GlyphsDude.createIcon(FontAwesomeIcon.DASHBOARD, "20px"));
-        dashboardButton.setAlignment(Pos.BASELINE_LEFT);
-        dashboardButton.setPadding(new Insets(0, 0, 0, 40));
-
         myCompanyButton.setGraphic(GlyphsDude.createIcon(FontAwesomeIcon.BUILDING, "20px"));
         myCompanyButton.setAlignment(Pos.BASELINE_LEFT);
         myCompanyButton.setPadding(new Insets(0, 0, 0, 40));
@@ -138,8 +229,16 @@ public class MainWindowController implements FxmlController {
         taxButton.setPadding(new Insets(0, 0, 0, 40));
 
         helpMenuButton.setGraphic(GlyphsDude.createIcon(FontAwesomeIcon.LIFE_BOUY, "15px"));
-        databaseMenuButton.setGraphic(GlyphsDude.createIcon(FontAwesomeIcon.DATABASE, "15px"));
-        fileMenuButton.setGraphic(GlyphsDude.createIcon(FontAwesomeIcon.FILE, "15px"));
         addMenuButton.setGraphic(GlyphsDude.createIcon(FontAwesomeIcon.PLUS_CIRCLE, "15px"));
+    }
+
+    private void changeButtonsStyle(Button _button) {
+        Button[] selectedButtons = new Button[] {
+                myCompanyButton,
+                customersButton,
+                invoicesButton,
+                productsButton,
+                taxButton};
+        mainWindowService.findButtonForStyleChange(selectedButtons, _button);
     }
 }

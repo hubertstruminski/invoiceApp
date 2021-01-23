@@ -1,72 +1,50 @@
 package com.hubertstruminski.invoice.app.controller;
 
-import com.hubertstruminski.invoice.app.component.NewTaxWindowComponent;
-import com.hubertstruminski.invoice.app.fx.manager.MainWindowUiManager;
-import com.hubertstruminski.invoice.app.fx.manager.NewTaxWindowUiManager;
 import com.hubertstruminski.invoice.app.model.Tax;
 import com.hubertstruminski.invoice.app.repository.TaxRepository;
-import com.hubertstruminski.invoice.app.service.TaxService;
-import com.hubertstruminski.invoice.app.view.ViewCreator;
-import javafx.event.ActionEvent;
+import com.hubertstruminski.invoice.app.util.Constants;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.stage.Window;
-import moe.tristan.easyfxml.EasyFxml;
 import moe.tristan.easyfxml.api.FxmlController;
-import moe.tristan.easyfxml.model.fxml.FxmlLoader;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Controller;
-
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 @Controller
 public class NewTaxWindowController implements FxmlController {
 
-    private Stage stage;
+    private boolean isTaxNameError;
+    private boolean isTaxDescriptionError;
+    private boolean isTaxAmountError;
 
-//    @Autowired
-//    private TaxRepository taxRepository;
+    private boolean isUpdateFlag = false;
 
-    @Autowired
-    private TaxService taxService;
-
-    @Autowired
-    private ViewCreator viewCreator;
+    private final TaxRepository taxRepository;
+    private final MainWindowController mainWindowController;
 
     @Autowired
-    private EasyFxml easyFxml;
-
-    @Autowired
-    private MainWindowUiManager mainWindowUiManager;
-
-    @Autowired
-    private NewTaxWindowComponent newTaxWindowComponent;
-
-    @Autowired
-    private NewTaxWindowUiManager newTaxWindowUiManager;
+    public NewTaxWindowController(
+            TaxRepository taxRepository,
+            MainWindowController mainWindowController) {
+        this.taxRepository = taxRepository;
+        this.mainWindowController = mainWindowController;
+    }
 
     @FXML
     private VBox vBox;
 
     @FXML
-    private Label nameLabel;
+    private Label taxAmountErrorLabel;
 
     @FXML
-    private Label descriptionLabel;
+    public Label taxNameErrorLabel;
 
     @FXML
-    private Label taxAmountLabel;
+    private Label taxDescriptionErrorLabel;
 
     @FXML
     private TextField nameTextField;
@@ -81,25 +59,82 @@ public class NewTaxWindowController implements FxmlController {
     public Button newTaxSaveButton;
 
     @FXML
-    void onNewTaxSaveButtonAction(ActionEvent event) {
-        Tax tax = new Tax();
-        tax.setName(nameTextField.getText());
-        tax.setDescription(descriptionTextField.getText());
-        tax.setTaxAmount(taxAmountTextField.getText());
+    private Label newTaxIdLabel;
 
-        taxService.save(tax);
+    public void setUpdateFlag(boolean updateFlag) {
+        isUpdateFlag = updateFlag;
+    }
+
+    @FXML
+    void onNewTaxSaveButtonAction() {
+        if (!nameTextField.getText().matches(".{1,255}")) isTaxNameError = true;
+        else isTaxNameError = false;
+
+        if (!taxDescriptionErrorLabel.getText().matches(".{0,255}")) isTaxDescriptionError = true;
+        else isTaxDescriptionError = false;
+
+        if (!taxAmountTextField.getText().matches("[0-9]+%$")) isTaxAmountError = true;
+        else isTaxAmountError = false;
+
+        if(isTaxNameError) {
+            taxNameErrorLabel.setText("Długość nazwy musi być od 1 do 255 znaków.");
+        } else {
+            taxNameErrorLabel.setText("");
+        }
+
+        if(isTaxDescriptionError) {
+            taxDescriptionErrorLabel.setText("Maksymalna długość to 255 znaków.");
+        } else {
+            taxDescriptionErrorLabel.setText("");
+        }
+
+        if(isTaxAmountError) {
+            taxAmountErrorLabel.setText("Nieprawidłowy format, np. 23%");
+        } else {
+            taxAmountErrorLabel.setText("");
+        }
+
+
+        if(!isTaxNameError && !isTaxDescriptionError && !isTaxAmountError) {
+            Tax tax = new Tax();
+            if(isUpdateFlag) {
+                tax.setId(Long.parseLong(newTaxIdLabel.getText()));
+            }
+            tax.setName(nameTextField.getText());
+            tax.setDescription(descriptionTextField.getText());
+            tax.setTaxAmount(taxAmountTextField.getText());
+
+            taxRepository.save(tax);
+            mainWindowController.refreshTaxTableView();
+
+            Stage stage = (Stage) vBox.getScene().getWindow();
+            stage.close();
+        }
     }
 
     @Override
     public void initialize() {
-        System.out.println("Hubert");
+        taxNameErrorLabel.setText("");
+        taxNameErrorLabel.setStyle(Constants.RED_COLOR_FONT);
+
+        taxDescriptionErrorLabel.setText("");
+        taxDescriptionErrorLabel.setStyle(Constants.RED_COLOR_FONT);
+
+        taxAmountErrorLabel.setText("");
+        taxAmountErrorLabel.setStyle(Constants.RED_COLOR_FONT);
+
+        newTaxIdLabel.setVisible(false);
+        isUpdateFlag = false;
+
+        isTaxAmountError = false;
+        isTaxDescriptionError = false;
+        isTaxNameError = false;
     }
 
-    public Stage initStage() {
-//        Scene scene1 = newTaxWindowUiManager.getScene(newTaxWindowComponent);
-        Scene scene = newTaxSaveButton.getScene();
-        Window window = scene.getWindow();
-        Stage stage = (Stage) window;
-        return stage;
+    public void setTextFields(Tax tax) {
+        newTaxIdLabel.setText(String.valueOf(tax.getId()));
+        nameTextField.setText(tax.getName());
+        descriptionTextField.setText(tax.getDescription());
+        taxAmountTextField.setText(tax.getTaxAmount());
     }
 }
